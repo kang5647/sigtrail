@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1012">
+  <meta name="description" content="A reproducible audit of NEAR Chain Signatures demand: requests, callbacks, and the applications behind them.">
+  <title>Capture Test — Is NEAR chain abstraction becoming a platform?</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header class="site-header wrap">
+    <a class="wordmark" href="#top" aria-label="Capture Test home"><span class="mark">CT</span><span>CAPTURE TEST</span></a>
+    <nav aria-label="Main navigation"><a href="#evidence">Evidence</a><a href="#thesis">Thesis</a><a href="#method">Method</a><a class="repo-link" href="#method">Reproduce ↗</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="signal-dot"></span> Independent research · NEAR Hackathon 2026</div>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">Is chain abstraction <em>becoming a platform?</em></h1>
+          <p class="hero-lead">NEAR can sign for other chains. We audit the on-chain requests behind that promise and ask a harder question: <strong>who is actually using it?</strong></p>
+          <div class="hero-actions"><a class="primary-button" href="#evidence">Explore the evidence <span>↘</span></a><a class="text-link" href="#thesis">Read the thesis <span>↗</span></a></div>
+        </div>
+        <div class="hero-graphic" aria-label="A visual distinction between raw activity and direct signature requests">
+          <div class="graphic-label">THE TEST</div>
+          <div class="graphic-line"><span>Explorer count</span><span class="graphic-value">≠</span></div>
+          <div class="graphic-line"><span>Real demand</span><span class="graphic-value lime">?</span></div>
+          <div class="graphic-foot">Open the trace. Count the calls. Name the callers.</div>
+        </div>
+      </div>
+      <div class="data-ribbon"><span><i></i> MAINNET RECEIPTS</span><span id="freshness">Loading verifiable data…</span><span>FIXED BLOCK WINDOWS · REPRODUCIBLE</span></div>
+    </section>
+
+    <section class="section wrap" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading"><div><div class="kicker">01 / The on-chain audit</div><h2 id="evidence-title">One contract. Three views of demand.</h2><p>Each window covers the same 1,000 block heights. Select one to see what actually reached <code>v1.signer</code>.</p></div><span class="section-index">001</span></div>
+      <div id="window-tabs" class="window-tabs" role="tablist" aria-label="Historical block window"></div>
+      <div class="audit-layout">
+        <div class="audit-main panel">
+          <div class="panel-top"><span class="mono-label">RECEIPT DISSECTION</span><span id="block-range" class="block-range">—</span></div>
+          <div class="main-stat"><div><span class="stat-label">Transactions touching signer</span><strong id="raw-count">—</strong></div><span class="not-equal">≠</span><div class="direct"><span class="stat-label">Direct <code>sign</code> requests</span><strong id="sign-count">—</strong></div></div>
+          <p class="audit-explain">The raw count includes callbacks and other contract activity. We trace every transaction and count only receipts calling the <code>sign</code> method.</p>
+          <div id="composition" class="composition" role="img" aria-label="Composition of signer receipts"></div>
+          <div id="composition-legend" class="composition-legend"></div>
+          <div class="audit-note" id="sample-note">—</div>
+        </div>
+        <aside class="caller-panel panel" aria-labelledby="caller-title">
+          <div class="panel-top"><span class="mono-label">WHO INITIATED REQUESTS</span><span class="small-icon">↗</span></div>
+          <h3 id="caller-title">Application mix</h3>
+          <p>Contracts that called <code>sign</code>. These are <strong>not</strong> unique people.</p>
+          <div id="caller-list" class="caller-list"></div>
+          <div class="concentration"><span>Largest caller's share</span><strong id="top-share">—</strong></div>
+        </aside>
+      </div>
+      <div class="bottom-grid">
+        <div class="panel window-comparison"><div class="panel-top"><span class="mono-label">SAME-SIZED HISTORICAL WINDOWS</span><span>01 — 03</span></div><h3>A signal, with a boundary</h3><p>The three fixed windows were chosen before classifying methods. Differences show what happened in these windows; they are not a network-wide growth rate.</p><div id="comparison-bars" class="comparison-bars"></div></div>
+        <div class="panel proof-panel"><div class="panel-top"><span class="mono-label">OPEN THE PROOF</span><span>MAINNET ↗</span></div><h3>Recent requests in this window</h3><p>These five rows resolve to public transaction traces. <a href="./data/receipt-audit.csv" download>Download every classified receipt ↗</a></p><div id="proof-rows" class="proof-rows"></div></div>
+      </div>
+      <div class="activity-panel panel"><div class="panel-top"><span class="mono-label">25 FIXED WINDOWS · 1,000 BLOCKS EACH</span><span>RAW ACTIVITY</span></div><div class="activity-header"><div><h3>A wider pulse, still an imperfect proxy.</h3><p>Every million block heights, we count transactions involving <code>v1.signer</code> with function calls. The three audited windows above show why this raw series cannot be treated as a signature count.</p></div><strong id="activity-range">—</strong></div><div id="activity-chart" class="activity-chart" role="img" aria-label="Raw signer activity across 25 fixed block windows"></div><div class="activity-axis"><span id="activity-start">—</span><span id="activity-end">—</span></div></div>
+    </section>
+
+    <section class="section context-section" id="money" aria-labelledby="money-title"><div class="wrap"><div class="section-heading"><div><div class="kicker">02 / Economic context</div><h2 id="money-title">Usage alone does not pay the token.</h2><p>NEAR Intents has a separately measured fee and buyback flow. Chain Signatures requests are not the same product or revenue stream.</p></div><span class="section-index">002</span></div><div class="money-grid"><div class="money-card"><span>Intents gross fees · 30d</span><strong id="fees-30">—</strong><small>Paid across the Intents ecosystem</small></div><div class="money-card"><span>Attributed to holders · 30d</span><strong id="holders-30">—</strong><small>DeFiLlama's buyback allocation measure</small></div><div class="money-card accent-card"><span>Holder allocation / gross fees</span><strong id="capture-share">—</strong><small>This ratio is for Intents only</small></div></div><div class="context-foot">Source: <a href="https://defillama.com/protocol/near-intents" target="_blank" rel="noreferrer">DeFiLlama NEAR Intents ↗</a> · <span id="period-label">—</span> · USD estimates, not chain gas fees</div></div></section>
+
+    <section class="section wrap thesis-section" id="thesis" aria-labelledby="thesis-title"><div class="section-heading"><div><div class="kicker">03 / The investment thesis</div><h2 id="thesis-title">Our answer is conditional.</h2></div><span class="section-index">003</span></div><div class="thesis-grid"><div class="thesis-lead panel"><span class="mono-label">THE CLAIM</span><p>Chain Signatures make a NEAR account useful on other chains. A durable platform thesis requires <em>independent applications</em> to use that primitive repeatedly—and a credible path from that activity to NEAR-token value.</p><a href="https://docs.near.org/chain-abstraction/chain-signatures" target="_blank" rel="noreferrer">Why this primitive is NEAR-specific ↗</a></div><div class="thesis-conditions"><div class="condition"><span class="condition-no">A</span><div><h3>What would support it</h3><p>More direct <code>sign</code> requests across comparable windows, with a falling share from the largest caller and more independent initiating contracts.</p></div></div><div class="condition"><span class="condition-no">B</span><div><h3>What would weaken it</h3><p>Headline activity rising only because one bridge grows, callbacks multiply, or requests never connect to durable fee capture.</p></div></div><div class="condition"><span class="condition-no">C</span><div><h3>What we cannot claim</h3><p>A <code>sign</code> receipt is not proof that a transaction settled on Bitcoin, Ethereum, or another chain. Caller accounts are not users. Three samples cannot establish a long-term trend.</p></div></div></div></div></section>
+
+    <section class="section method-section" id="method" aria-labelledby="method-title"><div class="wrap method-grid"><div><div class="kicker">04 / Method</div><h2 id="method-title">Re-run the question.</h2><p>We fixed block heights <code>200,000,000</code>, <code>212,000,000</code>, and <code>224,000,000</code> before classifying methods. Each window spans 1,000 blocks; these are not random samples. We fetch matching transactions involving <code>v1.signer</code>, hydrate their receipts, deduplicate receipt IDs, and count only <code>sign</code> calls addressed to that contract.</p><p>Economic context aligns complete UTC days across DeFiLlama fee, revenue, holder revenue, and NEAR DeFi TVL feeds. Current partial day is excluded. Method and limitations are in the repository.</p></div><div class="command-panel"><span>ONE COMMAND TO REBUILD</span><code>npm run refresh</code><small>Then <code>npm run serve</code> to inspect the dashboard.</small><div class="source-links"><a href="https://docs.fastnear.com/tx" target="_blank" rel="noreferrer">FastNear transaction API ↗</a><a href="https://docs.near.org/chain-abstraction/chain-signatures" target="_blank" rel="noreferrer">NEAR Chain Signatures docs ↗</a><a href="https://api.llama.fi/summary/fees/near-intents" target="_blank" rel="noreferrer">DeFiLlama methodology ↗</a></div></div></div></section>
+  </main>
+  <footer class="site-footer wrap"><span class="wordmark"><span class="mark">CT</span><span>CAPTURE TEST</span></span><p>Built for scrutiny. The conclusion can change as evidence grows.</p><a href="#top">Back to top ↑</a></footer>
+  <div id="error" class="error-banner" hidden role="alert"></div>
+</body>
+</html>

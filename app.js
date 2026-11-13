@@ -120,6 +120,20 @@ function render(data) {
       $('#activity-chart').append(bar);
     }
   }
+  const day = data.daySummary;
+  $('#day-share').textContent = percent(day.topThreeShare);
+  $('#day-request-count').textContent = integer(day.categories.request);
+  $('#day-window-range').textContent = `${percent(day.lowestWindowTopThreeShare)}–${percent(day.highestWindowTopThreeShare)}`;
+  $('#day-callers').textContent = `Leading accounts: ${day.topCallers.slice(0, 3).map(caller => `${caller.account} (${integer(caller.count)})`).join(' · ')}`;
+  $('#day-start').textContent = new Date(day.observedRange[0]).toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, timeZone: 'UTC' }) + ' UTC';
+  $('#day-end').textContent = new Date(day.observedRange[1]).toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, timeZone: 'UTC' }) + ' UTC';
+  $('#day-chart').setAttribute('aria-label', `Top-three caller share in ${data.dayWindows.length} sampled windows: ${data.dayWindows.map(window => percent(window.topThreeShare)).join(', ')}`);
+  for (const window of data.dayWindows) {
+    const bar = element('div', 'day-bar');
+    bar.style.height = `${window.topThreeShare * 100}%`;
+    bar.title = `${window.observedRange[0].slice(11, 16)} UTC · ${integer(window.categories.request)} requests · top three ${percent(window.topThreeShare)}`;
+    $('#day-chart').append(bar);
+  }
   const chainCase = data.crossChainCase;
   if (chainCase) {
     $('#case-caller').textContent = `Initiating contract: ${chainCase.signingCaller}`;
@@ -135,7 +149,7 @@ try {
   const response = await fetch('./data/snapshot.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`Data request failed (${response.status})`);
   const data = await response.json();
-  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare))) throw new Error('Signer audit data is incomplete');
+  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare)) throw new Error('Signer audit data is incomplete');
   render(data);
 } catch (error) {
   const banner = $('#error');

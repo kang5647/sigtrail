@@ -22,9 +22,15 @@ The **11 November top three**—`omni.bridge.near` (43), `fast-auth.near` (22), 
 
 The 11 November window also contained 85 MPC `respond` receipts, 80 internal signature completions, and eight other calls. Those are real contract work, but not additional direct signature requests. The data neither proves broad adoption nor proves decline; these short windows do not support a network-wide growth estimate.
 
+### One-day concentration stress test
+
+We also fixed twelve 1,000-block windows starting at block 224,000,000 and separated by 12,000 block heights, before classifying the additional eleven. They run from **01:50 to 23:34 UTC on 11 November**, at roughly two-hour intervals. The first is the 11 November historical window above, not an extra independent observation. The twelve windows contain **1,482 direct `sign` receipts** from **18 initiating accounts**. Pooling and deduplicating those receipts, `omni.bridge.near` (686), `fast-auth.near` (287), and `btc-connector.bridge.near` (246) made **1,219 of 1,482 requests, or 82.3%**. Each window's own top-three share ranged from **78.3% to 90.6%**.
+
+This is stronger evidence that concentration persists across the sampled day; it is still **spaced sampling, not a full-day census**. The selected windows cover about nine minutes every two hours. They do not show what happened between windows, and the account labels do not establish independent business ownership. The exact ranges, receipts, and caller labels are in the pipeline and CSV.
+
 The wider series contains 25 fixed 1,000-block raw-activity probes from May to November. Matching transaction counts range from **97 to 534 per window**. They add longitudinal context but cannot be relabeled as `sign` requests because only seven windows are method-audited. The first and last observations (418 and 170) are not a network-wide growth rate.
 
-One separate **illustrative settlement case** came from a NearBlocks multichain-signature index record on 12 November: [this NEAR transaction](https://nearblocks.io/txns/FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG) contains a `v1.signer.sign` receipt whose predecessor is `btc-connector.bridge.near`; the associated [Bitcoin transaction](https://mempool.space/tx/75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7) is confirmed in block **975,572**. FastNear confirms the NEAR method, while Mempool.space and Blockstream agree on Bitcoin confirmation. The cross-chain association is indexed, not independently cryptographically reconstructed from signature bytes. One case does not establish a network settlement rate.
+One separate **illustrative settlement case** came from a [NearBlocks multichain-signature index record](https://api.nearblocks.io/v3/multichain/signatures?chain=BITCOIN&txn=75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7): [this NEAR transaction](https://nearblocks.io/txns/FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG) contains a `v1.signer.sign` receipt whose predecessor is `btc-connector.bridge.near`; the associated [Bitcoin transaction](https://mempool.space/tx/75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7) is confirmed in block **975,572**. The refresh now verifies that the index record names those exact NEAR transaction, receipt, and Bitcoin transaction IDs. FastNear confirms the NEAR method, while Mempool.space and Blockstream agree on Bitcoin confirmation. The cross-chain association is indexed, not independently cryptographically reconstructed from signature bytes. One case does not establish a network settlement rate.
 
 ### Separate token-value test
 
@@ -32,7 +38,7 @@ The aligned 30-day period **14 October–12 November 2026** shows approximately 
 
 ## Current judgment
 
-**Conditional, with repeated concentration in the sampled windows.** Chain Signatures is a real NEAR primitive; the seven windows show direct requests from 8–12 initiating accounts each. Their top-three concentration was 74.8–90.0%. The evidence is insufficient to claim a broad independent application ecosystem or direct token value capture from Chain Signatures. Intents buybacks support a different, separately measured economic claim.
+**Conditional, with repeated concentration in the sampled windows.** Chain Signatures is a real NEAR primitive; the seven historical windows show direct requests from 8–12 initiating accounts each, with top-three concentration of 74.8–90.0%. The denser day audit puts the pooled top three at 82.3% of 1,482 sampled requests. The evidence is insufficient to claim a broad independent application ecosystem or direct token value capture from Chain Signatures. Intents buybacks support a different, separately measured economic claim.
 
 ## What would change the judgment
 
@@ -44,6 +50,6 @@ These are directional criteria, not ex post thresholds chosen to make the seven 
 
 ## Reproduction and limits
 
-Run `npm run refresh` from this repository. The script uses fixed ranges in `scripts/refresh.mjs`, paginates all matching FastNear account transactions for the seven audited windows, hydrates their complete traces in batches of 20, classifies the receipts in `src/analysis.mjs`, and stores the filtered receipt IDs, transaction hashes, methods, callers, and timestamps in `public/data/snapshot.json` and `public/data/receipt-audit.csv`. A one-page count query builds each of the 25 raw-activity points. The same script aligns DeFiLlama feeds on complete UTC dates.
+Run `npm run refresh` from this repository. The script uses fixed ranges in `scripts/refresh.mjs`, paginates all matching FastNear account transactions for the seven historical and twelve day windows, hydrates their complete traces in batches of 20, classifies the receipts in `src/analysis.mjs`, and stores the filtered receipt IDs, transaction hashes, methods, callers, and timestamps in `public/data/snapshot.json` and `public/data/receipt-audit.csv`. The overlapping window appears once in the CSV. A one-page count query builds each of the 25 raw-activity points. The same script aligns DeFiLlama feeds on complete UTC dates. Default refresh reuses verified fixed-window receipts from the snapshot and resumable local cache; `npm run refresh -- --full-audit` re-downloads them all, subject to FastNear rate limits.
 
 FastNear is an indexed service, not an independent archival NEAR node. An API outage or policy change may prevent a fresh rebuild, so the snapshot is committed for audit. The data excludes calls that never reached `v1.signer`, and a direct request can fail or never result in an external transaction. The Bitcoin case depends on NearBlocks for the association and is independently checked only for the two chain records. No price target or probability of winning is inferred.

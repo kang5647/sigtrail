@@ -23,6 +23,54 @@ function appendCaller(list, caller, max) {
   list.append(row);
 }
 
+function showReceipt(request, receipt) {
+  const inspector = $('#receipt-inspector');
+  inspector.replaceChildren(element('span', 'mono-label', 'VERIFIABLE SIGN RECEIPT'));
+  if (!receipt) {
+    inspector.append(element('p', '', 'This request has no matching receipt in the committed audit. Check the downloadable CSV.'));
+    return;
+  }
+  const timestamp = receipt.block_timestamp
+    ? new Date(Number(BigInt(receipt.block_timestamp) / 1_000_000n)).toISOString()
+    : 'Unavailable';
+  for (const [label, value] of [
+    ['Receipt ID', receipt.id],
+    ['Caller → contract', `${receipt.predecessor_account_id} → v1.signer`],
+    ['Method', 'sign'],
+    ['Receipt time', timestamp],
+    ['Parent transaction', receipt.transaction_hash],
+  ]) {
+    const row = element('div', 'receipt-field');
+    row.append(element('span', '', label), element('code', '', value));
+    inspector.append(row);
+  }
+  const link = element('a', 'receipt-source', 'Open parent transaction on Pikespeak ↗');
+  link.href = `https://pikespeak.ai/transaction-viewer/${encodeURIComponent(request.hash)}`;
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  inspector.append(link);
+}
+
+function renderModel(averageNear) {
+  const inputs = ['#model-requests', '#model-independent', '#model-multiple'].map(selector => $(selector));
+  const requests = Number($('#model-requests').value);
+  const independent = Number($('#model-independent').value);
+  const multiple = Number($('#model-multiple').value);
+  const valid = inputs.every(input => input.value.trim() !== '')
+    && [requests, independent, multiple].every(Number.isFinite)
+    && requests >= 0 && requests <= 100_000_000
+    && independent >= 0 && independent <= 100
+    && multiple >= 0.1 && multiple <= 10;
+  if (!valid) {
+    $('#model-daily').textContent = 'Enter values in range';
+    $('#model-yearly').textContent = '—';
+    return;
+  }
+  const daily = requests * independent / 100 * averageNear * multiple;
+  $('#model-daily').textContent = `${daily.toLocaleString('en-US', { maximumFractionDigits: 4 })} NEAR`;
+  $('#model-yearly').textContent = `${(daily * 365).toLocaleString('en-US', { maximumFractionDigits: 2 })} NEAR`;
+}
+
 function renderWindow(data, index) {
   const window = data.signerWindows[index];
   const categories = window.categories;
@@ -57,12 +105,20 @@ function renderWindow(data, index) {
   if (window.uniqueCallers > window.topCallers.length) callers.append(element('div', 'caller-row', `+ ${window.uniqueCallers - window.topCallers.length} more initiating contracts`));
   const proofs = $('#proof-rows');
   proofs.replaceChildren();
+  $('#receipt-inspector').replaceChildren(element('span', 'mono-label', 'SELECT A REQUEST ABOVE'));
   for (const request of window.recentRequests.slice(0, 5)) {
     if (!request.hash) continue;
-    const row = element('a', 'proof-row');
-    row.href = `https://nearblocks.io/txns/${encodeURIComponent(request.hash)}`;
-    row.target = '_blank'; row.rel = 'noreferrer';
-    row.append(element('span', '', request.account), element('span', 'hash', `${request.hash.slice(0, 8)}… ↗`));
+    const receipt = window.receipts?.find(candidate => candidate.transaction_hash === request.hash
+      && candidate.predecessor_account_id === request.account
+      && candidate.actions?.some(action => action.method === 'sign'));
+    const row = element('button', 'proof-row');
+    row.type = 'button';
+    row.append(element('span', '', request.account), element('span', 'hash', receipt ? `Receipt ${receipt.id.slice(0, 8)}… →` : 'Inspect →'));
+    row.addEventListener('click', () => {
+      [...proofs.children].forEach(item => item.setAttribute('aria-pressed', String(item === row)));
+      showReceipt(request, receipt);
+    });
+    row.setAttribute('aria-pressed', 'false');
     proofs.append(row);
   }
   [...$('#window-tabs').children].forEach((tab, i) => { tab.setAttribute('aria-selected', i === index ? 'true' : 'false'); tab.tabIndex = i === index ? 0 : -1; });
@@ -84,6 +140,10 @@ function render(data) {
   $('#fee-10k').textContent = data.feeFootprint.scenarios.find(row => row.dailyRequests === 10_000).signReceiptNearPerDay.toFixed(1);
   $('#fee-100k').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 100_000).signReceiptNearPerDay);
   $('#fee-million').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 1_000_000).signReceiptNearPerDay);
+  for (const selector of ['#model-requests', '#model-independent', '#model-multiple']) {
+    $(selector).addEventListener('input', () => renderModel(data.feeFootprint.averageNear));
+  }
+  renderModel(data.feeFootprint.averageNear);
 
   const tabs = $('#window-tabs');
   data.signerWindows.forEach((window, index) => {
@@ -127,6 +187,7 @@ function render(data) {
   }
   const day = data.daySummary;
   $('#day-share').textContent = percent(day.topThreeShare);
+  $('#day-fraction').textContent = `${integer(day.topThreeCount)} of ${integer(day.categories.request)} sampled requests`;
   $('#day-request-count').textContent = integer(day.categories.request);
   $('#day-window-range').textContent = `${percent(day.lowestWindowTopThreeShare)}–${percent(day.highestWindowTopThreeShare)}`;
   $('#day-callers').textContent = `Leading accounts: ${day.topCallers.slice(0, 3).map(caller => `${caller.account} (${integer(caller.count)})`).join(' · ')}`;
@@ -144,7 +205,7 @@ function render(data) {
     $('#case-caller').textContent = `Initiating contract: ${chainCase.signingCaller}`;
     $('#case-block').textContent = `Block #${integer(chainCase.bitcoinBlockHeight)}`;
     $('#case-bitcoin-hash').textContent = `${chainCase.bitcoinTransaction.slice(0, 14)}…${chainCase.bitcoinTransaction.slice(-10)}`;
-    $('#case-near-link').href = `https://nearblocks.io/txns/${encodeURIComponent(chainCase.nearTransaction)}`;
+    $('#case-near-link').href = `https://pikespeak.ai/transaction-viewer/${encodeURIComponent(chainCase.nearTransaction)}`;
     $('#case-bitcoin-link').href = `https://mempool.space/tx/${encodeURIComponent(chainCase.bitcoinTransaction)}`;
   }
   renderWindow(data, data.signerWindows.length - 1);

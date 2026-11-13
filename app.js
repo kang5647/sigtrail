@@ -79,6 +79,9 @@ function render(data) {
   $('#holders-30').textContent = money(data.summary.intentsHoldersRevenue30d);
   $('#capture-share').textContent = percent(data.summary.holderShareOfGross);
   $('#period-label').textContent = `${shortDate(data.summary.currentPeriod[0])} – ${shortDate(data.summary.currentPeriod[1])}`;
+  $('#fee-total').textContent = data.feeFootprint.totalNear.toFixed(4);
+  $('#fee-average').textContent = data.feeFootprint.averageNear.toFixed(6);
+  $('#fee-million').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 1_000_000).signReceiptNearPerDay);
 
   const tabs = $('#window-tabs');
   data.signerWindows.forEach((window, index) => {
@@ -149,7 +152,7 @@ try {
   const response = await fetch('./data/snapshot.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`Data request failed (${response.status})`);
   const data = await response.json();
-  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare)) throw new Error('Signer audit data is incomplete');
+  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare) || !Number.isFinite(data.feeFootprint?.averageNear)) throw new Error('Signer audit data is incomplete');
   render(data);
 } catch (error) {
   const banner = $('#error');

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-13T02:05:53.296Z",
+  "fetchedAt": "2026-11-13T02:19:20.900Z",
   "dataThrough": "2026-11-12",
   "sources": {
     "appFees": "https://api.llama.fi/overview/fees/near",
@@ -100632,6 +100632,513 @@
       "FastNear transaction trace",
       "Mempool.space Bitcoin status",
       "Blockstream Bitcoin status"
+    ]
+  },
+  "feeFootprint": {
+    "scope": "Only v1.signer sign receipt execution outcomes in the 224000000–224000999 parent-transaction window. Excludes parent transaction, MPC response, internal completion, other contracts, and destination-chain fees. This is a fee footprint, not proof of net NEAR holder accrual or a forecast.",
+    "blockWindow": [
+      224000000,
+      224000999
+    ],
+    "receiptCount": 80,
+    "totalTokensBurntYocto": "33515283269620000000000",
+    "totalNear": 0.03351528326962,
+    "averageNear": 0.00041894104087025,
+    "scenarios": [
+      {
+        "dailyRequests": 10000,
+        "signReceiptNearPerDay": 4.1894104087025
+      },
+      {
+        "dailyRequests": 100000,
+        "signReceiptNearPerDay": 41.894104087025
+      },
+      {
+        "dailyRequests": 1000000,
+        "signReceiptNearPerDay": 418.94104087025
+      }
+    ],
+    "receipts": [
+      {
+        "receiptId": "83i1pu7gyxVc3KzELu2TcxQgqgpda85ywaBRghBS4qBM",
+        "transactionHash": "2RpPdJYW343rJMRL63WYpKtLZkK7YWw5fNenpMHA6vTv",
+        "tokensBurntYocto": "419725964030400000000",
+        "gasBurnt": 4197259640304
+      },
+      {
+        "receiptId": "Lw6fdyM9ocwQzr6TgnZ7JjWiFG2r56a51aHF1byVCJb",
+        "transactionHash": "2jF4MqKc9rTESLQ4uC96VcfkzPS7rqwZNvLSAJ3ff7kB",
+        "tokensBurntYocto": "420336807815400000000",
+        "gasBurnt": 4203368078154
+      },
+      {
+        "receiptId": "6kJpXqoTFWVaKqEWv8H8ox21svrJsdgwEMpMJXevTW6d",
+        "transactionHash": "392vaVwRpjeiWpQ5zPjCNhLwyLzZg2WEPu2zgu1Sqbbf",
+        "tokensBurntYocto": "419321306623300000000",
+        "gasBurnt": 4193213066233
+      },
+      {
+        "receiptId": "8n8SsDhhzKjzn3JH9YJZLPn3fRpEkoKTTtzPmjTUL2X3",
+        "transactionHash": "3r6Fbu4KfK61Ub8MRGQCBrWvp333sMJ56pdaQhCm97uc",
+        "tokensBurntYocto": "419203537267600000000",
+        "gasBurnt": 4192035372676
+      },
+      {
+        "receiptId": "7H6G6P7TbMnvBMx8SCcv5JooE3EMDkB7QAh2mTXEAJ2F",
+        "transactionHash": "4NGBfQSwfrCG78qYVnsLqmRUCxos2ZZPJamLbZmFWCAd",
+        "tokensBurntYocto": "410917173716000000000",
+        "gasBurnt": 4109171737160
+      },
+      {
+        "receiptId": "2TiMxJ1sVYRfQgaFBv3FwdbcTD7bRMcvN1yyQXxcCpVc",
+        "transactionHash": "4YVFgPxsbxx6emRmxHBGQdqdUD8BbfiVp4W95t96ZpJw",
+        "tokensBurntYocto": "420539273313300000000",
+        "gasBurnt": 4205392733133
+      },
+      {
+        "receiptId": "cPVeydewkN87zZyTQGsGqLM64HGq3HET1KAefCN38mp",
+        "transactionHash": "4nxZ7tNaSZprt1pL238rLm9y9J31kWR1kyeryBYKweDg",
+        "tokensBurntYocto": "421554880906800000000",
+        "gasBurnt": 4215548809068
+      },
+      {
+        "receiptId": "61GT4X3Qy8JjHTkZVoGjTjK6mmYhaLrVEaecQRFYzLsh",
+        "transactionHash": "75rR7wDgPKvGxa4vSYrRU8HvHfTavTMRqREfnDiqAi8X",
+        "tokensBurntYocto": "415365804178700000000",
+        "gasBurnt": 4153658041787
+      },
+      {
+        "receiptId": "Csrf24oVjEgGPVtxvFjECctiJpxZoC8MMo8GxpiBRsWA",
+        "transactionHash": "7nEn9CfaV7ZoPwo14Vya82JfW5ZtJGjZVuYQMQDAs3kL",
+        "tokensBurntYocto": "417674365065900000000",
+        "gasBurnt": 4176743650659
+      },
+      {
+        "receiptId": "CbmSy7f6urTR6ki6moziW93MSqEyHvHzATYf96KAEnJD",
+        "transactionHash": "9Vo1fVA9WznS1YwcoyviNBkb2YWLUo1kCUETRca6R3vQ",
+        "tokensBurntYocto": "420602430562200000000",
+        "gasBurnt": 4206024305622
+      },
+      {
+        "receiptId": "8DmQHNeqRwMZoRvCkGfcTDRBN5aAyDByWKUX7zdQ6ktH",
+        "transactionHash": "9Z9iMWUFnGuHyavLaWL5ixEg3THDY5UbXSJUKwD78ahv",
+        "tokensBurntYocto": "420591576451500000000",
+        "gasBurnt": 4205915764515
+      },
+      {
+        "receiptId": "8XAZcFbT4CQC8EfoxAT2qoTmMrszVSoA4JtoKPeUum9i",
+        "transactionHash": "AbxrFdPrrJM6qNXNK3VfAgG2gsjVwjk1uDR2FESWj3D5",
+        "tokensBurntYocto": "417050849693500000000",
+        "gasBurnt": 4170508496935
+      },
+      {
+        "receiptId": "E65WBRA78vo1gxYKzaw3V81WYcBYRGDPUh9iRrPazigj",
+        "transactionHash": "EXJQaLJxtjauhyvLTztJviG6TVqkhRf6TxbmqBf9nok6",
+        "tokensBurntYocto": "417651891547700000000",
+        "gasBurnt": 4176518915477
+      },
+      {
+        "receiptId": "8SxUtETsdB82sTNG4HbuKPwu6XTL3HrGrm7QumEACpzK",
+        "transactionHash": "2kooARtgwMikuUMrrFnSspq8xB6YgzTUvuFBPAkbwn1c",
+        "tokensBurntYocto": "417416017445900000000",
+        "gasBurnt": 4174160174459
+      },
+      {
+        "receiptId": "Epi9Srm24ifqAZbRooaW95KKQZcMLbbS69yBc8H3jeWe",
+        "transactionHash": "2nTcu5bx7ECgZhTa4pH6TxquHKt1gaczFEuEi1xCBFfo",
+        "tokensBurntYocto": "420310503873000000000",
+        "gasBurnt": 4203105038730
+      },
+      {
+        "receiptId": "HuKnttYdzQuZj6cMctqoaat4Kb4BguEiZEsDuQprdZFu",
+        "transactionHash": "8PDbad7HgvRJEoSjaTCUeApnLHwcer2JVVnbJH9kRic4",
+        "tokensBurntYocto": "415477173716000000000",
+        "gasBurnt": 4154771737160
+      },
+      {
+        "receiptId": "F3uPj5zfgvnHdmzZRerVdC3fXvRyHAHBVLrtTYvXv2f2",
+        "transactionHash": "9jsoD6xhwZjdhHpqHBwEzuP7NaShNNxRdakKKbGRBXnF",
+        "tokensBurntYocto": "416003574882500000000",
+        "gasBurnt": 4160035748825
+      },
+      {
+        "receiptId": "9HydgBYTRQ5vAdX27XcJTfvZ1gkoB8N85mJ2E4UFj7HM",
+        "transactionHash": "A3AMVRyS1Ceq9SFRVuQaBipbGzsgD4odBpvAXkmGuDfc",
+        "tokensBurntYocto": "420306719195400000000",
+        "gasBurnt": 4203067191954
+      },
+      {
+        "receiptId": "8onYabZfqu2ea5AXvoURESBRQ9qHjfrqNB1VVJYFBQmC",
+        "transactionHash": "ET6XjaR323hwyzsKPYTEPZpi153Z5XPsDAUpcMRiFREm",
+        "tokensBurntYocto": "419581173716000000000",
+        "gasBurnt": 4195811737160
+      },
+      {
+        "receiptId": "97dVvXRV4EsugHjScdevfaVybXnDQ5BfADqSb2zxatgx",
+        "transactionHash": "RE8rWbsu2MSaC8fb333A6JCLngzShG74qX55uFMTSYj",
+        "tokensBurntYocto": "419810654676800000000",
+        "gasBurnt": 4198106546768
+      },
+      {
+        "receiptId": "EckKQNHMZoEQa6qqujxFrBXNqoa9WeDdbVq8A8njyy4o",
+        "transactionHash": "36zh3NYoBvgvYce2aCkznRinKy3CYdzGMvWKpgqpXgGJ",
+        "tokensBurntYocto": "415136323217900000000",
+        "gasBurnt": 4151363232179
+      },
+      {
+        "receiptId": "Ed45Bsq97ztc1mWcti9ia5FKW2zTC7NhtYz34Sf5RZ1h",
+        "transactionHash": "3XNbVR3GBkGL21FmosaSTqKSUCzJuMtGQWiUMMHeiWsv",
+        "tokensBurntYocto": "419545860600100000000",
+        "gasBurnt": 4195458606001
+      },
+      {
+        "receiptId": "5QFB26hB6LjB29hZquWixfscRee23z7aM6xuBQpHgT4E",
+        "transactionHash": "3Ypj3eevkpvwFtupw53QvNJ8MtvH1tLi2wq3xZpBhXme",
+        "tokensBurntYocto": "419397285608100000000",
+        "gasBurnt": 4193972856081
+      },
+      {
+        "receiptId": "6Whq11C97MWm7WRvxvVyWV24RGc5xTZsem23rvHUZcHr",
+        "transactionHash": "3qEseaud3PPGYBT2gNf8fuiBrHirBNe8Bpw6NLvm8xMT",
+        "tokensBurntYocto": "420181888269000000000",
+        "gasBurnt": 4201818882690
+      },
+      {
+        "receiptId": "nkgJAaY58uSM9Gk9Enb2DseVCt91qmcL9aTcksRdkoe",
+        "transactionHash": "7quscgiiDTAfybEJqHvMhmESfJ2J7LVDB1pAuTjJH7eG",
+        "tokensBurntYocto": "419644806521800000000",
+        "gasBurnt": 4196448065218
+      },
+      {
+        "receiptId": "FCq8cmby4KgLmbJqToWy5Dz4yjWjG4epo5QpWr4Zi3YW",
+        "transactionHash": "7zpfwWPScWUpfUMLVfvRUcj98WthuN9FC57XauDngc1Z",
+        "tokensBurntYocto": "419689169953700000000",
+        "gasBurnt": 4196891699537
+      },
+      {
+        "receiptId": "C7MLf2pfzYJj8d3nZBi53kTv1PCJjG2ibwzXRNfGXQ5K",
+        "transactionHash": "9E7rQVy6zzcDh12N67sB4M2KCgLR5tRvx1CsdYqq2K2A",
+        "tokensBurntYocto": "420293366086200000000",
+        "gasBurnt": 4202933660862
+      },
+      {
+        "receiptId": "88k1MjWi8HsmSCMMNSJe7Y5e5q89YFJeFvUWymEaUEvF",
+        "transactionHash": "9ioDwZmft8wZeALzCf2B2FPdXFvcC2vgvKYJ99Rf9Ga",
+        "tokensBurntYocto": "420182704510800000000",
+        "gasBurnt": 4201827045108
+      },
+      {
+        "receiptId": "9DKM1iF7xdXGvrsYaGJhWwHyW2pz5McU79N9vp8KDmsV",
+        "transactionHash": "ChRdJ642EpmPx2UnxKpadNPkopKb4wpwkL9UnLnMvFN1",
+        "tokensBurntYocto": "419725964030400000000",
+        "gasBurnt": 4197259640304
+      },
+      {
+        "receiptId": "CrfMwwDk7z5r6oa91p69ngexU9cycEqxZuR7XL2kQqgD",
+        "transactionHash": "DYDn1G9LuRP6iarmDWGGLEZWdfmEyejtNsBbQ1KUfgx4",
+        "tokensBurntYocto": "419138028111100000000",
+        "gasBurnt": 4191380281111
+      },
+      {
+        "receiptId": "M78iRVVoAdqg4brThjZbfUyWiJtZS4HF1iR3w4QfPxB",
+        "transactionHash": "GrDrqs1izY5HFbZuAfVuthCNp1gAx95wEMnoRB8Mubud",
+        "tokensBurntYocto": "419807610479600000000",
+        "gasBurnt": 4198076104796
+      },
+      {
+        "receiptId": "BHbS5rdmVpVD5NpAMNQLdMiNrx3aSNGHzpXMPJKm611V",
+        "transactionHash": "Hp4rWN8YXgb5HtULgnX4mmpEYgVDrwN5yKJVioAbzcf6",
+        "tokensBurntYocto": "419759384807500000000",
+        "gasBurnt": 4197593848075
+      },
+      {
+        "receiptId": "beNq86Am2kxucWE2zVeZbWd5nhz8CSgL7hFjRen97Qp",
+        "transactionHash": "2awBHWBYUHWMw4hTZKj9pJV2UmSTpmCSLPFUN4g6wwcF",
+        "tokensBurntYocto": "420328246548900000000",
+        "gasBurnt": 4203282465489
+      },
+      {
+        "receiptId": "2s62bmdMPEPykKj1SG2J3G2A6Y3EEUTAnXsK4dT9JbEt",
+        "transactionHash": "4aQKLpwucNGkkvrwrKz6K1iv53yrq3GKLLbD9EJEkXRU",
+        "tokensBurntYocto": "420217823060700000000",
+        "gasBurnt": 4202178230607
+      },
+      {
+        "receiptId": "EJRnKCFKdFRPAgKG7qFahFKnyV1g1759ZhJiduHz844D",
+        "transactionHash": "99D1zyC2rfAFShTejg8GhUF6J4hYTTVLxSnv7T4gq5W5",
+        "tokensBurntYocto": "419613854012700000000",
+        "gasBurnt": 4196138540127
+      },
+      {
+        "receiptId": "F8TaLfGCRYbtc1eJmKkVYDRcTdCE1mqznyyPv37z9vqK",
+        "transactionHash": "C7reYoAf4bWaS1kL9UXxXq83PrXyyrD9DajjwH6kRm2b",
+        "tokensBurntYocto": "415584429473300000000",
+        "gasBurnt": 4155844294733
+      },
+      {
+        "receiptId": "8b3eQ8E5ZSRBKd1HcdFdpRAkVkAAKRa8Py3VjWUcXHsW",
+        "transactionHash": "DFiYuaSMNFqjhcaY3fWLntrVabbaVp7JsmAEDfAj76UY",
+        "tokensBurntYocto": "420461150784300000000",
+        "gasBurnt": 4204611507843
+      },
+      {
+        "receiptId": "CTb9bLcywUNyioE4tPtLaZ9Zd7YWzksMeWTw3dwnEWmW",
+        "transactionHash": "EpzgHT8cZZZA1f36vsaGJmh9HkCm4eq7P9PnP1sVBkcw",
+        "tokensBurntYocto": "419726704510800000000",
+        "gasBurnt": 4197267045108
+      },
+      {
+        "receiptId": "QezVU2y49szvghEpHLchjNHreb6x3vnV77566oCWQn2",
+        "transactionHash": "FzTJv9VkxgV3E19qsTz5aHB7WrxejrD5k4uJSPFWdNqT",
+        "tokensBurntYocto": "420545255076300000000",
+        "gasBurnt": 4205452550763
+      },
+      {
+        "receiptId": "AqChS73R9tj74RycqQb1w2tWLU4pAhd1rBZGascrHwWx",
+        "transactionHash": "ev52FGQNyXT7gmJhZjDNAvB8cRUNh3S23UUSuQRtavg",
+        "tokensBurntYocto": "419613771737100000000",
+        "gasBurnt": 4196137717371
+      },
+      {
+        "receiptId": "FbyJkVkLFidTzodZNk3Ac3spWhobdhRFbNPXekJFZeBk",
+        "transactionHash": "3rSnqTo5NXA5UQtqR5j4RLbsEkkWW3Rz6e2TUAbQvbBW",
+        "tokensBurntYocto": "415066642918900000000",
+        "gasBurnt": 4150666429189
+      },
+      {
+        "receiptId": "HjHj34sXPGhzzztcYzNYnnJ3hDF2ovNNHMTdBJBZzAei",
+        "transactionHash": "44jr7nBBvz2efzXGCRqzB7DAzZu9u1NkM1xEXoM3puvv",
+        "tokensBurntYocto": "419498535246600000000",
+        "gasBurnt": 4194985352466
+      },
+      {
+        "receiptId": "Go3oDwmrWPDaDS2FRnG3gd3GckmSoVSMcNrvFGiFnq26",
+        "transactionHash": "52na1i8FN34TRtyYMHiCM7MmimA6T4y3v5QmtbiZpL9i",
+        "tokensBurntYocto": "419872066041400000000",
+        "gasBurnt": 4198720660414
+      },
+      {
+        "receiptId": "42YvaDb4XXbirdaFtFqiGud7jCFi7mgCmgeCboKdkCrR",
+        "transactionHash": "5XpuAuPrMFQWUZFxL4Wd9Tsub6CrAhxa1hhA85Xuae63",
+        "tokensBurntYocto": "420443103361800000000",
+        "gasBurnt": 4204431033618
+      },
+      {
+        "receiptId": "AXwCiGpEdGGoTGJv8CxM2xFkqKqsWTPFkvXAADa7fKzT",
+        "transactionHash": "6poupw6dVsDSXjyVLVPimQCGhtDBn1qtRbr1GKzdv6ca",
+        "tokensBurntYocto": "419024106381700000000",
+        "gasBurnt": 4190241063817
+      },
+      {
+        "receiptId": "BDU4efjcdRyqSFJbUAP87k3MfP356K71QbLTfCcNDAKM",
+        "transactionHash": "8mYUALBZjqUvwBgj5B56Afpxkar35G4iKVqJ3mZmodgn",
+        "tokensBurntYocto": "420330714816900000000",
+        "gasBurnt": 4203307148169
+      },
+      {
+        "receiptId": "B4jryPLYHoM2vVBaqWq7J8C7NtWKUa5jPA1hWHVgCwE9",
+        "transactionHash": "9oixqmv9b26nBJdX7gbsdXMQLRvQL1WCAvaZXpmzUrSP",
+        "tokensBurntYocto": "419500016207400000000",
+        "gasBurnt": 4195000162074
+      },
+      {
+        "receiptId": "5rEChqxR8RTEBZoB3cg76Gb3dBc3Xk3DjFo2pcBHtcWx",
+        "transactionHash": "Aw9tT6zQ23mNhyNeVJ8anx3jHrwPUwsqsVFGqPfMoQzi",
+        "tokensBurntYocto": "419833960268100000000",
+        "gasBurnt": 4198339602681
+      },
+      {
+        "receiptId": "G2ED6ZJvL9djbtpT3NtDivD3Jf8pAz3CJtkfdD6g4Qtg",
+        "transactionHash": "Ewq1SryKSGATK3RZYMjuBUrxdhLhdFz8A6anpAkhoUaA",
+        "tokensBurntYocto": "415164972010200000000",
+        "gasBurnt": 4151649720102
+      },
+      {
+        "receiptId": "EimVMNDB3XEfBHNH5hkmmdVC61cWX4KjejKY3kQ97dzc",
+        "transactionHash": "HCxE8MF3sKJE8tUE8tx8BJzc9rtEVZhCNZswQpzRq9qV",
+        "tokensBurntYocto": "419581173716000000000",
+        "gasBurnt": 4195811737160
+      },
+      {
+        "receiptId": "APVWwrXphzdgwMeVtHUBk4MMCq3dUCzgNK7e5dejYFS1",
+        "transactionHash": "6UJ3fKG39NAPP7PrN2ScURb8duEFwxo18CcEygcJ9pCJ",
+        "tokensBurntYocto": "415356429473300000000",
+        "gasBurnt": 4153564294733
+      },
+      {
+        "receiptId": "CQyeDvDuMJQZ353guG4E2W59Eey2VJZzpjmevMtNS1FS",
+        "transactionHash": "7HPu4pQy8pt6pg4QdbzuT8BLoz17XhHeQT17RsgHRPVx",
+        "tokensBurntYocto": "419644066041400000000",
+        "gasBurnt": 4196440660414
+      },
+      {
+        "receiptId": "H87NLTsrSSXwFtfHpfPqgZZiKNwy9yFJ2EFfwEookJrd",
+        "transactionHash": "9CFoHCo2V5bZC3rCZ1D6RciER4wwbt5rEgBBiGvPc7Dh",
+        "tokensBurntYocto": "419688429473300000000",
+        "gasBurnt": 4196884294733
+      },
+      {
+        "receiptId": "DF1FnZqFm4kxudm7ubjZWebatGYdxscD5eEgj9r918Fv",
+        "transactionHash": "9fNEoWvB6sE8BAeYuFLeG2Gv6bLUBaaDDR75isSCRXtJ",
+        "tokensBurntYocto": "419129411662300000000",
+        "gasBurnt": 4191294116623
+      },
+      {
+        "receiptId": "5aKg8gALgkbYhfSUZr4FYUhTFRXGDQRXGrUMzVAuHEZ4",
+        "transactionHash": "BpZrmnwR58ismiAeERFmJk8GVGT773cktWqeTFB2JY34",
+        "tokensBurntYocto": "414811548934600000000",
+        "gasBurnt": 4148115489346
+      },
+      {
+        "receiptId": "4WffpL3YHszRrnQf8bPbtLgvJzs1XzkFrfAi8wRP98Ec",
+        "transactionHash": "C1ECM2siZ7hZr2GXhxqwDKx4mShZ6EBvNmm5nomEMpwu",
+        "tokensBurntYocto": "419688429473300000000",
+        "gasBurnt": 4196884294733
+      },
+      {
+        "receiptId": "6x6x2WSMyPrfJ8TgAYrwsyfxZnGs9WytnXzabew2BnEc",
+        "transactionHash": "CSwo5nP8J7UFKQDqrLVM4P8QQaCR6tEthev48nKwccxx",
+        "tokensBurntYocto": "419582654676800000000",
+        "gasBurnt": 4195826546768
+      },
+      {
+        "receiptId": "HZnwctrW8EFNGqFyxPS44HSY3nsDa9gLZBH3t9c3E5kE",
+        "transactionHash": "EYzRozgr5G58AUxrX2493RPrenBkHih1qQ9H7bfax1es",
+        "tokensBurntYocto": "419726704510800000000",
+        "gasBurnt": 4197267045108
+      },
+      {
+        "receiptId": "CTSpzHXULSho1BwGPpzVpBK5pezG7ELxrZPzpswYNJi7",
+        "transactionHash": "F1Fj16AsZpps3Ycuzgk1m79PGJunxFu1rhPcjhATA3f7",
+        "tokensBurntYocto": "416211251502000000000",
+        "gasBurnt": 4162112515020
+      },
+      {
+        "receiptId": "CWoJbZw8QuFkgzKbRVe4BexkDR5jneFkZkyKabfNsuEG",
+        "transactionHash": "MFk6UxjJsw8jFbm1jY9jstb2vVondPJ8gvL6ZaWLarB",
+        "tokensBurntYocto": "420198376953000000000",
+        "gasBurnt": 4201983769530
+      },
+      {
+        "receiptId": "B64MfhM55qjTmaXg8XpHFcxGt5YRpFsmmoCzUpJGuEGL",
+        "transactionHash": "2PD3YuGEc4KwRt62Knh2EaXsLQ3nfLeqiuRvRrdqqikD",
+        "tokensBurntYocto": "415393964030400000000",
+        "gasBurnt": 4153939640304
+      },
+      {
+        "receiptId": "CSPjVUPCgSmtmWfd186ngQSKCax8DSqnkro3T4YbyUit",
+        "transactionHash": "3fnafqeKFZ7yN2zM1RNyvcPYTwRaC5sx1Ez9M7KMdRMe",
+        "tokensBurntYocto": "419789596836200000000",
+        "gasBurnt": 4197895968362
+      },
+      {
+        "receiptId": "5KLaC1AGiK47g97Ybnsd7JvvhyEzJQUcVDKifrTf7LPU",
+        "transactionHash": "3wF34M1wh9jSaWj2S3z5F7nawRnnLaEd3ss3qtHxr6Hy",
+        "tokensBurntYocto": "415905540351000000000",
+        "gasBurnt": 4159055403510
+      },
+      {
+        "receiptId": "6ByFVcuLvG7iQz7cUMyY2MaBwzdRGmjp95RyQfysksRL",
+        "transactionHash": "5RqnddVga9yMmuS47XExHDaJQJQttz7RRhgwTUJv36ob",
+        "tokensBurntYocto": "419759384807500000000",
+        "gasBurnt": 4197593848075
+      },
+      {
+        "receiptId": "2EaHCtPzCrApauFHnTqkcsihxjhHfPBwhwVD2K7nq7iw",
+        "transactionHash": "5rUBaMyAXMF7YU8nY9o66g8LkQeiLCyRRfiQmteDQZYR",
+        "tokensBurntYocto": "419544379639300000000",
+        "gasBurnt": 4195443796393
+      },
+      {
+        "receiptId": "B3gdsifS6dRtuhYDoKQnq8gYP87xPkzCvAZTUoSZhNRB",
+        "transactionHash": "7CggZ6G6Gos6kat1BNATvCddLEY2nRvq5YAERCa6GfmE",
+        "tokensBurntYocto": "419644066041400000000",
+        "gasBurnt": 4196440660414
+      },
+      {
+        "receiptId": "FF1LSPAhCyGCCQggVmnXTUs48byaY7hzBwueN9XnU39u",
+        "transactionHash": "8rPL5yAJ2wnk5infX4JNUyvGxodcGJwQRY6SEd9Qq8FJ",
+        "tokensBurntYocto": "419499275727000000000",
+        "gasBurnt": 4194992757270
+      },
+      {
+        "receiptId": "GSZs6SkG3tPUQMoQcD3Yt8qiEt4kztQAY5PQg3zpnBBr",
+        "transactionHash": "92aZaUJLPVwcky4JaSUfRZQnZtQ9mZwJq6hPvd6zgGqL",
+        "tokensBurntYocto": "419543639158900000000",
+        "gasBurnt": 4195436391589
+      },
+      {
+        "receiptId": "J1iK1zKjb4sSpPCALkBwrRxz5rgTyu8PQPhoivYHbaAR",
+        "transactionHash": "99xvGBMSqZ26L2nJygztoXBzxiKRqYeYHVKxewmtgQfZ",
+        "tokensBurntYocto": "419290770331200000000",
+        "gasBurnt": 4192907703312
+      },
+      {
+        "receiptId": "64uEWNqA3cWebHgwHHw9ps1xuPyBZwANPQHo7NrsMfwM",
+        "transactionHash": "9B4nXTd6rZunba84Aw5zEeC8JYmQn3Pt2iDVKXVHnCbb",
+        "tokensBurntYocto": "420104268495600000000",
+        "gasBurnt": 4201042684956
+      },
+      {
+        "receiptId": "695rKzBN3spQ4Wa9PKULnVoXjanZe84M8WjibMeVKEVv",
+        "transactionHash": "AsggUEa8qW94Fv1o9LmBAwtcfMKMnEhtB2YydReTrc35",
+        "tokensBurntYocto": "420720661353300000000",
+        "gasBurnt": 4207206613533
+      },
+      {
+        "receiptId": "A5RmykshrTNF1VmCgt6zAQY6wsmK1WV3qRL2CB7nqbrG",
+        "transactionHash": "BUVWNF8o8jB7bKN5p3ny2xstQb1TdksUT3YzG8ijV9DH",
+        "tokensBurntYocto": "420365914824300000000",
+        "gasBurnt": 4203659148243
+      },
+      {
+        "receiptId": "CvEdSK7AV4c5oZ6U8kf6oncXE7tgtz5uN1rpKad5wWj",
+        "transactionHash": "4dvJed9Ss43Ceme8jTTMixCAiukQUDYjQTPfdCGyuQ3a",
+        "tokensBurntYocto": "420360915602300000000",
+        "gasBurnt": 4203609156023
+      },
+      {
+        "receiptId": "AnqKntZq27cpcMbsLUcmjhCGG91NvXwbsvT72Abf4yX9",
+        "transactionHash": "6f6fgzi2xGUUKHgvH78gR9rW6TKBMgSxccPtXSXqqkpa",
+        "tokensBurntYocto": "414749762457100000000",
+        "gasBurnt": 4147497624571
+      },
+      {
+        "receiptId": "9VDJ8yToBBR65dpy1rJFCwoGALdAUfZzB3bpg7Bg2z5B",
+        "transactionHash": "7kjszxy4PBXJjkdq7KrZhFs23D5VCnfhGe4jNxq2fids",
+        "tokensBurntYocto": "419698544659100000000",
+        "gasBurnt": 4196985446591
+      },
+      {
+        "receiptId": "D5tJ9d2AmWdr9Q8ZBcRF2DR6CywJj5vbBsS1kPVnvn7S",
+        "transactionHash": "9kdowLZdAUWzVzTncvLTFEiC8GZ6oAPTZrD212wdzBfU",
+        "tokensBurntYocto": "419689169953700000000",
+        "gasBurnt": 4196891699537
+      },
+      {
+        "receiptId": "3PCqfaimgeYCMQgYGYfVMBodat7HL86hW3WRNh9Vcknc",
+        "transactionHash": "CRMe5Fu5HJPGEkgy4tPhFq1gZVTihyjpVNa95WT7hciC",
+        "tokensBurntYocto": "420220291328700000000",
+        "gasBurnt": 4202202913287
+      },
+      {
+        "receiptId": "45vKVQrApaDwyiA5YgwqdsmjxwmwFTkr4VGgqaA9nsZE",
+        "transactionHash": "FnyZLmPstt3hpx9kJGWdTHek5vJSbUVMZqYU5mBDhCJ7",
+        "tokensBurntYocto": "420275202930300000000",
+        "gasBurnt": 4202752029303
+      },
+      {
+        "receiptId": "4iaDhNspvwqURStcStAYwJZRhSixVjFSJCn1cQ21JHaq",
+        "transactionHash": "H1Z39bz6cSzqE2yenMbfMd3fRXsxodTEZrrR4xEhejVV",
+        "tokensBurntYocto": "419872066041400000000",
+        "gasBurnt": 4198720660414
+      },
+      {
+        "receiptId": "6nuGF19UaGSXN2iM7qfYmxG5nhP43qsxjcCzjvMWU2v4",
+        "transactionHash": "H3LWSUYvC2mHcXMbeUKbhoePHpEVA2q3cLg7fLuyuwiR",
+        "tokensBurntYocto": "420467955303300000000",
+        "gasBurnt": 4204679553033
+      }
     ]
   }
 }

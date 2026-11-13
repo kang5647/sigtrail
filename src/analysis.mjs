@@ -64,6 +64,8 @@ export function analyzeReceipts(receipts) {
     uniqueCallers: callers.size,
     topCallers: sorted.slice(0, 8).map(([account, count]) => ({ account, count })),
     topCallerShare: categories.request ? sorted[0][1] / categories.request : null,
+    topThreeCount: sorted.slice(0, 3).reduce((sum, [, count]) => sum + count, 0),
+    topThreeShare: categories.request ? sorted.slice(0, 3).reduce((sum, [, count]) => sum + count, 0) / categories.request : null,
     sampleNewestTimestamp: Math.max(...timestamps),
     sampleOldestTimestamp: Math.min(...timestamps),
     recentRequests: transactions.sort((a, b) => b.timestamp - a.timestamp).slice(0, 8),

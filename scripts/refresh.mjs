@@ -10,9 +10,14 @@ const SOURCES = {
   transactionTraces: 'https://tx.main.fastnear.com/v0/transactions',
 };
 
-// Three equal 1,000-block windows, spaced 12 million blocks apart. These
-// ranges were fixed before method classification, not randomly sampled.
-const BLOCK_WINDOWS = [200_000_000, 212_000_000, 224_000_000].map(start => ({ start, end: start + 999 }));
+// Seven equal 1,000-block windows at fixed 4-million-block intervals.
+// The four additional ranges were chosen before their method classification.
+const BLOCK_WINDOWS = Array.from({ length: 7 }, (_, i) => 200_000_000 + i * 4_000_000).map(start => ({ start, end: start + 999 }));
+const CASE = {
+  nearTransaction: 'FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG',
+  nearReceipt: 'J7j3QcvKFs79Z91zLg4DZ2s4RR9M73L4DQpvRLMBVTCF',
+  bitcoinTransaction: '75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7',
+};
 
 async function getJson(url) {
   const response = await fetch(url, { signal: AbortSignal.timeout(20_000), headers: { 'User-Agent': 'NEAR-Capture-Test/0.1 research' } });
@@ -95,6 +100,34 @@ async function getActivitySeries() {
   return points;
 }
 
+async function getCrossChainCase() {
+  const [near, mempool, blockstream] = await Promise.all([
+    postFastNear(SOURCES.transactionTraces, { tx_hashes: [CASE.nearTransaction] }),
+    getJson(`https://mempool.space/api/tx/${CASE.bitcoinTransaction}/status`),
+    getJson(`https://blockstream.info/api/tx/${CASE.bitcoinTransaction}/status`),
+  ]);
+  const tx = near.transactions?.[0];
+  const receipt = extractSignerReceipts([tx]).find(row => row.id === CASE.nearReceipt);
+  if (!receipt || receipt.actions.every(action => action.method !== 'sign')) throw new Error('Cross-chain case NEAR sign receipt was not verified');
+  if (!mempool.confirmed || !blockstream.confirmed || mempool.block_height !== blockstream.block_height || mempool.block_hash !== blockstream.block_hash) {
+    throw new Error('Cross-chain case Bitcoin confirmation sources disagree');
+  }
+  return {
+    nearTransaction: CASE.nearTransaction,
+    nearReceipt: CASE.nearReceipt,
+    parentSigner: tx.transaction.signer_id,
+    signingCaller: receipt.predecessor_account_id,
+    nearTimestamp: new Date(Number(receipt.block_timestamp) / 1e6).toISOString(),
+    bitcoinTransaction: CASE.bitcoinTransaction,
+    bitcoinBlockHeight: mempool.block_height,
+    bitcoinBlockHash: mempool.block_hash,
+    bitcoinBlockTime: new Date(mempool.block_time * 1000).toISOString(),
+    status: 'confirmed',
+    associationSource: 'NearBlocks v3 multichain/signatures indexed record observed on 2026-11-12',
+    independentChecks: ['FastNear transaction trace', 'Mempool.space Bitcoin status', 'Blockstream Bitcoin status'],
+  };
+}
+
 const fetchedAt = new Date().toISOString();
 const [fees, revenue, holdersRevenue, tvl] = await Promise.all([
   getJson(SOURCES.appFees),
@@ -115,6 +148,7 @@ for (const window of signerWindows) {
   const matching = activitySeries.find(point => point.blockStart === window.blocks[0]);
   if (matching?.touchingTransactions !== window.touchingTransactions) throw new Error(`Raw activity series disagrees with hydrated window ${window.blocks[0]}`);
 }
+const crossChainCase = await getCrossChainCase();
 const snapshot = {
   schemaVersion: 1,
   fetchedAt,
@@ -122,12 +156,13 @@ const snapshot = {
   sources: SOURCES,
   methodology: {
     series: 'Full UTC calendar days present in all four DeFiLlama feeds. Current UTC day excluded.',
-    signer: 'Twenty-five fixed 1,000-parent-transaction-block windows spaced one million block heights apart; three windows spaced 12 million heights apart are fully hydrated. Ranges were chosen before method classification, but are not random. Count deduplicated receipts whose receiver is v1.signer and method is sign. These receipts may execute after the parent transaction window. Excludes respond, verify, and cleanup. Windows are samples, not all-network totals or proof of outbound settlement.',
+    signer: 'Twenty-five fixed 1,000-parent-transaction-block windows spaced one million block heights apart; seven at fixed four-million-block intervals are fully hydrated. The four additional ranges were chosen before their method classification, but the samples are not random. Count deduplicated receipts whose receiver is v1.signer and method is sign. These receipts may execute after the parent transaction window. Excludes respond, verify, and cleanup. Windows are samples, not all-network totals or proof of outbound settlement.',
   },
   summary,
   series: rows.slice(-180),
   signerWindows,
   activitySeries,
+  crossChainCase,
 };
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true });
 await writeFile(new URL('../public/data/snapshot.json', import.meta.url), JSON.stringify(snapshot, null, 2) + '\n');
@@ -145,4 +180,4 @@ for (const window of signerWindows) {
   }
 }
 await writeFile(new URL('../public/data/receipt-audit.csv', import.meta.url), csv.join('\n') + '\n');
-console.log(JSON.stringify({ fetchedAt, dataThrough: snapshot.dataThrough, summary, signerWindows: signerWindows.map(({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare}) => ({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare})) }, null, 2));
+console.log(JSON.stringify({ fetchedAt, dataThrough: snapshot.dataThrough, summary, signerWindows: signerWindows.map(({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare}) => ({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare})) }, null, 2));

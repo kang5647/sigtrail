@@ -4,23 +4,35 @@
 
 **Why NEAR matters.** A NEAR account or contract can request an MPC signature for transactions on other chains from `v1.signer`, removing the need for each app to operate separate signing infrastructure. That shared primitive is the potential network advantage. The investment case depends on independent applications adopting it repeatedly and on some durable route from usage to NEAR-token value. Usage alone is insufficient.
 
-## Evidence as of 12 November 2026 UTC
+## Evidence refreshed 13 November 2026 UTC
 
-The mainnet audit was rebuilt from [FastNear indexed transaction traces](https://docs.fastnear.com/tx). The 25-point raw-activity series samples one 1,000-parent-transaction-block interval every million block heights. Three of those windows are fully hydrated to classify methods. Each window spans around 9–10 minutes. The three audited windows are fixed at 12-million-block intervals, but are not random or exhaustive. Signer receipts may execute after their parent transaction's block range.
+The mainnet audit was rebuilt from [FastNear indexed transaction traces](https://docs.fastnear.com/tx). The 25-point raw-activity series samples one 1,000-parent-transaction-block interval every million block heights. Seven of those windows are fully hydrated to classify methods, at fixed four-million-block intervals. Each window spans around 9–10 minutes. The original three audited windows were fixed before the first method classification; the four extra windows were chosen at equal intervals before classifying their methods. The samples are neither random nor exhaustive. Signer receipts may execute after their parent transaction's block range.
 
-| Window | Transactions involving `v1.signer` with function calls | Direct `sign` receipts | Initiating contracts | Largest caller share |
+| Window start | Transactions involving `v1.signer` | Direct `sign` receipts | Initiating accounts | Top three share |
 | --- | ---: | ---: | ---: | ---: |
-| 26 May, blocks 200000000–200000999 | 418 | 210 | 9 | 56.7% (`fast-auth.near`) |
-| 19 Aug, blocks 212000000–212000999 | 534 | 264 | 12 | 43.6% (`fast-auth.near`) |
-| 11 Nov, blocks 224000000–224000999 | 170 | 80 | 8 | 53.8% (`omni.bridge.near`) |
+| 26 May · block 200000000 | 418 | 210 | 9 | 88.6% |
+| 23 Jun · block 204000000 | 427 | 210 | 9 | 82.4% |
+| 22 Jul · block 208000000 | 292 | 145 | 8 | 86.9% |
+| 19 Aug · block 212000000 | 534 | 264 | 12 | 79.5% |
+| 17 Sep · block 216000000 | 247 | 119 | 9 | 74.8% |
+| 14 Oct · block 220000000 | 140 | 69 | 11 | 81.2% |
+| 11 Nov · block 224000000 | 170 | 80 | 8 | 90.0% |
 
-The 11 November window also contained 85 MPC `respond` receipts, 80 internal signature completions, and eight other calls. Those are real contract work, but not additional direct signature requests. The largest initiating contract accounted for 43 of the 80 requests. The data neither proves broad adoption nor proves decline; these short, deliberately chosen windows do not support a network-wide trend estimate.
+The **11 November top three**—`omni.bridge.near` (43), `fast-auth.near` (22), and `btc-connector.bridge.near` (7)—accounted for **72 of 80 direct requests, or 90%**. This is the sharpest result. The top-three share in the seven windows ranged from **74.8% to 90.0%**. `fast-auth.near` and bridge accounts recur; `tx-bench.near` appears among the leaders in two windows, which is not evidence of independent production application demand. These samples show repeated concentration, but their short duration cannot establish a network-wide adoption trend or measure unique applications. An account is not necessarily a distinct business.
 
-Economic context: the aligned 30-day period **13 October–11 November 2026** shows approximately **$5.99 million** in NEAR Intents gross fees and **$1.80 million** in DeFiLlama's holder-revenue/buyback measure, or 30.0% of gross fees. This is a separate Intents metric, **not** revenue caused by `v1.signer`. NEAR's own [revenue dashboard](https://revenue.near.org/) covers Intents capture more comprehensively; Capture Test's original contribution is the method-level signer audit and attribution.
+The 11 November window also contained 85 MPC `respond` receipts, 80 internal signature completions, and eight other calls. Those are real contract work, but not additional direct signature requests. The data neither proves broad adoption nor proves decline; these short windows do not support a network-wide growth estimate.
+
+The wider series contains 25 fixed 1,000-block raw-activity probes from May to November. Matching transaction counts range from **97 to 534 per window**. They add longitudinal context but cannot be relabeled as `sign` requests because only seven windows are method-audited. The first and last observations (418 and 170) are not a network-wide growth rate.
+
+One separate **illustrative settlement case** came from a NearBlocks multichain-signature index record on 12 November: [this NEAR transaction](https://nearblocks.io/txns/FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG) contains a `v1.signer.sign` receipt whose predecessor is `btc-connector.bridge.near`; the associated [Bitcoin transaction](https://mempool.space/tx/75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7) is confirmed in block **975,572**. FastNear confirms the NEAR method, while Mempool.space and Blockstream agree on Bitcoin confirmation. The cross-chain association is indexed, not independently cryptographically reconstructed from signature bytes. One case does not establish a network settlement rate.
+
+### Separate token-value test
+
+The aligned 30-day period **14 October–12 November 2026** shows approximately **$5.81 million** in NEAR Intents gross fees and **$1.84 million** in DeFiLlama's holder-revenue/buyback measure, or **31.6%** of gross fees. Gross fees include integrator affiliate fees. This is a separate Intents metric, **not** revenue caused by `v1.signer`. NEAR's own [revenue dashboard](https://revenue.near.org/) covers Intents capture more comprehensively; Capture Test's original contribution is the method-level signer audit and attribution. An investable Chain Signatures value-capture thesis still needs an evidenced route from its requests to token demand or buybacks.
 
 ## Current judgment
 
-**Conditional, with material concentration risk.** Chain Signatures is a real NEAR primitive and the audited windows show real direct requests from multiple contracts. But the latest sampled window is dominated by three accounts (`omni.bridge.near`, `fast-auth.near`, `btc-connector.bridge.near`). The evidence is not yet sufficient to say that a broad application ecosystem or direct token value capture has emerged from Chain Signatures.
+**Conditional, with repeated concentration in the sampled windows.** Chain Signatures is a real NEAR primitive; the seven windows show direct requests from 8–12 initiating accounts each. Their top-three concentration was 74.8–90.0%. The evidence is insufficient to claim a broad independent application ecosystem or direct token value capture from Chain Signatures. Intents buybacks support a different, separately measured economic claim.
 
 ## What would change the judgment
 
@@ -28,10 +40,10 @@ Economic context: the aligned 30-day period **13 October–11 November 2026** sh
 
 **Weaken or falsify it:** A longer series shows that activity grows mainly through one bridge or test infrastructure, method-level requests do not diversify, destination-chain completion is weak, or no defensible token-capture mechanism emerges. A rise in raw `v1.signer` account transactions by itself is not supporting evidence.
 
-These are directional criteria, not ex post thresholds chosen to make the three current windows look favorable. Future windows must be fixed before reading them and archived with provenance.
+These are directional criteria, not ex post thresholds chosen to make the seven current windows look favorable. Future windows must be fixed before reading them and archived with provenance.
 
 ## Reproduction and limits
 
-Run `npm run refresh` from this repository. The script uses fixed ranges in `scripts/refresh.mjs`, paginates all matching FastNear account transactions for the three audited windows, hydrates their complete traces in batches of 20, classifies the receipts in `src/analysis.mjs`, and stores the filtered receipt IDs, transaction hashes, methods, callers, and timestamps in `public/data/snapshot.json` and `public/data/receipt-audit.csv`. A one-page count query builds each of the 25 raw-activity points. The same script aligns DeFiLlama feeds on complete UTC dates.
+Run `npm run refresh` from this repository. The script uses fixed ranges in `scripts/refresh.mjs`, paginates all matching FastNear account transactions for the seven audited windows, hydrates their complete traces in batches of 20, classifies the receipts in `src/analysis.mjs`, and stores the filtered receipt IDs, transaction hashes, methods, callers, and timestamps in `public/data/snapshot.json` and `public/data/receipt-audit.csv`. A one-page count query builds each of the 25 raw-activity points. The same script aligns DeFiLlama feeds on complete UTC dates.
 
-FastNear is an indexed service, not an independent archival NEAR node. An API outage or policy change may prevent a fresh rebuild, so the snapshot is committed for audit. The data excludes calls that never reached `v1.signer`, and a direct request can fail or never result in an external transaction. No price target or probability of winning is inferred.
+FastNear is an indexed service, not an independent archival NEAR node. An API outage or policy change may prevent a fresh rebuild, so the snapshot is committed for audit. The data excludes calls that never reached `v1.signer`, and a direct request can fail or never result in an external transaction. The Bitcoin case depends on NearBlocks for the association and is independently checked only for the two chain records. No price target or probability of winning is inferred.

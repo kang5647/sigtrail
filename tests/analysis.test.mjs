@@ -10,6 +10,8 @@ test('separates direct signature requests from callbacks and internal receipts',
   assert.equal(result.categories.request, 3);
   assert.equal(result.uniqueCallers, 2);
   assert.equal(result.topCallerShare, 2 / 3);
+  assert.equal(result.topThreeCount, 3);
+  assert.equal(result.topThreeShare, 1);
   assert.equal(result.sampleSize, 6);
   assert.equal(analyzeReceipts([...receipts, receipts[0]]).sampleSize, 6);
 });

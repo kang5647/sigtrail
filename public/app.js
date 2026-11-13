@@ -32,6 +32,7 @@ function renderWindow(data, index) {
   $('#sign-count').textContent = integer(categories.request);
   $('#sample-note').textContent = `${shortDate(window.observedRange[0])} · ${integer(window.sampleSize)} deduplicated method receipts across ${integer(window.touchingTransactions)} transactions. Fixed 1,000-block sample, not a daily total.`;
   $('#top-share').textContent = percent(window.topCallerShare);
+  $('#top-three-share').textContent = percent(window.topThreeShare);
   const pieces = [
     ['Direct sign', categories.request, 'comp-request'],
     ['MPC response', categories.mpc_response, 'comp-response'],
@@ -68,6 +69,11 @@ function renderWindow(data, index) {
 }
 
 function render(data) {
+  const latest = data.signerWindows.at(-1);
+  $('#hero-share').textContent = `${Math.round(latest.topThreeShare * 100)}%`;
+  $('#hero-count').textContent = `${integer(latest.topThreeCount)} of ${integer(latest.categories.request)}`;
+  $('#hero-raw').textContent = integer(latest.touchingTransactions);
+  $('#hero-sign').textContent = integer(latest.categories.request);
   $('#freshness').textContent = `REFRESHED ${shortDate(data.fetchedAt)} · FEES THROUGH ${shortDate(data.dataThrough)}`;
   $('#fees-30').textContent = money(data.summary.intentsFees30d);
   $('#holders-30').textContent = money(data.summary.intentsHoldersRevenue30d);
@@ -114,6 +120,14 @@ function render(data) {
       $('#activity-chart').append(bar);
     }
   }
+  const chainCase = data.crossChainCase;
+  if (chainCase) {
+    $('#case-caller').textContent = `Initiating contract: ${chainCase.signingCaller}`;
+    $('#case-block').textContent = `Block #${integer(chainCase.bitcoinBlockHeight)}`;
+    $('#case-bitcoin-hash').textContent = `${chainCase.bitcoinTransaction.slice(0, 14)}…${chainCase.bitcoinTransaction.slice(-10)}`;
+    $('#case-near-link').href = `https://nearblocks.io/txns/${encodeURIComponent(chainCase.nearTransaction)}`;
+    $('#case-bitcoin-link').href = `https://mempool.space/tx/${encodeURIComponent(chainCase.bitcoinTransaction)}`;
+  }
   renderWindow(data, data.signerWindows.length - 1);
 }
 
@@ -121,7 +135,7 @@ try {
   const response = await fetch('./data/snapshot.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`Data request failed (${response.status})`);
   const data = await response.json();
-  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 3) throw new Error('Signer audit data is incomplete');
+  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare))) throw new Error('Signer audit data is incomplete');
   render(data);
 } catch (error) {
   const banner = $('#error');

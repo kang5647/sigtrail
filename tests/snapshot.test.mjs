@@ -24,3 +24,16 @@ test('cross-chain case records the exact indexed association', () => {
   assert.equal(item.associationRecord.destinationTransaction, item.bitcoinTransaction);
   assert.equal(item.status, 'confirmed');
 });
+
+test('fee footprint reconciles with 80 exact sign receipt outcomes', () => {
+  const fee = data.feeFootprint;
+  const requestIds = new Set(data.signerWindows.at(-1).receipts
+    .filter(receipt => receipt.actions.some(action => action.method === 'sign'))
+    .map(receipt => receipt.id));
+  assert.equal(fee.receiptCount, requestIds.size);
+  assert.equal(new Set(fee.receipts.map(row => row.receiptId)).size, fee.receiptCount);
+  for (const row of fee.receipts) assert.ok(requestIds.has(row.receiptId));
+  const total = fee.receipts.reduce((sum, row) => sum + BigInt(row.tokensBurntYocto), 0n);
+  assert.equal(total.toString(), fee.totalTokensBurntYocto);
+  assert.equal(fee.scenarios.at(-1).signReceiptNearPerDay, fee.averageNear * 1_000_000);
+});

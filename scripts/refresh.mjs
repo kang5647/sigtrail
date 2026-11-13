@@ -150,6 +150,43 @@ async function getCrossChainCase() {
   };
 }
 
+async function getSignReceiptFeeFootprint(window) {
+  const requests = window.receipts.filter(receipt => receipt.actions.some(action => action.method === 'sign'));
+  const requestedIds = new Set(requests.map(receipt => receipt.id));
+  const hashes = [...new Set(requests.map(receipt => receipt.transaction_hash))];
+  const rows = [];
+  for (let i = 0; i < hashes.length; i += 20) {
+    const batch = hashes.slice(i, i + 20);
+    const result = await postFastNear(SOURCES.transactionTraces, { tx_hashes: batch });
+    if (!Array.isArray(result.transactions) || result.transactions.length !== batch.length) throw new Error(`Incomplete fee trace batch ${i}`);
+    for (const item of result.transactions) {
+      for (const entry of item.receipts || []) {
+        const id = entry.receipt?.receipt_id;
+        if (!requestedIds.has(id)) continue;
+        const outcome = entry.execution_outcome?.outcome;
+        if (!outcome || !/^\d+$/.test(String(outcome.tokens_burnt)) || !Number.isFinite(outcome.gas_burnt)) throw new Error(`Missing fee outcome for receipt ${id}`);
+        rows.push({ receiptId: id, transactionHash: item.transaction.hash, tokensBurntYocto: String(outcome.tokens_burnt), gasBurnt: outcome.gas_burnt });
+      }
+    }
+    await new Promise(resolve => setTimeout(resolve, 1200));
+  }
+  const unique = [...new Map(rows.map(row => [row.receiptId, row])).values()];
+  if (unique.length !== requestedIds.size) throw new Error(`Fee footprint covers ${unique.length}/${requestedIds.size} sign receipts`);
+  const totalYocto = unique.reduce((sum, row) => sum + BigInt(row.tokensBurntYocto), 0n);
+  const totalNear = Number(totalYocto) / 1e24;
+  const averageNear = totalNear / unique.length;
+  return {
+    scope: 'Only v1.signer sign receipt execution outcomes in the 224000000–224000999 parent-transaction window. Excludes parent transaction, MPC response, internal completion, other contracts, and destination-chain fees. This is a fee footprint, not proof of net NEAR holder accrual or a forecast.',
+    blockWindow: window.blocks,
+    receiptCount: unique.length,
+    totalTokensBurntYocto: totalYocto.toString(),
+    totalNear,
+    averageNear,
+    scenarios: [10_000, 100_000, 1_000_000].map(dailyRequests => ({ dailyRequests, signReceiptNearPerDay: averageNear * dailyRequests })),
+    receipts: unique,
+  };
+}
+
 const fetchedAt = new Date().toISOString();
 const fullAudit = process.argv.includes('--full-audit');
 const cacheDir = new URL('../.cache/', import.meta.url);
@@ -208,6 +245,7 @@ for (const window of signerWindows) {
   if (matching?.touchingTransactions !== window.touchingTransactions) throw new Error(`Raw activity series disagrees with hydrated window ${window.blocks[0]}`);
 }
 const crossChainCase = await getCrossChainCase();
+const feeFootprint = await getSignReceiptFeeFootprint(signerWindows.at(-1));
 const snapshot = {
   schemaVersion: 1,
   fetchedAt,
@@ -225,6 +263,7 @@ const snapshot = {
   daySummary,
   activitySeries,
   crossChainCase,
+  feeFootprint,
 };
 await mkdir(new URL('../public/data/', import.meta.url), { recursive: true });
 await writeFile(new URL('../public/data/snapshot.json', import.meta.url), JSON.stringify(snapshot, null, 2) + '\n');
@@ -242,4 +281,7 @@ for (const window of new Map([...signerWindows, ...dayWindows].map(window => [wi
   }
 }
 await writeFile(new URL('../public/data/receipt-audit.csv', import.meta.url), csv.join('\n') + '\n');
+const feeCsv = ['receipt_id,transaction_hash,tokens_burnt_yoctonear,gas_burnt'];
+for (const row of feeFootprint.receipts) feeCsv.push([row.receiptId, row.transactionHash, row.tokensBurntYocto, row.gasBurnt].map(quote).join(','));
+await writeFile(new URL('../public/data/fee-audit.csv', import.meta.url), feeCsv.join('\n') + '\n');
 console.log(JSON.stringify({ fetchedAt, dataThrough: snapshot.dataThrough, summary, signerWindows: signerWindows.map(({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare}) => ({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare})), daySummary: { windowCount: daySummary.windowCount, observedRange: daySummary.observedRange, requests: daySummary.categories.request, topThreeShare: daySummary.topThreeShare, uniqueCallers: daySummary.uniqueCallers } }, null, 2));

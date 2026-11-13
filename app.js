@@ -81,6 +81,8 @@ function render(data) {
   $('#period-label').textContent = `${shortDate(data.summary.currentPeriod[0])} – ${shortDate(data.summary.currentPeriod[1])}`;
   $('#fee-total').textContent = data.feeFootprint.totalNear.toFixed(4);
   $('#fee-average').textContent = data.feeFootprint.averageNear.toFixed(6);
+  $('#fee-10k').textContent = data.feeFootprint.scenarios.find(row => row.dailyRequests === 10_000).signReceiptNearPerDay.toFixed(1);
+  $('#fee-100k').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 100_000).signReceiptNearPerDay);
   $('#fee-million').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 1_000_000).signReceiptNearPerDay);
 
   const tabs = $('#window-tabs');

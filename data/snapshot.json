@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-13T02:19:20.900Z",
+  "fetchedAt": "2026-11-13T10:23:09.100Z",
   "dataThrough": "2026-11-12",
   "sources": {
     "appFees": "https://api.llama.fi/overview/fees/near",
@@ -33,7 +33,7 @@
     "ecosystemAppFees30d": 6558401.369999998,
     "intentsShare": 0.885488958721659,
     "intentsChangeVsPrior": -0.2909604474937748,
-    "averageDefiTvl30d": 204309229.06666666
+    "averageDefiTvl30d": 204312720.5
   },
   "series": [
     {
@@ -1474,7 +1474,7 @@
       "intentsFees": 16604,
       "intentsNetRevenue": 95652,
       "intentsHoldersRevenue": 95652,
-      "defiTvl": 167715670
+      "defiTvl": 167820413
     }
   ],
   "signerWindows": [
@@ -100660,6 +100660,48 @@
     ],
     "receipts": [
       {
+        "receiptId": "8SxUtETsdB82sTNG4HbuKPwu6XTL3HrGrm7QumEACpzK",
+        "transactionHash": "2kooARtgwMikuUMrrFnSspq8xB6YgzTUvuFBPAkbwn1c",
+        "tokensBurntYocto": "417416017445900000000",
+        "gasBurnt": 4174160174459
+      },
+      {
+        "receiptId": "Epi9Srm24ifqAZbRooaW95KKQZcMLbbS69yBc8H3jeWe",
+        "transactionHash": "2nTcu5bx7ECgZhTa4pH6TxquHKt1gaczFEuEi1xCBFfo",
+        "tokensBurntYocto": "420310503873000000000",
+        "gasBurnt": 4203105038730
+      },
+      {
+        "receiptId": "HuKnttYdzQuZj6cMctqoaat4Kb4BguEiZEsDuQprdZFu",
+        "transactionHash": "8PDbad7HgvRJEoSjaTCUeApnLHwcer2JVVnbJH9kRic4",
+        "tokensBurntYocto": "415477173716000000000",
+        "gasBurnt": 4154771737160
+      },
+      {
+        "receiptId": "F3uPj5zfgvnHdmzZRerVdC3fXvRyHAHBVLrtTYvXv2f2",
+        "transactionHash": "9jsoD6xhwZjdhHpqHBwEzuP7NaShNNxRdakKKbGRBXnF",
+        "tokensBurntYocto": "416003574882500000000",
+        "gasBurnt": 4160035748825
+      },
+      {
+        "receiptId": "9HydgBYTRQ5vAdX27XcJTfvZ1gkoB8N85mJ2E4UFj7HM",
+        "transactionHash": "A3AMVRyS1Ceq9SFRVuQaBipbGzsgD4odBpvAXkmGuDfc",
+        "tokensBurntYocto": "420306719195400000000",
+        "gasBurnt": 4203067191954
+      },
+      {
+        "receiptId": "8onYabZfqu2ea5AXvoURESBRQ9qHjfrqNB1VVJYFBQmC",
+        "transactionHash": "ET6XjaR323hwyzsKPYTEPZpi153Z5XPsDAUpcMRiFREm",
+        "tokensBurntYocto": "419581173716000000000",
+        "gasBurnt": 4195811737160
+      },
+      {
+        "receiptId": "97dVvXRV4EsugHjScdevfaVybXnDQ5BfADqSb2zxatgx",
+        "transactionHash": "RE8rWbsu2MSaC8fb333A6JCLngzShG74qX55uFMTSYj",
+        "tokensBurntYocto": "419810654676800000000",
+        "gasBurnt": 4198106546768
+      },
+      {
         "receiptId": "83i1pu7gyxVc3KzELu2TcxQgqgpda85ywaBRghBS4qBM",
         "transactionHash": "2RpPdJYW343rJMRL63WYpKtLZkK7YWw5fNenpMHA6vTv",
         "tokensBurntYocto": "419725964030400000000",
@@ -100736,48 +100778,6 @@
         "transactionHash": "EXJQaLJxtjauhyvLTztJviG6TVqkhRf6TxbmqBf9nok6",
         "tokensBurntYocto": "417651891547700000000",
         "gasBurnt": 4176518915477
-      },
-      {
-        "receiptId": "8SxUtETsdB82sTNG4HbuKPwu6XTL3HrGrm7QumEACpzK",
-        "transactionHash": "2kooARtgwMikuUMrrFnSspq8xB6YgzTUvuFBPAkbwn1c",
-        "tokensBurntYocto": "417416017445900000000",
-        "gasBurnt": 4174160174459
-      },
-      {
-        "receiptId": "Epi9Srm24ifqAZbRooaW95KKQZcMLbbS69yBc8H3jeWe",
-        "transactionHash": "2nTcu5bx7ECgZhTa4pH6TxquHKt1gaczFEuEi1xCBFfo",
-        "tokensBurntYocto": "420310503873000000000",
-        "gasBurnt": 4203105038730
-      },
-      {
-        "receiptId": "HuKnttYdzQuZj6cMctqoaat4Kb4BguEiZEsDuQprdZFu",
-        "transactionHash": "8PDbad7HgvRJEoSjaTCUeApnLHwcer2JVVnbJH9kRic4",
-        "tokensBurntYocto": "415477173716000000000",
-        "gasBurnt": 4154771737160
-      },
-      {
-        "receiptId": "F3uPj5zfgvnHdmzZRerVdC3fXvRyHAHBVLrtTYvXv2f2",
-        "transactionHash": "9jsoD6xhwZjdhHpqHBwEzuP7NaShNNxRdakKKbGRBXnF",
-        "tokensBurntYocto": "416003574882500000000",
-        "gasBurnt": 4160035748825
-      },
-      {
-        "receiptId": "9HydgBYTRQ5vAdX27XcJTfvZ1gkoB8N85mJ2E4UFj7HM",
-        "transactionHash": "A3AMVRyS1Ceq9SFRVuQaBipbGzsgD4odBpvAXkmGuDfc",
-        "tokensBurntYocto": "420306719195400000000",
-        "gasBurnt": 4203067191954
-      },
-      {
-        "receiptId": "8onYabZfqu2ea5AXvoURESBRQ9qHjfrqNB1VVJYFBQmC",
-        "transactionHash": "ET6XjaR323hwyzsKPYTEPZpi153Z5XPsDAUpcMRiFREm",
-        "tokensBurntYocto": "419581173716000000000",
-        "gasBurnt": 4195811737160
-      },
-      {
-        "receiptId": "97dVvXRV4EsugHjScdevfaVybXnDQ5BfADqSb2zxatgx",
-        "transactionHash": "RE8rWbsu2MSaC8fb333A6JCLngzShG74qX55uFMTSYj",
-        "tokensBurntYocto": "419810654676800000000",
-        "gasBurnt": 4198106546768
       },
       {
         "receiptId": "EckKQNHMZoEQa6qqujxFrBXNqoa9WeDdbVq8A8njyy4o",

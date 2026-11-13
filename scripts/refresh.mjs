@@ -1,5 +1,7 @@
 import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import { analyzeReceipts, extractSignerReceipts, normalizeSeries, summarizeSeries } from '../src/analysis.mjs';
+import { assertCompleteHistory, assertCompleteHydration, rebuildArtifacts } from '../src/audit.mjs';
+import { writeArtifacts } from '../src/write-artifacts.mjs';
 
 const SOURCES = {
   appFees: 'https://api.llama.fi/overview/fees/near',
@@ -24,11 +26,20 @@ const CASE = {
 };
 
 async function getJson(url) {
-  const response = await fetch(url, { signal: AbortSignal.timeout(20_000), headers: { 'User-Agent': 'NEAR-Capture-Test/0.1 research' } });
-  if (!response.ok) throw new Error(`${response.status} ${url}`);
-  const payload = await response.json();
-  if (payload?.message && /limit|error/i.test(payload.message)) throw new Error(`${payload.message} (${url})`);
-  return payload;
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const response = await fetch(url, { signal: AbortSignal.timeout(20_000), headers: { 'User-Agent': 'NEAR-Capture-Test/0.1 research' } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      if (payload?.message && /limit|error/i.test(payload.message)) throw new Error(payload.message);
+      return payload;
+    } catch (error) {
+      lastError = error;
+      if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 2_000 * (attempt + 1)));
+    }
+  }
+  throw new Error(`Live source failed after 3 attempts: ${url}: ${lastError?.message}; committed snapshot remains unchanged`);
 }
 
 async function postFastNear(url, body) {
@@ -52,30 +63,39 @@ async function getWindow({ start, end }) {
   const rows = [];
   let resume_token = null;
   let reportedCount = null;
+  const usedTokens = new Set();
   do {
     const body = { account_id: 'v1.signer', from_tx_block_height: start, to_tx_block_height: end, is_function_call: true, limit: 200, desc: false };
     if (resume_token) body.resume_token = resume_token;
     const page = await postFastNear(SOURCES.signerHistory, body);
     if (!Array.isArray(page.account_txs)) throw new Error(`Malformed account response for ${start}`);
-    if (reportedCount === null) reportedCount = page.txs_count;
+    // FastNear reports txs_count on the first page; later cursor pages may omit it.
+    if (reportedCount === null) {
+      if (!Number.isSafeInteger(page.txs_count) || page.txs_count < 0) throw new Error(`Invalid first-page account count for ${start}`);
+      reportedCount = page.txs_count;
+    } else if (page.txs_count != null && page.txs_count !== reportedCount) {
+      throw new Error(`Indexer count changed while paging window ${start}`);
+    }
     rows.push(...page.account_txs);
     resume_token = page.resume_token || null;
+    if (resume_token && (usedTokens.has(resume_token) || !page.account_txs.length)) throw new Error(`Stalled pagination for window ${start}`);
+    if (resume_token) usedTokens.add(resume_token);
     await new Promise(resolve => setTimeout(resolve, 1200));
     if (rows.length > 10_000) throw new Error(`Unexpectedly large window ${start}`);
   } while (resume_token);
-  const hashes = [...new Set(rows.map(row => row.transaction_hash))];
-  if (hashes.length !== reportedCount) throw new Error(`Window ${start}: ${hashes.length} hashes, index reports ${reportedCount}`);
+  const hashes = assertCompleteHistory(rows, reportedCount, start);
   const raw = [];
   for (let i = 0; i < hashes.length; i += 20) {
     const batch = hashes.slice(i, i + 20);
     const result = await postFastNear(SOURCES.transactionTraces, { tx_hashes: batch });
-    if (!Array.isArray(result.transactions) || result.transactions.length !== batch.length) throw new Error(`Incomplete transaction hydration at ${start}:${i}`);
+    assertCompleteHydration(batch, result.transactions, `${start}:${i}`);
     raw.push(...result.transactions);
     await new Promise(resolve => setTimeout(resolve, 1200));
   }
   const receipts = extractSignerReceipts(raw);
   const analysis = analyzeReceipts(receipts);
   const timestamps = rows.map(row => Number(row.tx_block_timestamp) / 1e9).sort((a, b) => a - b);
+  if (!timestamps.length || timestamps.some(timestamp => !Number.isFinite(timestamp) || timestamp <= 0)) throw new Error(`Invalid or absent parent timestamps at ${start}`);
   return {
     blocks: [start, end],
     observedRange: [new Date(timestamps[0] * 1000).toISOString(), new Date(timestamps.at(-1) * 1000).toISOString()],
@@ -158,7 +178,7 @@ async function getSignReceiptFeeFootprint(window) {
   for (let i = 0; i < hashes.length; i += 20) {
     const batch = hashes.slice(i, i + 20);
     const result = await postFastNear(SOURCES.transactionTraces, { tx_hashes: batch });
-    if (!Array.isArray(result.transactions) || result.transactions.length !== batch.length) throw new Error(`Incomplete fee trace batch ${i}`);
+    assertCompleteHydration(batch, result.transactions, `fee batch ${i}`);
     for (const item of result.transactions) {
       for (const entry of item.receipts || []) {
         const id = entry.receipt?.receipt_id;
@@ -265,23 +285,6 @@ const snapshot = {
   crossChainCase,
   feeFootprint,
 };
-await mkdir(new URL('../public/data/', import.meta.url), { recursive: true });
-await writeFile(new URL('../public/data/snapshot.json', import.meta.url), JSON.stringify(snapshot, null, 2) + '\n');
-const csv = ['window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_timestamp_utc'];
-const quote = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
-for (const window of new Map([...signerWindows, ...dayWindows].map(window => [window.blocks[0], window])).values()) {
-  for (const receipt of window.receipts) {
-    for (const action of receipt.actions) {
-      csv.push([
-        window.blocks[0], window.blocks[1], receipt.id, receipt.transaction_hash,
-        receipt.predecessor_account_id, action.method,
-        new Date(Number(receipt.block_timestamp) / 1e6).toISOString(),
-      ].map(quote).join(','));
-    }
-  }
-}
-await writeFile(new URL('../public/data/receipt-audit.csv', import.meta.url), csv.join('\n') + '\n');
-const feeCsv = ['receipt_id,transaction_hash,tokens_burnt_yoctonear,gas_burnt'];
-for (const row of feeFootprint.receipts) feeCsv.push([row.receiptId, row.transactionHash, row.tokensBurntYocto, row.gasBurnt].map(quote).join(','));
-await writeFile(new URL('../public/data/fee-audit.csv', import.meta.url), feeCsv.join('\n') + '\n');
+const { files } = rebuildArtifacts(snapshot);
+await writeArtifacts(new URL('../public/data/', import.meta.url), files);
 console.log(JSON.stringify({ fetchedAt, dataThrough: snapshot.dataThrough, summary, signerWindows: signerWindows.map(({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare}) => ({blocks, touchingTransactions, categories, uniqueCallers, topCallerShare, topThreeCount, topThreeShare})), daySummary: { windowCount: daySummary.windowCount, observedRange: daySummary.observedRange, requests: daySummary.categories.request, topThreeShare: daySummary.topThreeShare, uniqueCallers: daySummary.uniqueCallers } }, null, 2));

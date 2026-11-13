@@ -15,6 +15,17 @@ export function classifyReceipt(receipt) {
   return 'other_receipt';
 }
 
+function uniqueReceipts(receipts) {
+  const byId = new Map();
+  for (const receipt of receipts) {
+    if (typeof receipt?.id !== 'string' && typeof receipt?.id !== 'number') throw new Error('Receipt has no ID');
+    const earlier = byId.get(receipt.id);
+    if (earlier && JSON.stringify(earlier) !== JSON.stringify(receipt)) throw new Error(`Conflicting duplicate receipt ${receipt.id}`);
+    byId.set(receipt.id, receipt);
+  }
+  return [...byId.values()];
+}
+
 export function extractSignerReceipts(rawTransactions) {
   const rows = [];
   for (const item of rawTransactions) {
@@ -34,12 +45,12 @@ export function extractSignerReceipts(rawTransactions) {
       });
     }
   }
-  return [...new Map(rows.map(row => [row.id, row])).values()];
+  return uniqueReceipts(rows);
 }
 
 export function analyzeReceipts(receipts) {
   // The live indexer can repeat the boundary receipt on adjacent cursor pages.
-  receipts = [...new Map(receipts.map(receipt => [receipt.id, receipt])).values()];
+  receipts = uniqueReceipts(receipts);
   const categories = { request: 0, mpc_response: 0, internal_completion: 0, other_method: 0, other_receipt: 0 };
   const callers = new Map();
   const transactions = [];

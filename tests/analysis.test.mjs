@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeReceipts, classifyReceipt, extractSignerReceipts, normalizeSeries, summarizeSeries, DAY } from '../src/analysis.mjs';
+import { assertCompleteHistory, assertCompleteHydration, rebuildArtifacts } from '../src/audit.mjs';
+import { readFile } from 'node:fs/promises';
+import { parseGasReward } from '../src/protocol.mjs';
 
 test('separates direct signature requests from callbacks and internal receipts', () => {
   const make = (method, account) => ({ predecessor_account_id: account, block_timestamp: '1794441600000000000', actions: method ? [{ action: 'FUNCTION_CALL', method }] : null });
@@ -53,4 +56,44 @@ test('recent proof links are sorted by receipt time rather than indexer order', 
   assert.equal(result.recentRequests[0].hash, 'newhash');
   assert.equal(result.sampleNewestTimestamp, 2000000000);
   assert.equal(result.sampleOldestTimestamp, 1000000000);
+});
+
+test('missing page and wrong transaction hydration cannot silently pass', () => {
+  const rows = [{transaction_hash:'one'}, {transaction_hash:'two'}, {transaction_hash:'two'}];
+  assert.deepEqual(assertCompleteHistory(rows, 2, 100), ['one', 'two']);
+  assert.throws(() => assertCompleteHistory(rows, 3, 100), /2 hashes, index reports 3/);
+  assert.throws(() => assertCompleteHistory([{transaction_hash:'one'}], 2, 100), /1 hashes, index reports 2/);
+  assert.doesNotThrow(() => assertCompleteHydration(['one', 'two'], [{transaction:{hash:'two'}}, {transaction:{hash:'one'}}], 'fixture'));
+  assert.throws(() => assertCompleteHydration(['one', 'two'], [{transaction:{hash:'one'}}, {transaction:{hash:'one'}}], 'fixture'), /mismatched/);
+  assert.throws(() => assertCompleteHydration(['one', 'two'], [{transaction:{hash:'one'}}, {transaction:{hash:'other'}}], 'fixture'), /mismatched/);
+});
+
+test('conflicting duplicate receipt IDs are rejected rather than changing caller counts', () => {
+  const base = {id:'same', transaction_hash:'tx', predecessor_account_id:'a.near', block_timestamp:'1794441600000000000', actions:[{action:'FUNCTION_CALL',method:'sign'}]};
+  assert.throws(() => analyzeReceipts([base, {...base, predecessor_account_id:'b.near'}]), /Conflicting duplicate/);
+});
+
+test('offline rebuild recomputes public headline and rejects incomplete fees', async () => {
+  const snapshot = JSON.parse(await readFile(new URL('../public/data/snapshot.json', import.meta.url), 'utf8'));
+  const result = rebuildArtifacts(snapshot);
+  assert.equal(result.snapshot.signerWindows.at(-1).touchingTransactions, 170);
+  assert.equal(result.snapshot.signerWindows.at(-1).categories.request, 80);
+  assert.equal(result.snapshot.signerWindows.at(-1).topThreeCount, 72);
+  assert.equal(result.snapshot.daySummary.categories.request, 1482);
+  assert.equal(result.snapshot.daySummary.topThreeCount, 1219);
+  assert.equal(result.snapshot.daySummary.topThreeShare, 1219/1482);
+  const broken = structuredClone(snapshot);
+  broken.feeFootprint.receipts.pop();
+  assert.throws(() => rebuildArtifacts(broken), /each direct sign receipt/);
+});
+
+test('protocol reward interpretation rejects malformed or non-mainnet config', () => {
+  const config = { chain_id: 'mainnet', protocol_version: 88,
+    runtime_config: { transaction_costs: { burnt_gas_reward: [0, 1] } } };
+  assert.deepEqual(parseGasReward(config, 224000000), {
+    blockId: 224000000, protocolVersion: 88, contractRewardNumerator: 0,
+    contractRewardDenominator: 1, contractRewardFraction: 0, noContractGasReward: true,
+  });
+  assert.throws(() => parseGasReward({ ...config, chain_id: 'testnet' }, 224000000), /Invalid mainnet/);
+  assert.throws(() => parseGasReward({ ...config, runtime_config: { transaction_costs: { burnt_gas_reward: [1, 0] } } }, 224000000), /Invalid burnt_gas_reward/);
 });

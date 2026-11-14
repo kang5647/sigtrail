@@ -1,0 +1,4 @@
+npm run rebuild
+Offline rebuild: 7 historical windows, 12 spaced windows, 1482 pooled direct sign requests, 80 fee outcomes
+Issuance baseline: 25 epoch transitions, 92266.875 NEAR/day gross; 1% offset at 2,202,384 direct sign requests/day
+Rebuilt THESIS.md from committed receipt and epoch-reward records

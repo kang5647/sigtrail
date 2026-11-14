@@ -109708,6 +109708,39 @@
           "requestsPerDay": 220238329
         }
       ]
+    },
+    "supplyCrossCheck": {
+      "source": "https://archival-rpc.mainnet.fastnear.com",
+      "method": "block",
+      "fetchedAtUtc": "2026-11-14T02:36:55.352Z",
+      "boundaryBlocks": {
+        "startBefore": {
+          "height": 223088015,
+          "hash": "9AXxzopdmP8Reg9Rs5eFEEHtugE3t3W44yAftgo5fruE",
+          "timeUtc": "2026-11-04T23:59:59.924Z",
+          "totalSupplyYocto": "1310833180394332400845397419996547"
+        },
+        "startInside": {
+          "height": 223088016,
+          "hash": "GwsKt73ELzLsWPabYRS1NCd9yE3S9XV51Lg2QgEXLUJf",
+          "timeUtc": "2026-11-05T00:00:00.524Z",
+          "totalSupplyYocto": "1310833180390717571947955019996547"
+        },
+        "endInside": {
+          "height": 224135609,
+          "hash": "EacX9sDK6GTbMsqUfvhged4BvR94mVkfWexsFxWbELbU",
+          "timeUtc": "2026-11-11T23:59:59.752Z",
+          "totalSupplyYocto": "1311473431762787833076286255899939"
+        },
+        "endAfter": {
+          "height": 224135610,
+          "hash": "JD95GM2eLSyetHJRK9TRVyXVZ4iwcDtNVv5bwRgTMWfc",
+          "timeUtc": "2026-11-12T00:00:00.223Z",
+          "totalSupplyYocto": "1311473431756332278090674755899939"
+        }
+      },
+      "netSupplyChangeNear": 640251.3684554322,
+      "grossMinusNetNear": 5616.753762999783
     }
   }
 }

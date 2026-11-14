@@ -15,7 +15,7 @@ export function renderThesis(template, snapshot, canonicalSnapshotText) {
   const pool = snapshot.daySummary;
   const fee = snapshot.feeFootprint;
   const issuance = snapshot.issuanceAudit;
-  if (!issuance || latest.topThreeShare < 0.6 || pool.topThreeShare < 0.6) {
+  if (!issuance?.supplyCrossCheck || latest.topThreeShare < 0.6 || pool.topThreeShare < 0.6) {
     throw new Error('Thesis conclusion needs manual review before rebuild');
   }
   const historical = markdownTable(
@@ -54,6 +54,8 @@ export function renderThesis(template, snapshot, canonicalSnapshotText) {
     ISSUANCE_PERIOD: `${day(issuance.windowStartUtc)}–${day(issuance.windowEndUtc)}`,
     ISSUANCE_EPOCH_COUNT: n(issuance.epochs.length), ISSUANCE_TOTAL: n(issuance.mintedNearInWindow, 3),
     ISSUANCE_DAILY: n(issuance.dailyMintedNear, 3), ISSUANCE_YEARLY: n(issuance.annualizedMintedNear, 1),
+    NET_SUPPLY_CHANGE: n(issuance.supplyCrossCheck.netSupplyChangeNear, 3),
+    GROSS_NET_GAP: n(issuance.supplyCrossCheck.grossMinusNetNear, 3),
     SCENARIO_TABLE: scenarios, THRESHOLD_TABLE: thresholds,
     AGGRESSIVE_PCT: `${n(issuance.model.scenarios.at(-1).shareOfDailyIssuancePct, 4)}%`,
     FETCH_DATE: day(snapshot.fetchedAt),

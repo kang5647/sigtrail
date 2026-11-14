@@ -62,6 +62,7 @@ const issuanceAudit = { windowStartUtc, windowEndUtc, dayCount: 7,
   epochs: allEpochs.filter(epoch => epoch.epochStartTimeUtc >= windowStartUtc && epoch.epochStartTimeUtc < windowEndUtc) };
 const dataDir = new URL('../public/data/', import.meta.url);
 const source = JSON.parse(await readFile(new URL('snapshot.json', dataDir), 'utf8'));
+if (source.issuanceAudit?.supplyCrossCheck) issuanceAudit.supplyCrossCheck = source.issuanceAudit.supplyCrossCheck;
 const { snapshot, files } = rebuildArtifacts({ ...source, issuanceAudit });
 await writeArtifacts(dataDir, files);
 console.log(JSON.stringify({ epochCount: snapshot.issuanceAudit.epochs.length,

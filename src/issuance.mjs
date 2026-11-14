@@ -65,6 +65,23 @@ export function analyzeIssuanceAudit(audit, feeFootprint) {
   const feeYocto = BigInt(feeFootprint.totalTokensBurntYocto);
   const receipts = BigInt(feeFootprint.receiptCount);
   const days = BigInt(audit.dayCount);
+  let supplyCrossCheck;
+  if (audit.supplyCrossCheck) {
+    const blocks = audit.supplyCrossCheck.boundaryBlocks;
+    const ordered = [blocks?.startBefore, blocks?.startInside, blocks?.endInside, blocks?.endAfter];
+    if (ordered.some(block => !block || !Number.isSafeInteger(block.height) || !block.hash ||
+        !integer(block.totalSupplyYocto) || !Number.isFinite(Date.parse(block.timeUtc))) ||
+        ordered[0].height + 1 !== ordered[1].height || ordered[2].height + 1 !== ordered[3].height ||
+        ordered[0].timeUtc >= audit.windowStartUtc || ordered[1].timeUtc < audit.windowStartUtc ||
+        ordered[2].timeUtc >= audit.windowEndUtc || ordered[3].timeUtc < audit.windowEndUtc) {
+      throw new Error('Invalid supply boundary cross-check');
+    }
+    const netYocto = BigInt(ordered[2].totalSupplyYocto) - BigInt(ordered[0].totalSupplyYocto);
+    if (netYocto <= 0n || netYocto > total) throw new Error('Net supply change exceeds gross issuance audit');
+    supplyCrossCheck = { ...audit.supplyCrossCheck,
+      netSupplyChangeNear: Number(netYocto) / Number(YOCTO),
+      grossMinusNetNear: Number(total - netYocto) / Number(YOCTO) };
+  }
   const dailyMintedNear = Number(total) / Number(YOCTO) / audit.dayCount;
   const averageSignBurnNear = Number(feeYocto) / Number(YOCTO) / feeFootprint.receiptCount;
   const scenarios = [10_000, 1_000_000].map((requestsPerDay, i) => ({
@@ -74,7 +91,7 @@ export function analyzeIssuanceAudit(audit, feeFootprint) {
   const thresholds = [1, 10, 100].map(issuanceSharePct => ({ issuanceSharePct,
     requestsPerDay: Number(ceilDiv(total * BigInt(issuanceSharePct) * receipts,
       days * 100n * feeYocto)) }));
-  return { ...audit, totalMintedYocto: total.toString(), mintedNearInWindow: Number(total) / Number(YOCTO),
+  return { ...audit, supplyCrossCheck, totalMintedYocto: total.toString(), mintedNearInWindow: Number(total) / Number(YOCTO),
     dailyMintedNear, annualizedMintedNear: dailyMintedNear * 365,
     model: { averageSignBurnNear, scenarios, thresholds } };
 }

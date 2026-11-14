@@ -6,6 +6,7 @@
   "scripts": {
     "rebuild": "node scripts/rebuild.mjs",
     "issuance-check": "node scripts/issuance-check.mjs",
+    "supply-check": "node scripts/supply-check.mjs",
     "concentration-check": "node scripts/concentration-report.mjs",
     "spot-check": "node scripts/spot-check.mjs",
     "protocol-check": "node scripts/protocol-check.mjs",

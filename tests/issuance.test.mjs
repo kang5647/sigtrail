@@ -48,3 +48,19 @@ test('rejects a changed archived reward payload when its hash is committed', () 
   audit.epochs[0].rewardsSha256 = '0'.repeat(64);
   assert.throws(() => analyzeIssuanceAudit(audit, fee), /rewards hash mismatch/);
 });
+
+test('checks UTC supply boundaries and keeps net growth separate from gross rewards', () => {
+  const audit = makeAudit();
+  const supply = value => (BigInt(value) * 10n ** 24n).toString();
+  audit.supplyCrossCheck = { boundaryBlocks: {
+    startBefore: { height: 99, hash: 'a', timeUtc: '2026-11-04T23:59:59.000Z', totalSupplyYocto: supply(100_000) },
+    startInside: { height: 100, hash: 'b', timeUtc: '2026-11-05T00:00:01.000Z', totalSupplyYocto: supply(100_000) },
+    endInside: { height: 199, hash: 'c', timeUtc: '2026-11-06T23:59:59.000Z', totalSupplyYocto: supply(129_000) },
+    endAfter: { height: 200, hash: 'd', timeUtc: '2026-11-07T00:00:01.000Z', totalSupplyYocto: supply(129_000) },
+  } };
+  const result = analyzeIssuanceAudit(audit, fee);
+  assert.equal(result.supplyCrossCheck.netSupplyChangeNear, 29_000);
+  assert.equal(result.supplyCrossCheck.grossMinusNetNear, 1_000);
+  audit.supplyCrossCheck.boundaryBlocks.endInside.totalSupplyYocto = supply(131_000);
+  assert.throws(() => analyzeIssuanceAudit(audit, fee), /exceeds gross/);
+});

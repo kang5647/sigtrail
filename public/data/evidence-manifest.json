@@ -15,6 +15,14 @@
     "sha256": "d20b696e23cdb32198de9193331930a36ec94c2feb015fb5a9d73cf70dac21da",
     "bytes": 9147675
   },
+  "investigation.json": {
+    "sha256": "2dd2f978c58bd9977909197c0ad74e4291041078946bfa283bbe197ca28d153e",
+    "bytes": 1389414
+  },
+  "investigation-checks.json": {
+    "sha256": "1dec8817986272b0ef6ff35c909b7c71cf044e23d62c9ca9a27225864a029d52",
+    "bytes": 18435
+  },
   "comparison.json": {
     "sha256": "4849b2572d9d0dd7c21d28706dcae1d80c2d7cb8cee93fac7d1cfb2b00c8e1c8",
     "bytes": 8470
@@ -40,15 +48,19 @@
     "bytes": 496
   },
   "../METHODOLOGY.md": {
-    "sha256": "24e5d5609d17bd8d51d5aada6d8bc8fec3670384f7a3213b69d4a0548a10be3e",
-    "bytes": 14373
+    "sha256": "da7109caab4807efad2505322572010c259ba00b65e31177e6a68f11be423eb3",
+    "bytes": 19352
   },
   "../DEMO.md": {
-    "sha256": "3c793353a9372136ccf61f424147621f7d8288506e551e5d99af8acc887250f4",
-    "bytes": 3107
+    "sha256": "3237cb0c1580f9d44c06685056a5c68c4e3460be1e593222c1292424696d7c62",
+    "bytes": 2450
   },
   "../THESIS.md": {
-    "sha256": "3bdc52d073de280238b72568c47f9adb9833694a0f37720ce280c6d2984bedcd",
-    "bytes": 14917
+    "sha256": "a8fea5e2440135a48685a724b7537a36815beee2ab113bd9438ed4efbf3b442b",
+    "bytes": 15996
+  },
+  "../FINDINGS.md": {
+    "sha256": "cb6bd481963df345fd53454b4b2e2ddc1158f87d4814600e21b01a701a388707",
+    "bytes": 7473
   }
 }

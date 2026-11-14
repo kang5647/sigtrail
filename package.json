@@ -1,5 +1,5 @@
 {
-  "name": "near-capture-test",
+  "name": "sigtrail",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,8 @@
     "serve": "python3 -m http.server 4177 --directory public",
     "independent-audit": "python3 scripts/independent-audit.py",
     "build": "node scripts/rebuild.mjs",
-    "collect-comparison": "node scripts/collect-comparison.mjs"
+    "collect-comparison": "node scripts/collect-comparison.mjs",
+    "investigation-check": "python3 scripts/investigation-check.py"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f8f2"><meta name="description" content="Explore dated NEAR Chain Signatures activity, historical comparisons, accounts, receipts and investment implications."><title>Sigtrail · Full-day and historical evidence</title><link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script></head>
+<body>
+<a class="skip" href="#workspace">Skip to research</a>
+<header class="wrap"><a class="brand" href="./">sigtrail.</a><span>Full-day and historical context</span><a href="./">← Investigation workbench</a></header>
+<main class="wrap">
+  <section class="research-header"><div><h1>Chain Signatures research</h1><p>Activity, account mix and economic evidence for NEAR.</p></div><span class="archive-badge">Saved mainnet evidence</span><p class="note" id="freshness">Loading saved evidence…</p></section>
+  <div id="error" role="alert" hidden></div>
+  <section id="workspace">
+    <nav role="tablist" aria-label="Research views">
+      <button id="tab-finding" role="tab" aria-controls="finding" aria-selected="true" data-view="finding">Overview</button>
+      <button id="tab-changed" role="tab" aria-controls="changed" aria-selected="false" tabindex="-1" data-view="changed">Compare periods</button>
+      <button id="tab-verify" role="tab" aria-controls="verify" aria-selected="false" tabindex="-1" data-view="verify">Accounts & receipts</button>
+      <button id="tab-thesis" role="tab" aria-controls="thesis" aria-selected="false" tabindex="-1" data-view="thesis">Implications</button>
+    </nav>
+    <section id="finding" role="tabpanel" aria-labelledby="tab-finding" tabindex="0">
+      <div class="section-title"><h2>Activity snapshot</h2><p class="note">11 November 2026 UTC · indexed parent-transaction cohort · blocks 223,988,378–224,135,609</p></div>
+      <div class="metrics overview-metrics"><div><strong id="direct">—</strong><span>Direct signing requests</span></div><div><strong id="accounts">—</strong><span>Initiating account IDs</span></div><div><strong id="touching">—</strong><span>Signer-touching parent transactions</span></div><div><strong id="share">—</strong><span>Top-three account share</span></div></div>
+      <div class="two-col">
+        <article class="panel"><h3>Account activity</h3><p class="note">Direct requests by initiating account. Select an account to focus the evidence.</p><div id="callers"></div><p id="participant-selection" class="selection-status" role="status"></p><p id="finding-math" class="note"></p><p class="note">An account may serve many users. These IDs do not count independently operated applications.</p><button id="inspect-finding" class="primary">View receipt rows</button><button id="clear-participant" hidden>Clear selection</button></article>
+        <article class="panel verdict"><h3 id="overview-interpretation">Loading interpretation…</h3><p>Observed signing requests establish use of the service. The available periods do not establish a lasting adoption trend.</p><p id="overview-economics" class="note"></p><div class="links"><button id="overview-compare">Compare periods</button><button id="view-thesis">Research implications</button></div><p class="note">Signing requests are not destination settlements. Full-workflow economics and independent operator identities are not measured.</p></article>
+      </div>
+      <details><summary>Counting rules and coverage</summary><p>One request = one distinct retained receipt containing an exact <code>sign</code> FunctionCall, filtered to <code>v1.signer</code> during collection. Responses, internal completion and other methods are excluded.</p><div id="classifications"></div><p>Parent inclusion defines the cohort. Descendant receipts may fall outside the day. Older normalized records retain creation timestamps, not execution timestamps, and omit raw receivers and outcomes. Provider completeness has not been independently established against a full node.</p><a href="./METHODOLOGY.md">Full method and corrections ↗</a></details>
+    </section>
+    <section id="changed" role="tabpanel" aria-labelledby="tab-changed" tabindex="0" hidden><div class="section-title"><h2>Historical comparison</h2><p class="note">Matched parent cohorts · 00:00–01:00 UTC on 10 and 11 November 2026. Two hours do not establish a lasting trend.</p></div><div id="comparison"><p>Loading comparison evidence…</p></div></section>
+    <section id="verify" role="tabpanel" aria-labelledby="tab-verify" tabindex="0" hidden>
+      <div class="section-title"><h2>Accounts & receipts</h2><p class="note">Filter the selected cohort. Counts use all matching requests; the table shows the first 20 receipt rows.</p></div>
+      <div class="filters"><label>Evidence cohort<select id="cohort" aria-label="Evidence cohort"><option value="full">11 Nov · full-day parent cohort</option></select></label><label>Initiating account<select id="account-filter" aria-label="Initiating account"><option value="">All accounts</option></select></label></div>
+      <p id="evidence-scope" class="scope"></p><button id="download-filtered">Export matching receipts ↓</button><span id="export-status" class="note" role="status"></span><p id="evidence-count" class="note" aria-live="polite"></p>
+      <div class="table-wrap"><table><thead><tr><th>Initiating account</th><th>Receipt creation (UTC)</th><th>Receipt / parent transaction</th></tr></thead><tbody id="receipts"></tbody></table></div>
+      <details><summary>All account counts and excluded methods</summary><div id="all-accounts"></div><div id="all-methods"></div></details>
+      <details class="reproduce"><summary>Archives and offline reproduction</summary><pre>npm test
+npm run independent-audit
+npm run build
+npm run serve</pre><p class="note">Reproduction verifies retained evidence and calculations. Network recollection is separate. It does not independently prove index completeness.</p><div class="links"><a href="./data/full-day-census.json.gz" download>Full-day archive</a><a href="./data/full-day-receipt-audit.csv" download>Full-day CSV</a><a href="./data/snapshot.json">Source snapshot</a><a href="./data/evidence-manifest.json">File checksums</a></div><details><summary>Recorded build output</summary><pre id="rebuild-output"></pre></details></details>
+    </section>
+    <section id="thesis" role="tabpanel" aria-labelledby="tab-thesis" tabindex="0" hidden>
+      <article id="adoption-answer"><div class="section-title"><h2 id="adoption-heading"></h2><p id="adoption-implication" class="answer-lead"></p><p id="adoption-economics" class="scope"></p></div><div class="two-col adoption-grid"><section class="panel"><h3>Evidence interpretation</h3><div id="adoption-observations"></div><button id="answer-compare">Compare periods</button></section><section class="panel verdict"><h3>Signals to investigate next</h3><div id="adoption-watch"></div></section></div><p class="note">The full-day cohort and the two selected hours are different populations. These are research interpretations and investigation signals, not forecasts or a buy/sell recommendation.</p></article>
+      <details id="fee-assumptions"><summary>Direct-stage fees and sensitivity assumptions</summary><p id="measured-fees"></p><p id="estimated-fees"></p><p id="issuance"></p><div class="model"><label>Hypothetical direct requests / day<input id="model-requests" type="number" value="1000000" min="0" max="100000000" step="1000"></label><label>Fee multiple vs sampled mean<input id="model-fee" type="number" value="1" min="0.1" max="10" step="0.1"></label><output id="model-result" aria-live="polite"></output></div><p class="note">All scenario requests count; operator independence is unknown. Assumes constant sampled fees and protocol rules. Excludes parent transactions, responses, cleanup, other contracts and destination fees. This is not a forecast, service revenue or token price model. Intents fees and buybacks are separate.</p><a href="./data/fee-audit.csv" download>80 measured fee outcomes ↗</a></details>
+      <details><summary>Further thesis boundaries</summary><p>More persuasive adoption evidence would include repeated complete-day cohorts over several weeks, independently identified unrelated app operators, linked destination outcomes and complete NEAR workflow fees. Declining account concentration alone would not prove broader adoption.</p><p>Utility depends on signing-service security and availability. Outbound signing does not independently verify inbound chain state. This research does not establish superiority over other systems or a token price implication.</p><div class="links"><a href="./THESIS.md">Full research thesis</a><a href="https://docs.near.org/chain-abstraction/chain-signatures">NEAR mechanism documentation ↗</a></div></details>
+    </section>
+  </section>
+</main><footer class="wrap"><span>Read only · Saved evidence · No wallet required</span><a href="./THESIS.md">Research thesis ↗</a><a href="./METHODOLOGY.md">Method & sources ↗</a></footer>
+</body></html>

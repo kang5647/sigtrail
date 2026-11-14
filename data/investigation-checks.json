@@ -1,0 +1,909 @@
+{
+  "sourceArchiveSha256": "350e06ff3fe99ab378d2c3bd46bff6e8c25225274df052e5860a44b1f200fd1d",
+  "results": {
+    "hour": {
+      "": [
+        {
+          "receipts": 615,
+          "inputs": 567,
+          "excess": 48,
+          "accounts": 12
+        },
+        {
+          "receipts": 600,
+          "inputs": 574,
+          "excess": 26,
+          "accounts": 13
+        }
+      ],
+      "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb": [
+        {
+          "receipts": 6,
+          "inputs": 6,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora": [
+        {
+          "receipts": 9,
+          "inputs": 9,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "6s5b8.sputnik-dao.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "btc-connector.bridge.near": [
+        {
+          "receipts": 115,
+          "inputs": 115,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 92,
+          "inputs": 92,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "fast-auth.near": [
+        {
+          "receipts": 92,
+          "inputs": 91,
+          "excess": 1,
+          "accounts": 1
+        },
+        {
+          "receipts": 105,
+          "inputs": 105,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "gimbal_dex.near": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-near.meteor-vaults.near": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdc.meteor-vaults.near": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdt.meteor-vaults.near": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-zec.meteor-vaults.near": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "omni.bridge.near": [
+        {
+          "receipts": 243,
+          "inputs": 243,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 301,
+          "inputs": 299,
+          "excess": 2,
+          "accounts": 1
+        }
+      ],
+      "tx-bench.near": [
+        {
+          "receipts": 24,
+          "inputs": 24,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 24,
+          "inputs": 24,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "zcash-connector.bridge.near": [
+        {
+          "receipts": 104,
+          "inputs": 57,
+          "excess": 47,
+          "accounts": 1
+        },
+        {
+          "receipts": 54,
+          "inputs": 30,
+          "excess": 24,
+          "accounts": 1
+        }
+      ]
+    },
+    "first15": {
+      "": [
+        {
+          "receipts": 157,
+          "inputs": 139,
+          "excess": 18,
+          "accounts": 11
+        },
+        {
+          "receipts": 125,
+          "inputs": 121,
+          "excess": 4,
+          "accounts": 11
+        }
+      ],
+      "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "6s5b8.sputnik-dao.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "btc-connector.bridge.near": [
+        {
+          "receipts": 20,
+          "inputs": 20,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 11,
+          "inputs": 11,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "fast-auth.near": [
+        {
+          "receipts": 21,
+          "inputs": 20,
+          "excess": 1,
+          "accounts": 1
+        },
+        {
+          "receipts": 29,
+          "inputs": 29,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "gimbal_dex.near": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-near.meteor-vaults.near": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdc.meteor-vaults.near": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdt.meteor-vaults.near": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-zec.meteor-vaults.near": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "omni.bridge.near": [
+        {
+          "receipts": 66,
+          "inputs": 66,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 62,
+          "inputs": 62,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "tx-bench.near": [
+        {
+          "receipts": 6,
+          "inputs": 6,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 6,
+          "inputs": 6,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "zcash-connector.bridge.near": [
+        {
+          "receipts": 37,
+          "inputs": 20,
+          "excess": 17,
+          "accounts": 1
+        },
+        {
+          "receipts": 11,
+          "inputs": 7,
+          "excess": 4,
+          "accounts": 1
+        }
+      ]
+    },
+    "first30": {
+      "": [
+        {
+          "receipts": 306,
+          "inputs": 283,
+          "excess": 23,
+          "accounts": 12
+        },
+        {
+          "receipts": 242,
+          "inputs": 235,
+          "excess": 7,
+          "accounts": 11
+        }
+      ],
+      "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora": [
+        {
+          "receipts": 4,
+          "inputs": 4,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "6s5b8.sputnik-dao.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "btc-connector.bridge.near": [
+        {
+          "receipts": 40,
+          "inputs": 40,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 15,
+          "inputs": 15,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "fast-auth.near": [
+        {
+          "receipts": 52,
+          "inputs": 51,
+          "excess": 1,
+          "accounts": 1
+        },
+        {
+          "receipts": 50,
+          "inputs": 50,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "gimbal_dex.near": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-near.meteor-vaults.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdc.meteor-vaults.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdt.meteor-vaults.near": [
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-zec.meteor-vaults.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "omni.bridge.near": [
+        {
+          "receipts": 135,
+          "inputs": 135,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 137,
+          "inputs": 136,
+          "excess": 1,
+          "accounts": 1
+        }
+      ],
+      "tx-bench.near": [
+        {
+          "receipts": 12,
+          "inputs": 12,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 12,
+          "inputs": 12,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "zcash-connector.bridge.near": [
+        {
+          "receipts": 47,
+          "inputs": 25,
+          "excess": 22,
+          "accounts": 1
+        },
+        {
+          "receipts": 17,
+          "inputs": 11,
+          "excess": 6,
+          "accounts": 1
+        }
+      ]
+    },
+    "last30": {
+      "": [
+        {
+          "receipts": 309,
+          "inputs": 284,
+          "excess": 25,
+          "accounts": 11
+        },
+        {
+          "receipts": 358,
+          "inputs": 339,
+          "excess": 19,
+          "accounts": 11
+        }
+      ],
+      "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb": [
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora": [
+        {
+          "receipts": 5,
+          "inputs": 5,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 1,
+          "inputs": 1,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "6s5b8.sputnik-dao.near": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "btc-connector.bridge.near": [
+        {
+          "receipts": 75,
+          "inputs": 75,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 77,
+          "inputs": 77,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "fast-auth.near": [
+        {
+          "receipts": 40,
+          "inputs": 40,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 55,
+          "inputs": 55,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "gimbal_dex.near": [
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        },
+        {
+          "receipts": 0,
+          "inputs": 0,
+          "excess": 0,
+          "accounts": 0
+        }
+      ],
+      "kernel-near.meteor-vaults.near": [
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdc.meteor-vaults.near": [
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-usdt.meteor-vaults.near": [
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 2,
+          "inputs": 2,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "kernel-zec.meteor-vaults.near": [
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 3,
+          "inputs": 3,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "omni.bridge.near": [
+        {
+          "receipts": 108,
+          "inputs": 108,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 164,
+          "inputs": 163,
+          "excess": 1,
+          "accounts": 1
+        }
+      ],
+      "tx-bench.near": [
+        {
+          "receipts": 12,
+          "inputs": 12,
+          "excess": 0,
+          "accounts": 1
+        },
+        {
+          "receipts": 12,
+          "inputs": 12,
+          "excess": 0,
+          "accounts": 1
+        }
+      ],
+      "zcash-connector.bridge.near": [
+        {
+          "receipts": 57,
+          "inputs": 32,
+          "excess": 25,
+          "accounts": 1
+        },
+        {
+          "receipts": 37,
+          "inputs": 19,
+          "excess": 18,
+          "accounts": 1
+        }
+      ]
+    }
+  }
+}

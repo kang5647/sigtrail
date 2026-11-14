@@ -56,4 +56,9 @@ for (const [name, bytes] of Object.entries({ ...publicDocs, 'THESIS.md': thesis,
   await writeFile(new URL(`../public/${name}`, import.meta.url), publicText);
   manifestFiles[`../${name}`] = publicText;
 }
+// The recorded walkthrough is a release artifact, not regenerated analytics.
+for (const name of ['walkthrough.mp4', 'walkthrough.srt']) {
+  try { manifestFiles[`../${name}`] = await readFile(new URL(`../public/${name}`, import.meta.url)); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+}
 await writeFile(new URL('evidence-manifest.json',dataDir), JSON.stringify(evidenceManifest(manifestFiles),null,2)+'\n');

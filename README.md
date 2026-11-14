@@ -8,7 +8,7 @@ Sigtrail is an interactive research submission for the NEAR **Investment Thesis*
 
 The shared service is demonstrably used. Independent application breadth, long-term adoption, destination execution and complete token capture remain unresolved. A successful platform can also be concentrated if a few integrations aggregate many users. Neither the positive nor negative platform conclusion is forced.
 
-[Public app](https://kang5647.github.io/sigtrail/) · [Findings and sensitivity table](FINDINGS.md) · [Long-term thesis](THESIS.md) · [Methodology](METHODOLOGY.md) · [60–90-second demonstration](DEMO.md)
+[Public app](https://kang5647.github.io/sigtrail/) · [83-second captioned demo](https://kang5647.github.io/sigtrail/watch.html) · [Findings and sensitivity table](FINDINGS.md) · [Long-term thesis](THESIS.md) · [Methodology](METHODOLOGY.md) · [60–90-second demonstration](DEMO.md)
 
 ## Investigate it
 
@@ -73,6 +73,6 @@ Sigtrail was previously named Capture Test. It is the same project and authentic
 
 Related independent projects in this production portfolio are Orbit, PrizeKey and AfterVote. No implementation is imported here. The per-person maximum of two projects and cross-project participation must be reconciled; two accounts do not establish eligibility. No X post or hackathon form submission has been performed.
 
-Hosting uses free GitHub Pages from the `gh-pages` branch; full source remains on `main`. The rejected generated voice clone is excluded from every public artifact. The research demo uses captions unless an acceptable authorized voice asset is supplied.
+Hosting uses free GitHub Pages from the `gh-pages` branch; full source remains on `main`. The research walkthrough is captioned; no personal voice reference files or model identifiers are published.
 
 MIT covers this project's own code. Vendored GSAP from the earlier interface retains its [standard license](https://gsap.com/standard-license/); the present workbench does not load it. UI uses DM Sans with system fallbacks. No credentials, private strategy, raw voice samples, voice IDs, signing service or personal submission payload belongs in the public bundle.

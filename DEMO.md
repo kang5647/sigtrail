@@ -1,6 +1,8 @@
 # Sigtrail · captioned research demonstration
 
-Target: 75–85 seconds. Show the actual workbench continuously with real clicks, matched-window changes, record inspection and a real export. Keep the app readable. No rejected voice clone, synthetic presenter, forced reveal, invented success or destination settlement claim.
+Recorded captioned walkthrough: **83.43 seconds**, available at [watch.html](https://kang5647.github.io/sigtrail/watch.html). The exact 160-word script below matches its captions.
+
+Target: 75–85 seconds. Show the actual workbench continuously with real clicks, matched-window changes, record inspection and a real export. Keep the app readable. Use captions and preserve the actual UI actions, exact evidence and qualified claims.
 
 ## Exact script
 
@@ -28,7 +30,7 @@ I can export the exact selection and rebuild the result from the sealed raw reco
 2. Select **Distinct signing inputs**; hold on 567 → 574 and the definition.
 3. Select **First 30 min**, then **Last 30 min**; keep both contrary results readable.
 4. Restore **Full hour**; filter **zcash-connector.bridge.near**, inspect one repeated group, and show the two exact receipt IDs and separate same-parent failure fact. Inspect raw arguments if the frame permits.
-5. Show the interpretation/unknowns and export all selected receipt rows. The downloaded file must match the active scope.
+5. Show the interpretation/unknowns and export the inspected input group: two original receipts with their arguments and source seal. The broader selected-cohort CSV remains available in the workbench.
 6. Finish on the reproduction commands/source archive and the qualified answer. Do not speed up gestures or clip reading time to force the target duration.
 
 The displayed counts are generated from the sealed raw comparison, verified by JavaScript tests and an independent Python reconstruction. This is two selected hours, not two full days or a general adoption trend. See [FINDINGS.md](FINDINGS.md), [METHODOLOGY.md](METHODOLOGY.md) and [THESIS.md](THESIS.md).

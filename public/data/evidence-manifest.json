@@ -52,8 +52,8 @@
     "bytes": 19352
   },
   "../DEMO.md": {
-    "sha256": "3237cb0c1580f9d44c06685056a5c68c4e3460be1e593222c1292424696d7c62",
-    "bytes": 2450
+    "sha256": "577e5e87a039220012a11e392de43f2ce78dd1418c0833ca891a942f86195f2b",
+    "bytes": 2685
   },
   "../THESIS.md": {
     "sha256": "a8fea5e2440135a48685a724b7537a36815beee2ab113bd9438ed4efbf3b442b",
@@ -62,5 +62,13 @@
   "../FINDINGS.md": {
     "sha256": "cb6bd481963df345fd53454b4b2e2ddc1158f87d4814600e21b01a701a388707",
     "bytes": 7473
+  },
+  "../walkthrough.mp4": {
+    "sha256": "24442968a3baac608efc7c0582e588635715980c5d91367ab4d3416e3cc786f4",
+    "bytes": 14385929
+  },
+  "../walkthrough.srt": {
+    "sha256": "8b7997099106db2dbff5c3afd61eae541db06a1409c47fbbc4757802a962f87c",
+    "bytes": 1647
   }
 }

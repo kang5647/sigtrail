@@ -1,8 +1,20 @@
 # Capture Test
 
-**Chain Signatures are demonstrably used, but this evidence does not yet establish broad demand from independently operated applications or material NEAR token capture.** A post hoc census of the 11 November 2026 UTC parent-transaction cohort found **14,234/17,665 direct `v1.signer.sign` receipts (80.6%)** from the top three initiating accounts. The earlier fixed window found **72/80 (90%)**, and twelve spaced windows found **1,219/1,482 (82.3%)**. The observed `sign`-stage burn was **0.000418941041 NEAR per receipt** in the fixed fee sample; at that charge, even one million hypothetical direct requests per day would offset only **0.4541%** of contemporaneous gross issuance.
+**More cross-chain activity. How much value comes back to NEAR?**
 
-Capture Test is a receipt-level Investment Thesis dashboard. It asks who actually calls NEAR Chain Signatures, whether those callers are independent applications, and how much the measured execution-stage burn could matter for NEAR supply. It deliberately separates this question from NEAR Intents fees and buybacks. Read the generated [two-sentence verdict and full thesis](THESIS.md).
+[NEAR Chain Signatures](https://docs.near.org/chain-abstraction/chain-signatures) lets NEAR accounts authorize transactions on other blockchains. For someone evaluating NEAR’s long-term investment case, the missing link is between that useful technology, repeat demand from independent applications, and value captured by the NEAR token. Activity counts alone do not establish that link.
+
+Capture Test is an **Investment Thesis** dashboard that lets a reader inspect real signing requests, check which accounts initiate them, and test how measured signing-stage fees compare with gross NEAR issuance. It separates observed evidence from user assumptions and keeps Chain Signatures distinct from NEAR Intents fees and buybacks.
+
+### Why investigate? Three pieces of evidence
+
+| Evidence | What it tells us | Check it |
+| --- | --- | --- |
+| **170 signer-touching transactions; 80 direct signing requests** in one fixed 1,000-block window. | Touching the signer is different from making a new signing request. These are different units, not a conversion or success rate. | [Classified receipt rows](public/data/receipt-audit.csv), block range 224000000–224000999; [classification method](METHODOLOGY.md). |
+| **14,234 of 17,665 direct requests (80.6%)** came from three initiating accounts in the indexed 11 November 2026 UTC parent-transaction cohort. | Activity is concentrated by account. This does not identify independent operators or prove that demand is artificial. | [Full-day receipt rows](public/data/full-day-receipt-audit.csv), [archive](public/data/full-day-census.json.gz), [cohort boundaries](METHODOLOGY.md). |
+| **One million hypothetical requests/day → 418.94 NEAR/day**, about **0.4541%** of the observed daily gross issuance baseline, at the sampled charge. | Even substantial hypothetical demand needs economic scale analysis. This measures the direct signing stage only; it is not total workflow burn or a price forecast. | [80 measured fee outcomes](public/data/fee-audit.csv), [issuance audit and model inputs](public/data/snapshot.json), [full derivation](THESIS.md). |
+
+**Current thesis:** Chain Signatures usage is real. This dated evidence does not yet establish broad independent-application demand or material NEAR token capture. That is a bounded research conclusion, not a claim that the technology lacks value. Read the generated [full thesis and what would change the verdict](THESIS.md).
 
 ## Do X → see Y
 

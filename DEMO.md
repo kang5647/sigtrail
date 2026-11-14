@@ -2,6 +2,12 @@
 
 [Watch the actual-app walkthrough](public/demo.mp4). This captioned cut is currently silent; narration can be added without changing the dated evidence or calculations.
 
+## Problem and evidence opening for the next recording
+
+“NEAR lets apps sign transactions on other blockchains. But if that activity grows, how much value comes back to NEAR? Capture Test checks the evidence.”
+
+Show the dated concentration finding, inspect an actual request, then change a burn-model assumption. The concentration observation and the fee scenario answer different questions; neither is a price forecast. Use the README’s evidence table for exact counts and source links. The existing video linked above predates this revised narration; a new face-led recording is not yet complete.
+
 ## Reproduce the moment
 
 Run `npm run serve` and open `http://127.0.0.1:4177`.

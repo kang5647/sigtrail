@@ -229,6 +229,7 @@ function render(data) {
   $('#census-share').textContent = percent(census.topThreeShare);
   $('#census-fraction').textContent = `${integer(census.topThreeCount)} of ${integer(census.categories.request)} direct requests`;
   $('#census-accounts').textContent = integer(census.initiatingAccounts);
+  $('#census-fetched').textContent = `FastNear index fetched ${new Date(census.fetchedAtUtc).toLocaleString('en-US', { timeZone: 'UTC', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })} UTC · archive SHA-256 ${census.archiveSha256.slice(0, 12)}…`;
   for (const caller of census.topCallers.slice(0, 4)) {
     const cell = element('div');
     cell.append(element('span', '', caller.account), element('strong', '', integer(caller.count)));

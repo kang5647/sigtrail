@@ -51,7 +51,7 @@ function showReceipt(request, receipt) {
   inspector.append(link);
 }
 
-function renderModel(averageNear) {
+function renderModel(averageNear, dailyIssuanceNear) {
   const inputs = ['#model-requests', '#model-independent', '#model-multiple'].map(selector => $(selector));
   const requests = Number($('#model-requests').value);
   const independent = Number($('#model-independent').value);
@@ -64,11 +64,13 @@ function renderModel(averageNear) {
   if (!valid) {
     $('#model-daily').textContent = 'Enter values in range';
     $('#model-yearly').textContent = '—';
+    $('#model-ratio').textContent = '—';
     return;
   }
   const daily = requests * independent / 100 * averageNear * multiple;
   $('#model-daily').textContent = `${daily.toLocaleString('en-US', { maximumFractionDigits: 4 })} NEAR`;
   $('#model-yearly').textContent = `${(daily * 365).toLocaleString('en-US', { maximumFractionDigits: 2 })} NEAR`;
+  $('#model-ratio').textContent = `${(daily / dailyIssuanceNear * 100).toFixed(4)}%`;
 }
 
 function renderWindow(data, index) {
@@ -125,6 +127,9 @@ function renderWindow(data, index) {
 }
 
 function render(data) {
+  const moneyGrid = document.querySelector('.money-grid');
+  moneyGrid.before(document.querySelector('.fee-panel'));
+  moneyGrid.before(element('h3', 'intents-heading', 'Separate context: NEAR Intents fees and buybacks'));
   const latest = data.signerWindows.at(-1);
   $('#hero-share').textContent = `${Math.round(latest.topThreeShare * 100)}%`;
   $('#hero-count').textContent = `${integer(latest.topThreeCount)} of ${integer(latest.categories.request)}`;
@@ -140,10 +145,22 @@ function render(data) {
   $('#fee-10k').textContent = data.feeFootprint.scenarios.find(row => row.dailyRequests === 10_000).signReceiptNearPerDay.toFixed(1);
   $('#fee-100k').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 100_000).signReceiptNearPerDay);
   $('#fee-million').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 1_000_000).signReceiptNearPerDay);
-  for (const selector of ['#model-requests', '#model-independent', '#model-multiple']) {
-    $(selector).addEventListener('input', () => renderModel(data.feeFootprint.averageNear));
+  const issuance = data.issuanceAudit;
+  $('#issuance-seven').textContent = `${integer(issuance.mintedNearInWindow)} NEAR`;
+  $('#issuance-daily').textContent = `${integer(issuance.dailyMintedNear)} NEAR`;
+  $('#issuance-yearly').textContent = `${integer(issuance.annualizedMintedNear)} NEAR`;
+  $('#issuance-period').textContent = `${issuance.windowStartUtc.slice(0, 10)} to ${issuance.windowEndUtc.slice(0, 10)} UTC · ${issuance.epochs.length} epoch transitions · gross validator and treasury rewards. Source is archived mainnet validator RPC, not a fixed inflation-rate assumption.`;
+  for (const threshold of issuance.model.thresholds) {
+    const row = element('div', 'threshold-row');
+    row.append(element('span', '', `${threshold.issuanceSharePct}% of observed issuance`),
+      element('strong', '', integer(threshold.requestsPerDay)),
+      element('small', '', 'direct sign requests / day at 1× sampled burn'));
+    $('#threshold-rows').append(row);
   }
-  renderModel(data.feeFootprint.averageNear);
+  for (const selector of ['#model-requests', '#model-independent', '#model-multiple']) {
+    $(selector).addEventListener('input', () => renderModel(data.feeFootprint.averageNear, issuance.dailyMintedNear));
+  }
+  renderModel(data.feeFootprint.averageNear, issuance.dailyMintedNear);
 
   const tabs = $('#window-tabs');
   data.signerWindows.forEach((window, index) => {
@@ -169,6 +186,23 @@ function render(data) {
     bar.style.height = `${Math.max(4, window.categories.request / max * 82)}px`;
     column.append(bar, element('span', 'comparison-label', shortDate(window.observedRange[0])));
     $('#comparison-bars').append(column);
+  }
+  for (const window of data.signerWindows) {
+    const row = element('div', 'matrix-row');
+    const heading = element('div', 'matrix-heading');
+    heading.append(element('strong', '', shortDate(window.observedRange[0])), element('small', '', `Block ${integer(window.blocks[0])}`));
+    row.append(heading);
+    for (const [label, value] of [
+      ['Direct requests', integer(window.categories.request)],
+      ['Caller accounts', integer(window.uniqueCallers)],
+      ['Top one', `${integer(window.topCallers[0]?.count || 0)} · ${percent(window.topCallerShare)}`],
+      ['Top three', `${integer(window.topThreeCount)} · ${percent(window.topThreeShare)}`],
+    ]) {
+      const cell = element('div', 'matrix-cell');
+      cell.append(element('span', '', label), element('strong', '', value));
+      row.append(cell);
+    }
+    $('#window-matrix-rows').append(row);
   }
   const activity = data.activitySeries;
   if (Array.isArray(activity) && activity.length) {
@@ -215,8 +249,10 @@ try {
   const response = await fetch('./data/snapshot.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`Data request failed (${response.status})`);
   const data = await response.json();
-  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare) || !Number.isFinite(data.feeFootprint?.averageNear)) throw new Error('Signer audit data is incomplete');
+  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare) || !Number.isFinite(data.feeFootprint?.averageNear) || !Number.isFinite(data.issuanceAudit?.dailyMintedNear)) throw new Error('Signer or issuance audit data is incomplete');
   render(data);
+  const proof = await fetch('./data/rebuild-proof.txt', { cache: 'no-store' });
+  if (proof.ok) $('#rebuild-output').textContent = await proof.text();
 } catch (error) {
   const banner = $('#error');
   banner.textContent = `Could not load the audit: ${error.message}. Run npm run refresh, then serve this directory over HTTP.`;

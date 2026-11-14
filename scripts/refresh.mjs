@@ -284,6 +284,9 @@ const snapshot = {
   activitySeries,
   crossChainCase,
   feeFootprint,
+  // The issuance baseline is a fixed archival audit. Update it separately with
+  // `npm run issuance-check`; do not silently replace it during a fee refresh.
+  issuanceAudit: previousSnapshot?.issuanceAudit,
 };
 const { files } = rebuildArtifacts(snapshot);
 await writeArtifacts(new URL('../public/data/', import.meta.url), files);

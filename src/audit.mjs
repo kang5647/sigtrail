@@ -1,4 +1,5 @@
 import { analyzeReceipts, summarizeSeries } from './analysis.mjs';
+import { analyzeIssuanceAudit } from './issuance.mjs';
 
 export function assertCompleteHistory(rows, expectedCount, start) {
   if (!Number.isSafeInteger(expectedCount) || expectedCount < 0) throw new Error(`Invalid reported count for ${start}`);
@@ -70,6 +71,7 @@ export function rebuildArtifacts(source) {
     dayWindows,
     daySummary,
     feeFootprint,
+    issuanceAudit: source.issuanceAudit ? analyzeIssuanceAudit(source.issuanceAudit, feeFootprint) : undefined,
   };
   const csv = ['window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_timestamp_utc'];
   for (const window of new Map([...signerWindows, ...dayWindows].map(window => [window.blocks[0], window])).values()) {

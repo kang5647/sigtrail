@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "rebuild": "node scripts/rebuild.mjs",
+    "issuance-check": "node scripts/issuance-check.mjs",
+    "concentration-check": "node scripts/concentration-report.mjs",
     "spot-check": "node scripts/spot-check.mjs",
     "protocol-check": "node scripts/protocol-check.mjs",
     "refresh": "node scripts/refresh.mjs",

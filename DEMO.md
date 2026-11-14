@@ -1,21 +1,25 @@
 # Capture Test demonstration
 
+The current product is an independent four-view research workspace. The video is a separate presentation of selected interactions.
+
 The current 68-second production assembly is **awaiting Michael’s recording**. No synthetic Michael voice is used. The obsolete 32-second preview is archived privately. Final audio synchronization and the final public video link remain blocked on the human recording and publication authorization.
 
 Run `npm test`, `npm run independent-audit`, `npm run rebuild`, then `npm run serve`. Open http://127.0.0.1:4177.
 
 | Time | Actual screen action | Narration |
 | --- | --- | --- |
-| 0–6s | Short problem slide | Transaction counts can look like adoption. But who is actually generating the activity? |
-| 6–13s | The Finding, dated scope and denominator | Capture Test examines NEAR Chain Signatures, where NEAR accounts request signatures for actions across chains. |
-| 13–21s | Concentration and leading accounts | In the November eleventh UTC parent cohort, three accounts initiated eighty point six percent of direct requests. |
-| 21–30s | Verify this exact cohort; select omni.bridge.near | Choose an account. The count narrows to its exact receipts, with parent transaction links and recorded timestamps. |
-| 30–34s | Export all 8,492 matching receipts | Export the matching rows. |
-| 34–39s | Open the first public parent transaction; inspect its sign receipt | Open a public request. Its receiver and method are visible in the trace. |
-| 39–48s | What Changed?; enlarged matched-hour summary cards | Matched UTC hours show six hundred and fifteen requests becoming six hundred. Concentration increased. |
-| 48–51s | Hold the matched-hour scope and summary | Two hours do not establish an adoption trend. |
-| 51–60s | Economic evidence; change requests from one to ten million | The fee model tests hypothetical demand against measured signing charges. It covers only the direct signing stage. |
-| 60–68s | Clear closing slide | Accounts are not independent applications. Capture Test shows what an investment thesis can verify, and what still needs proof. |
+| 0–5s | Original question slide | Is NEAR’s cross-chain infrastructure actually gaining adoption? |
+| 5–12s | Actual app Overview; scope, metrics and account mix | Capture Test gives researchers a dated view of activity, account mix, and the evidence behind that story. |
+| 12–18s | Compare periods | Compare matched periods. These two hours show six hundred and fifteen requests becoming six hundred. |
+| 18–22s | Hold matched-hour scope | That comparison does not establish a lasting trend. |
+| 22–27s | Accounts & receipts | Filter the initiating account to inspect its exact requests. |
+| 27–33s | Select omni.bridge.near; 8,492 matching requests | This account has eight thousand, four hundred and ninety-two requests. Export every matching row. |
+| 33–37s | Actual CSV export and visible result | The export retains receipt IDs and parent transactions. |
+| 37–42s | Public parent trace, exact sign receipt | Open the public trace to verify the receiver and signing method. |
+| 42–48s | Implications view | The investment read stays bounded: real service use, but unproven growth in independent application adoption. |
+| 48–54s | Concrete research signals and explicit unknowns | Watch for sustained use across unrelated apps, completed external actions, and full-workflow economics. |
+| 54–60s | Direct-stage fee assumptions | Current fee estimates cover only the initial signing stage. They do not establish material NEAR token demand. |
+| 60–68s | Original closing slide | Capture Test makes the adoption story easier to examine, with conclusions you can trace back to the evidence. |
 
 Captions follow these ordinary spoken sentences without a redundant provenance footer. Cohort and saved-evidence labels stay in the application. Recording timings are provisional until Michael’s actual delivery is integrated; never speed or clone his voice to force a fit.
 

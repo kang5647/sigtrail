@@ -1,10 +1,12 @@
 # Capture Test
 
-**More cross-chain activity. How much value comes back to NEAR?**
+**Is NEAR’s cross-chain infrastructure actually gaining adoption?**
 
-[NEAR Chain Signatures](https://docs.near.org/chain-abstraction/chain-signatures) lets NEAR accounts authorize transactions on other blockchains. For someone evaluating NEAR’s long-term investment case, the missing link is between that useful technology, repeat demand from independent applications, and value captured by the NEAR token. Activity counts alone do not establish that link.
+Capture Test is an explorable research application for dated NEAR Chain Signatures activity. Review scope and metrics, compare matched periods, filter initiating accounts, export exact receipts, and inspect the investment implications. Every view is independently accessible; no presentation or reveal step is required.
 
-Checking that link requires tracing requests, identifying initiating accounts and calculating fees. Capture Test brings the receipts, caller breakdown and fee model into one **Investment Thesis** dashboard: a researcher can inspect real signing requests and test how different usage assumptions compare with gross NEAR issuance. It separates observed evidence from user assumptions and keeps Chain Signatures distinct from NEAR Intents fees and buybacks.
+[NEAR Chain Signatures](https://docs.near.org/chain-abstraction/chain-signatures) lets NEAR accounts authorize actions on other blockchains. The application separates use of that service from unverified claims about growing independent-app adoption, completed destination actions or material token demand.
+
+This is a saved research snapshot, not a live monitor. Its value is making the observations and their interpretation easier to inspect and reproduce. Fresh comparable observations and verified operator/outcome evidence are still needed for a durable adoption assessment.
 
 ### Why investigate? Three pieces of evidence
 
@@ -30,13 +32,14 @@ Open `http://localhost:4177`.
 
 | Do this | See this |
 | --- | --- |
-| Open **The Finding** | 14,234 / 17,665 distinct direct requests (80.6%) came from three initiating accounts in the 11 November UTC parent cohort. |
-| Click **Verify this exact cohort** | The inspector opens the same full-day population used in the headline. |
-| Choose `omni.bridge.near` under **Initiating account** | 8,492 matching receipts; the table shows the first 20 exact receipt/parent IDs. |
-| Click **Export matching receipts** | A CSV with all 8,492 matching receipt IDs, parent hashes, account IDs and creation timestamps. |
-| Open **What Changed?** | Two archived UTC hours (00:00–01:00, 10 and 11 November): 615 → 600 requests, −2.4%; top-three share 75.1% → 83.0%. These are not full-day growth or independent-app adoption estimates. |
-| Open **Economic evidence and a bounded sensitivity model** under **The Finding** | At 1,000,000 hypothetical requests/day and 1× sampled fee: 418.94 NEAR/day, 0.4541% of normalized gross issuance. Change requests to 10,000,000 to see 4.5405%. |
-| Run `npm run independent-audit` then `npm run rebuild` | Independently recount the archive, then regenerate the finding ledger, comparison, CSVs, snapshot and thesis offline. |
+| Open **Overview** | The dated scope, 17,665 requests, 82 initiating account IDs, 37,775 parent transactions and top-three share. Account mix and a bounded interpretation are visible immediately. |
+| Open **Compare periods** | 615 → 600 requests, −2.4%, in two matched UTC hours; top-three share 75.1% → 83.0%. This is not a lasting trend. |
+| Open **Accounts & receipts**, then choose `omni.bridge.near` | 8,492 matching direct requests, with exact receipt and parent IDs. |
+| Click **Export matching receipts** | A CSV with every selected row, not only the 20 displayed. |
+| Open a row's public parent transaction | Public explorer evidence for that request. Requests do not establish destination settlement. |
+| Open **Implications** | Evidence interpretation, explicit unknowns, and concrete signals that would change the research case. |
+| Expand **Direct-stage fees and sensitivity assumptions** | At one million hypothetical requests/day, sampled initial-stage charges imply 0.4541% of normalized gross daily issuance; ten million implies 4.5405%. |
+| Run `npm run independent-audit` then `npm run build` | Independently recount retained evidence, then reproduce the public artifacts and thesis offline. |
 
 No scenario input identifies independent applications. The burn model includes only direct sign execution and excludes parent transactions, responses, cleanup, other contracts and destination fees. It is not a forecast or price target.
 

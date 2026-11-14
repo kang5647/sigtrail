@@ -54,6 +54,10 @@ export function rebuildArtifacts(source) {
       feeRows.length !== requestIds.size || feeRows.some(row => !requestIds.has(row.receiptId) || !/^\d+$/.test(row.tokensBurntYocto))) {
     throw new Error('Fee audit does not cover each direct sign receipt exactly once');
   }
+  const requestParents = new Map(signerWindows.at(-1).receipts.filter(receipt => requestIds.has(receipt.id)).map(receipt => [receipt.id, receipt.transaction_hash]));
+  if (feeRows.some(row => row.transactionHash !== requestParents.get(row.receiptId))) {
+    throw new Error('Fee receipt parent transaction differs from the classified signing request');
+  }
   const totalYocto = feeRows.reduce((sum, row) => sum + BigInt(row.tokensBurntYocto), 0n);
   const totalNear = Number(totalYocto) / 1e24;
   feeFootprint.receiptCount = feeRows.length;

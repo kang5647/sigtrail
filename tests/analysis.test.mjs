@@ -97,3 +97,11 @@ test('protocol reward interpretation rejects malformed or non-mainnet config', (
   assert.throws(() => parseGasReward({ ...config, chain_id: 'testnet' }, 224000000), /Invalid mainnet/);
   assert.throws(() => parseGasReward({ ...config, runtime_config: { transaction_costs: { burnt_gas_reward: [1, 0] } } }, 224000000), /Invalid burnt_gas_reward/);
 });
+
+test('normal rebuild rejects a fee receipt attributed to the wrong parent transaction', async () => {
+ const source=JSON.parse(await readFile(new URL('../public/data/snapshot.json',import.meta.url),'utf8'));
+ const altered=structuredClone(source);
+ altered.feeFootprint.receipts[0].transactionHash=altered.feeFootprint.receipts[1].transactionHash;
+ assert.notEqual(altered.feeFootprint.receipts[0].transactionHash,source.feeFootprint.receipts[0].transactionHash);
+ assert.throws(()=>rebuildArtifacts(altered),/parent transaction differs/);
+});

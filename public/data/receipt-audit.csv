@@ -1,4 +1,4 @@
-window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_timestamp_utc
+window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_created_timestamp_utc
 "200000000","200000999","9pHWStjYp8VeNrRU2UnTJyxxvhm8HqdKeLyaSLQqYEQQ","2kp51ScYrTHnXquX5nUe972bcXV9UfNY3Ds8SkogzrwZ","stakin-mpc.near","respond","2026-05-26T14:06:56.927Z"
 "200000000","200000999","33P315qCZNWMt2VXgapFLwAPCGzWQUzRPZ8pV1uVJLZG","3vsfL5gLVVN8EwV61z7DmQ3C7b9U9DUrZG865s8a8N6E","fast-auth.near","sign","2026-05-26T14:07:23.554Z"
 "200000000","200000999","8TgftiQFi57ty6sAqkyABWwgwF6JFyoJvQtsmZj5qfKa","3vsfL5gLVVN8EwV61z7DmQ3C7b9U9DUrZG865s8a8N6E","v1.signer","return_signature_and_clean_state_on_success","2026-05-26T14:07:23.554Z"

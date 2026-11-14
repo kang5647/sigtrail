@@ -59,14 +59,14 @@ export function analyzeFullDayRecord(record, archiveSha256) {
     archiveSha256, transactionHashesSha256: hashesSha,
     touchingTransactions: record.touchingTransactions,
     categories: analysis.categories, receiptCount: analysis.sampleSize,
-    receiptsExecutedOutsideUtcDay: outsideUtcDay.length,
-    directSignsExecutedOutsideUtcDay: outsideAnalysis.categories.request,
+    receiptsCreatedOutsideUtcDay: outsideUtcDay.length,
+    directSignsCreatedOutsideUtcDay: outsideAnalysis.categories.request,
     initiatingAccounts: analysis.uniqueCallers, topCallers: analysis.topCallers,
     topOneCount: analysis.topCallers[0]?.count || 0,
     topOneShare: analysis.topCallerShare,
     topThreeCount: analysis.topThreeCount,
     topThreeShare: analysis.topThreeShare };
-  const csv = ['receipt_id,parent_transaction_hash,initiating_account,method,receipt_timestamp_utc'];
+  const csv = ['receipt_id,parent_transaction_hash,initiating_account,method,receipt_created_timestamp_utc'];
   const seen = new Set();
   for (const receipt of record.receipts) {
     if (seen.has(receipt.id)) continue;

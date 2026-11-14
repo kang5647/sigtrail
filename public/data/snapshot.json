@@ -109794,8 +109794,8 @@
       "other_receipt": 0
     },
     "receiptCount": 56716,
-    "receiptsExecutedOutsideUtcDay": 2,
-    "directSignsExecutedOutsideUtcDay": 1,
+    "receiptsCreatedOutsideUtcDay": 2,
+    "directSignsCreatedOutsideUtcDay": 1,
     "initiatingAccounts": 82,
     "topCallers": [
       {

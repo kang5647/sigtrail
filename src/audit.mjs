@@ -73,7 +73,7 @@ export function rebuildArtifacts(source) {
     feeFootprint,
     issuanceAudit: source.issuanceAudit ? analyzeIssuanceAudit(source.issuanceAudit, feeFootprint) : undefined,
   };
-  const csv = ['window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_timestamp_utc'];
+  const csv = ['window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_created_timestamp_utc'];
   for (const window of new Map([...signerWindows, ...dayWindows].map(window => [window.blocks[0], window])).values()) {
     for (const receipt of window.receipts) {
       for (const action of receipt.actions) {

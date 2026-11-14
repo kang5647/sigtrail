@@ -1,4 +1,4 @@
-receipt_id,parent_transaction_hash,initiating_account,method,receipt_timestamp_utc
+receipt_id,parent_transaction_hash,initiating_account,method,receipt_created_timestamp_utc
 "DC9fx5zJvJMJyWSPbumuGDmYGQMZvvrdf1oXZRCHr2bq","2jUXCQTY5EWkqU5GKYUVrK3QKHsAoVfR38pBDYH7Bary","tx-bench.near","sign","2026-11-11T00:01:18.560Z"
 "EoRJjDutPPk4tHQTpSzpPX4wGJpDYhvpqfF6QsmvYVZz","2jUXCQTY5EWkqU5GKYUVrK3QKHsAoVfR38pBDYH7Bary","v1.signer","return_signature_and_clean_state_on_success","2026-11-11T00:01:18.560Z"
 "6S8Zva1gLXoGJqsNk2eKncuEwWobqzHSzMG37uAtA6Vx","2oTr6peagkQcSatR8ki2dBQabUnERRTV5nRctd25zzxh","natsai-mpc.near","respond","2026-11-11T00:01:12.307Z"

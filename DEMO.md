@@ -1,26 +1,26 @@
-# Look past the activity — 32 seconds
+# Capture Test demonstration
 
-[Watch the actual-app walkthrough](public/demo.mp4). This captioned cut is currently silent; narration can be added without changing the dated evidence or calculations.
+The current 68-second production assembly is **awaiting Michael’s recording**. No synthetic Michael voice is used. The obsolete 32-second preview is archived privately. Final audio synchronization and the final public video link remain blocked on the human recording and publication authorization.
 
-## Problem and evidence opening for the next recording
+Run `npm test`, `npm run independent-audit`, `npm run rebuild`, then `npm run serve`. Open http://127.0.0.1:4177.
 
-“If you’re researching NEAR, growing transaction numbers only tell part of the story. They don’t tell you how widely the technology is being used, or how much NEAR those requests burn in fees. Capture Test brings the requests, caller breakdown and fee model into one dashboard, so you can inspect the evidence and test your assumptions.”
+| Time | Actual screen action | Narration |
+| --- | --- | --- |
+| 0–6s | Short problem slide | Transaction counts can look like adoption. But who is actually generating the activity? |
+| 6–13s | The Finding, dated scope and denominator | Capture Test examines NEAR Chain Signatures, where NEAR accounts request signatures for actions across chains. |
+| 13–21s | Concentration and leading accounts | In the November eleventh UTC parent cohort, three accounts initiated eighty point six percent of direct requests. |
+| 21–30s | Verify this exact cohort; select omni.bridge.near | Choose an account. The count narrows to its exact receipts, with parent transaction links and recorded timestamps. |
+| 30–34s | Export all 8,492 matching receipts | Export the matching rows. |
+| 34–39s | Open the first public parent transaction; inspect its sign receipt | Open a public request. Its receiver and method are visible in the trace. |
+| 39–48s | What Changed?; enlarged matched-hour summary cards | Matched UTC hours show six hundred and fifteen requests becoming six hundred. Concentration increased. |
+| 48–51s | Hold the matched-hour scope and summary | Two hours do not establish an adoption trend. |
+| 51–60s | Economic evidence; change requests from one to ten million | The fee model tests hypothetical demand against measured signing charges. It covers only the direct signing stage. |
+| 60–68s | Clear closing slide | Accounts are not independent applications. Capture Test shows what an investment thesis can verify, and what still needs proof. |
 
-Show the dated concentration finding, inspect an actual request, then change a burn-model assumption. The concentration observation and the fee scenario answer different questions; neither is a price forecast. Use the README’s evidence table for exact counts and source links. The existing video linked above predates this revised narration; a new face-led recording is not yet complete.
+Captions follow these ordinary spoken sentences without a redundant provenance footer. Cohort and saved-evidence labels stay in the application. Recording timings are provisional until Michael’s actual delivery is integrated; never speed or clone his voice to force a fit.
 
-## Reproduce the moment
+The public request shot shows receipt `HvLvAtJCexC3neX4uxG4UeZH7ZniPA63WZyracCgwAZr`, receiver `v1.signer`, predecessor `omni.bridge.near`, exact method `sign`, in parent `49YbWgMy4hKtcSSGZ36E4yD5mi8miuGHFXTPeWLrpxui`. This verifies the selected request, not a destination settlement. The explorer displays local time; the app’s UTC creation timestamp remains authoritative for the archived label.
 
-Run `npm run serve` and open `http://127.0.0.1:4177`.
+The full-day finding uses 14,234 / 17,665 distinct `sign` receipts, with exact receiver filtering at collection. The inspector and filtered export use that same population. The comparison is the first UTC hour on 10 and 11 November, selected post hoc; it is separate from the headline. Account IDs do not count applications, and requests do not establish settlements.
 
-1. The opening donut shows **80.6%** of the **17,665** direct signing requests in the dated **11 November UTC parent-transaction cohort** originated from three account IDs. These are accounts, not unique users or verified independent applications.
-2. Click **Inspect a real request** (`#explore-proof`). Select a `.proof-row`, then expand **Exact receipt and parent transaction**. This inspector uses the separately documented fixed historical windows; it is not presented as a receipt-level drilldown of the full-day concentration count.
-3. Select **Test impact** (`#tab-model`). At **1,000,000 assumed requests/day**, **100% assumed independent-app share** and **1×** sampled fee, estimated sign-stage burn is **418.94 NEAR/day**, or **0.4541%** of the observed normalized gross issuance baseline.
-4. Click **10 million** (`[data-requests="10000000"]`). The scenario changes to **4.5405%**. Inputs are assumptions; the result is not measured demand, complete workflow burn, net supply or a price forecast. Outputs include only the assumed independent-app share; other calls also burn fees.
-
-The fee input comes from 80 measured direct-sign outcomes. The issuance baseline is a separate seven-day archival reward audit. A direct signing request does not establish destination-chain settlement. Source data, research conclusions and calculations remain unchanged by this presentation update.
-
-## Capture and validation
-
-The video is actual browser footage sampled about 10 times per second, encoded at 30 fps with short captions. No slides or fabricated screens. [Desktop](evidence/bright-desktop.jpg) and [390px phone](evidence/bright-phone.jpg) were checked; neither had horizontal overflow. Reduced-motion preferences are respected.
-
-All **19 tests** passed, including independent reproduction of cohort counts, fee arithmetic, issuance and the committed thesis. No new network census, wallet, transaction, publication or deployment was performed for this UI update. Follow the README to rebuild the saved evidence or deliberately recollect it.
+Use the thesis, methodology, raw archives and independent audit for all analytical boundaries. The 80 measured fee outcomes cover the initial `sign` stage; full-day actual fees and full-workflow burn remain unmeasured. All demonstration actions read saved mainnet records or calculate explicit hypothetical scenarios. No new blockchain transaction is performed.

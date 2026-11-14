@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 
 const snapshot = JSON.parse(readFileSync(new URL('../public/data/snapshot.json', import.meta.url)));
 const lines = readFileSync(new URL('../public/data/receipt-audit.csv', import.meta.url), 'utf8').trim().split(/\r?\n/);
-const header = 'window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_timestamp_utc';
+const header = 'window_start,window_end,receipt_id,transaction_hash,predecessor,method,receipt_created_timestamp_utc';
 if (lines.shift() !== header) throw new Error('Unexpected receipt CSV header');
 const records = new Map();
 for (const line of lines) {

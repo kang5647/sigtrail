@@ -1,0 +1,820 @@
+{
+  "scope": "Independent recount of committed records; no production analyzer imports",
+  "archiveSha256": "9b36c9c2f86575a788b68b1592b33f1b7a9cdf0c81b73ea7afd6a87b6960c065",
+  "indexedParents": 37775,
+  "fullDay": {
+    "receipts": 56716,
+    "methods": {
+      "sign": 17665,
+      "return_signature_and_clean_state_on_success": 17665,
+      "respond": 17892,
+      "submit_participant_info": 384,
+      "resolve_verification": 384,
+      "respond_verify_foreign_tx": 872,
+      "verify_foreign_transaction": 859,
+      "return_verify_foreign_tx_and_clean_state_on_success": 859,
+      "fail_on_timeout": 1,
+      "derived_public_key": 11,
+      "vote_tee_verifier_change": 13,
+      "respond_ckd": 22,
+      "request_app_private_key": 22,
+      "return_ck_and_clean_state_on_success": 22,
+      "verify_tee": 23,
+      "vote_add_domains": 15,
+      "register_foreign_chains_config": 7
+    },
+    "directSign": 17665,
+    "initiatingAccounts": 82,
+    "topThree": [
+      [
+        "omni.bridge.near",
+        8492
+      ],
+      [
+        "fast-auth.near",
+        3304
+      ],
+      [
+        "btc-connector.bridge.near",
+        2438
+      ]
+    ],
+    "topThreeCount": 14234
+  },
+  "historicalAndSpacedWindows": [
+    {
+      "blocks": [
+        200000000,
+        200000999
+      ],
+      "parentObservedRange": [
+        "2026-05-26T14:06:52.154Z",
+        "2026-05-26T14:16:54.588Z"
+      ],
+      "receipts": 628,
+      "methods": {
+        "respond": 207,
+        "sign": 210,
+        "return_signature_and_clean_state_on_success": 210,
+        "submit_participant_info": 1
+      },
+      "directSign": 210,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          119
+        ],
+        [
+          "7eda04920f22ba6a2b9f2573fd9a6f6f1946ff9f.aurora",
+          46
+        ],
+        [
+          "tx-bench.near",
+          21
+        ]
+      ],
+      "topThreeCount": 186
+    },
+    {
+      "blocks": [
+        204000000,
+        204000999
+      ],
+      "parentObservedRange": [
+        "2026-06-23T21:09:13.181Z",
+        "2026-06-23T21:19:16.186Z"
+      ],
+      "receipts": 637,
+      "methods": {
+        "respond": 217,
+        "sign": 210,
+        "return_signature_and_clean_state_on_success": 210
+      },
+      "directSign": 210,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          130
+        ],
+        [
+          "btc-connector.bridge.near",
+          23
+        ],
+        [
+          "omni.bridge.near",
+          20
+        ]
+      ],
+      "topThreeCount": 173
+    },
+    {
+      "blocks": [
+        208000000,
+        208000999
+      ],
+      "parentObservedRange": [
+        "2026-07-22T03:49:26.664Z",
+        "2026-07-22T03:59:19.207Z"
+      ],
+      "receipts": 437,
+      "methods": {
+        "respond": 145,
+        "sign": 145,
+        "return_signature_and_clean_state_on_success": 145,
+        "submit_participant_info": 2
+      },
+      "directSign": 145,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "fast-auth.near",
+          77
+        ],
+        [
+          "btc-connector.bridge.near",
+          29
+        ],
+        [
+          "tx-bench.near",
+          20
+        ]
+      ],
+      "topThreeCount": 126
+    },
+    {
+      "blocks": [
+        212000000,
+        212000999
+      ],
+      "parentObservedRange": [
+        "2026-08-19T11:18:41.972Z",
+        "2026-08-19T11:28:54.267Z"
+      ],
+      "receipts": 800,
+      "methods": {
+        "sign": 264,
+        "return_signature_and_clean_state_on_success": 264,
+        "respond": 267,
+        "submit_participant_info": 2,
+        "derived_public_key": 2,
+        "resolve_verification": 1
+      },
+      "directSign": 264,
+      "initiatingAccounts": 12,
+      "topThree": [
+        [
+          "fast-auth.near",
+          115
+        ],
+        [
+          "btc-connector.bridge.near",
+          50
+        ],
+        [
+          "omni.bridge.near",
+          45
+        ]
+      ],
+      "topThreeCount": 210
+    },
+    {
+      "blocks": [
+        216000000,
+        216000999
+      ],
+      "parentObservedRange": [
+        "2026-09-17T02:13:46.273Z",
+        "2026-09-17T02:23:48.285Z"
+      ],
+      "receipts": 368,
+      "methods": {
+        "respond": 121,
+        "sign": 119,
+        "return_signature_and_clean_state_on_success": 119,
+        "submit_participant_info": 4,
+        "verify_foreign_transaction": 1,
+        "return_verify_foreign_tx_and_clean_state_on_success": 1,
+        "respond_verify_foreign_tx": 1,
+        "derived_public_key": 2
+      },
+      "directSign": 119,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          49
+        ],
+        [
+          "tx-bench.near",
+          20
+        ],
+        [
+          "zcash-connector.bridge.near",
+          20
+        ]
+      ],
+      "topThreeCount": 89
+    },
+    {
+      "blocks": [
+        220000000,
+        220000999
+      ],
+      "parentObservedRange": [
+        "2026-10-14T23:47:24.676Z",
+        "2026-10-14T23:57:07.682Z"
+      ],
+      "receipts": 212,
+      "methods": {
+        "sign": 69,
+        "return_signature_and_clean_state_on_success": 69,
+        "respond": 67,
+        "submit_participant_info": 4,
+        "resolve_verification": 3
+      },
+      "directSign": 69,
+      "initiatingAccounts": 11,
+      "topThree": [
+        [
+          "btc-connector.bridge.near",
+          21
+        ],
+        [
+          "omni.bridge.near",
+          19
+        ],
+        [
+          "fast-auth.near",
+          16
+        ]
+      ],
+      "topThreeCount": 56
+    },
+    {
+      "blocks": [
+        224000000,
+        224000999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T01:50:48.366Z",
+        "2026-11-11T01:59:42.082Z"
+      ],
+      "receipts": 253,
+      "methods": {
+        "respond": 85,
+        "sign": 80,
+        "return_signature_and_clean_state_on_success": 80,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "respond_verify_foreign_tx": 2,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 80,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          43
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          7
+        ]
+      ],
+      "topThreeCount": 72
+    },
+    {
+      "blocks": [
+        224000000,
+        224000999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T01:50:48.366Z",
+        "2026-11-11T01:59:42.082Z"
+      ],
+      "receipts": 253,
+      "methods": {
+        "respond": 85,
+        "sign": 80,
+        "return_signature_and_clean_state_on_success": 80,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "respond_verify_foreign_tx": 2,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 80,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          43
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          7
+        ]
+      ],
+      "topThreeCount": 72
+    },
+    {
+      "blocks": [
+        224012000,
+        224012999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T03:46:59.445Z",
+        "2026-11-11T03:56:37.613Z"
+      ],
+      "receipts": 327,
+      "methods": {
+        "sign": 105,
+        "return_signature_and_clean_state_on_success": 105,
+        "respond": 106,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 105,
+      "initiatingAccounts": 7,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          53
+        ],
+        [
+          "fast-auth.near",
+          21
+        ],
+        [
+          "btc-connector.bridge.near",
+          14
+        ]
+      ],
+      "topThreeCount": 88
+    },
+    {
+      "blocks": [
+        224024000,
+        224024999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T05:45:36.330Z",
+        "2026-11-11T05:55:10.293Z"
+      ],
+      "receipts": 290,
+      "methods": {
+        "respond": 95,
+        "sign": 96,
+        "return_signature_and_clean_state_on_success": 96,
+        "verify_foreign_transaction": 1,
+        "return_verify_foreign_tx_and_clean_state_on_success": 1,
+        "respond_verify_foreign_tx": 1
+      },
+      "directSign": 96,
+      "initiatingAccounts": 7,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          50
+        ],
+        [
+          "btc-connector.bridge.near",
+          22
+        ],
+        [
+          "fast-auth.near",
+          14
+        ]
+      ],
+      "topThreeCount": 86
+    },
+    {
+      "blocks": [
+        224036000,
+        224036999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T07:44:05.467Z",
+        "2026-11-11T07:53:58.711Z"
+      ],
+      "receipts": 380,
+      "methods": {
+        "respond": 135,
+        "sign": 119,
+        "return_signature_and_clean_state_on_success": 119,
+        "respond_verify_foreign_tx": 2,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "vote_tee_verifier_change": 1
+      },
+      "directSign": 119,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          48
+        ],
+        [
+          "zcash-connector.bridge.near",
+          28
+        ],
+        [
+          "fast-auth.near",
+          20
+        ]
+      ],
+      "topThreeCount": 96
+    },
+    {
+      "blocks": [
+        224048000,
+        224048999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T09:41:06.305Z",
+        "2026-11-11T09:50:46.212Z"
+      ],
+      "receipts": 398,
+      "methods": {
+        "respond": 123,
+        "sign": 121,
+        "return_signature_and_clean_state_on_success": 121,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10,
+        "respond_verify_foreign_tx": 10,
+        "vote_tee_verifier_change": 3
+      },
+      "directSign": 121,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          65
+        ],
+        [
+          "zcash-connector.bridge.near",
+          20
+        ],
+        [
+          "btc-connector.bridge.near",
+          16
+        ]
+      ],
+      "topThreeCount": 101
+    },
+    {
+      "blocks": [
+        224060000,
+        224060999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T11:36:52.075Z",
+        "2026-11-11T11:46:24.351Z"
+      ],
+      "receipts": 413,
+      "methods": {
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "sign": 129,
+        "return_signature_and_clean_state_on_success": 129,
+        "respond": 131,
+        "respond_verify_foreign_tx": 2,
+        "verify_tee": 16,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 129,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          66
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          19
+        ]
+      ],
+      "topThreeCount": 107
+    },
+    {
+      "blocks": [
+        224072000,
+        224072999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T13:31:56.766Z",
+        "2026-11-11T13:41:19.591Z"
+      ],
+      "receipts": 455,
+      "methods": {
+        "sign": 144,
+        "return_signature_and_clean_state_on_success": 144,
+        "respond": 143,
+        "submit_participant_info": 3,
+        "resolve_verification": 3,
+        "verify_foreign_transaction": 6,
+        "return_verify_foreign_tx_and_clean_state_on_success": 6,
+        "respond_verify_foreign_tx": 6
+      },
+      "directSign": 144,
+      "initiatingAccounts": 11,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          62
+        ],
+        [
+          "btc-connector.bridge.near",
+          27
+        ],
+        [
+          "fast-auth.near",
+          25
+        ]
+      ],
+      "topThreeCount": 114
+    },
+    {
+      "blocks": [
+        224084000,
+        224084999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T15:33:04.452Z",
+        "2026-11-11T15:42:42.238Z"
+      ],
+      "receipts": 441,
+      "methods": {
+        "respond": 144,
+        "sign": 143,
+        "return_signature_and_clean_state_on_success": 143,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 143,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          56
+        ],
+        [
+          "btc-connector.bridge.near",
+          28
+        ],
+        [
+          "fast-auth.near",
+          28
+        ]
+      ],
+      "topThreeCount": 112
+    },
+    {
+      "blocks": [
+        224096000,
+        224096999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T17:29:48.847Z",
+        "2026-11-11T17:39:23.388Z"
+      ],
+      "receipts": 505,
+      "methods": {
+        "respond": 158,
+        "sign": 155,
+        "return_signature_and_clean_state_on_success": 155,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10,
+        "respond_verify_foreign_tx": 10,
+        "submit_participant_info": 3,
+        "resolve_verification": 3,
+        "derived_public_key": 1
+      },
+      "directSign": 155,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          57
+        ],
+        [
+          "fast-auth.near",
+          49
+        ],
+        [
+          "btc-connector.bridge.near",
+          29
+        ]
+      ],
+      "topThreeCount": 135
+    },
+    {
+      "blocks": [
+        224108000,
+        224108999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T19:28:46.305Z",
+        "2026-11-11T19:39:05.947Z"
+      ],
+      "receipts": 376,
+      "methods": {
+        "respond": 112,
+        "sign": 111,
+        "return_signature_and_clean_state_on_success": 111,
+        "submit_participant_info": 6,
+        "resolve_verification": 6,
+        "respond_verify_foreign_tx": 10,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10
+      },
+      "directSign": 111,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          56
+        ],
+        [
+          "fast-auth.near",
+          27
+        ],
+        [
+          "btc-connector.bridge.near",
+          10
+        ]
+      ],
+      "topThreeCount": 93
+    },
+    {
+      "blocks": [
+        224120000,
+        224120999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T21:29:15.585Z",
+        "2026-11-11T21:38:59.798Z"
+      ],
+      "receipts": 503,
+      "methods": {
+        "respond": 162,
+        "sign": 162,
+        "return_signature_and_clean_state_on_success": 162,
+        "submit_participant_info": 4,
+        "resolve_verification": 4,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3
+      },
+      "directSign": 162,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          78
+        ],
+        [
+          "btc-connector.bridge.near",
+          27
+        ],
+        [
+          "fast-auth.near",
+          27
+        ]
+      ],
+      "topThreeCount": 132
+    },
+    {
+      "blocks": [
+        224132000,
+        224132999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T23:25:21.140Z",
+        "2026-11-11T23:34:48.423Z"
+      ],
+      "receipts": 403,
+      "methods": {
+        "respond": 120,
+        "sign": 117,
+        "return_signature_and_clean_state_on_success": 117,
+        "respond_verify_foreign_tx": 13,
+        "verify_foreign_transaction": 13,
+        "return_verify_foreign_tx_and_clean_state_on_success": 13,
+        "submit_participant_info": 5,
+        "resolve_verification": 5
+      },
+      "directSign": 117,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          52
+        ],
+        [
+          "btc-connector.bridge.near",
+          33
+        ],
+        [
+          "fast-auth.near",
+          21
+        ]
+      ],
+      "topThreeCount": 106
+    }
+  ],
+  "pooledSpaced": {
+    "receipts": 4744,
+    "methods": {
+      "respond": 1514,
+      "sign": 1482,
+      "return_signature_and_clean_state_on_success": 1482,
+      "verify_foreign_transaction": 65,
+      "return_verify_foreign_tx_and_clean_state_on_success": 65,
+      "respond_verify_foreign_tx": 65,
+      "submit_participant_info": 25,
+      "resolve_verification": 25,
+      "vote_tee_verifier_change": 4,
+      "verify_tee": 16,
+      "derived_public_key": 1
+    },
+    "directSign": 1482,
+    "initiatingAccounts": 18,
+    "topThree": [
+      [
+        "omni.bridge.near",
+        686
+      ],
+      [
+        "fast-auth.near",
+        287
+      ],
+      [
+        "btc-connector.bridge.near",
+        246
+      ]
+    ],
+    "topThreeCount": 1219
+  },
+  "feeOutcomes": 80,
+  "feeSumYocto": "33515283269620000000000",
+  "averageSignChargeNear": 0.00041894104087025,
+  "rewardMaps": 25,
+  "grossRewardsYocto": "645868122218432013441559002016",
+  "grossRewardsDailyNear": 92266.87460263315,
+  "netSupplyChangeYocto": "640251368455432230888835903392",
+  "grossMinusNetYocto": "5616753762999782552723098624",
+  "separateIntentsContext": {
+    "currentPeriod": [
+      "2026-10-14",
+      "2026-11-12"
+    ],
+    "sums": {
+      "intentsFees": 5807392,
+      "intentsNetRevenue": 1836360,
+      "intentsHoldersRevenue": 1836360,
+      "appFees": 6558401.369999998
+    },
+    "changeVsPrior": -0.2909604474937748
+  },
+  "matchedComparison": [
+    {
+      "date": "2026-11-10",
+      "indexedParents": 1295,
+      "directRequests": 615,
+      "initiatingAccounts": 12,
+      "totalTokensBurntYocto": "257842719043961800000000",
+      "topThreeCount": 462
+    },
+    {
+      "date": "2026-11-11",
+      "indexedParents": 1253,
+      "directRequests": 600,
+      "initiatingAccounts": 13,
+      "totalTokensBurntYocto": "251489829827030500000000",
+      "topThreeCount": 498
+    }
+  ]
+}

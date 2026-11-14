@@ -1,0 +1,1419 @@
+{
+  "scope": "Independent recount of committed records; no production analyzer imports",
+  "archiveSha256": "9b36c9c2f86575a788b68b1592b33f1b7a9cdf0c81b73ea7afd6a87b6960c065",
+  "indexedParents": 37775,
+  "fullDay": {
+    "receipts": 56716,
+    "methods": {
+      "sign": 17665,
+      "return_signature_and_clean_state_on_success": 17665,
+      "respond": 17892,
+      "submit_participant_info": 384,
+      "resolve_verification": 384,
+      "respond_verify_foreign_tx": 872,
+      "verify_foreign_transaction": 859,
+      "return_verify_foreign_tx_and_clean_state_on_success": 859,
+      "fail_on_timeout": 1,
+      "derived_public_key": 11,
+      "vote_tee_verifier_change": 13,
+      "respond_ckd": 22,
+      "request_app_private_key": 22,
+      "return_ck_and_clean_state_on_success": 22,
+      "verify_tee": 23,
+      "vote_add_domains": 15,
+      "register_foreign_chains_config": 7
+    },
+    "directSign": 17665,
+    "initiatingAccounts": 82,
+    "topThree": [
+      [
+        "omni.bridge.near",
+        8492
+      ],
+      [
+        "fast-auth.near",
+        3304
+      ],
+      [
+        "btc-connector.bridge.near",
+        2438
+      ]
+    ],
+    "topThreeCount": 14234
+  },
+  "historicalAndSpacedWindows": [
+    {
+      "blocks": [
+        200000000,
+        200000999
+      ],
+      "parentObservedRange": [
+        "2026-05-26T14:06:52.154Z",
+        "2026-05-26T14:16:54.588Z"
+      ],
+      "receipts": 628,
+      "methods": {
+        "respond": 207,
+        "sign": 210,
+        "return_signature_and_clean_state_on_success": 210,
+        "submit_participant_info": 1
+      },
+      "directSign": 210,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          119
+        ],
+        [
+          "7eda04920f22ba6a2b9f2573fd9a6f6f1946ff9f.aurora",
+          46
+        ],
+        [
+          "tx-bench.near",
+          21
+        ]
+      ],
+      "topThreeCount": 186
+    },
+    {
+      "blocks": [
+        204000000,
+        204000999
+      ],
+      "parentObservedRange": [
+        "2026-06-23T21:09:13.181Z",
+        "2026-06-23T21:19:16.186Z"
+      ],
+      "receipts": 637,
+      "methods": {
+        "respond": 217,
+        "sign": 210,
+        "return_signature_and_clean_state_on_success": 210
+      },
+      "directSign": 210,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          130
+        ],
+        [
+          "btc-connector.bridge.near",
+          23
+        ],
+        [
+          "omni.bridge.near",
+          20
+        ]
+      ],
+      "topThreeCount": 173
+    },
+    {
+      "blocks": [
+        208000000,
+        208000999
+      ],
+      "parentObservedRange": [
+        "2026-07-22T03:49:26.664Z",
+        "2026-07-22T03:59:19.207Z"
+      ],
+      "receipts": 437,
+      "methods": {
+        "respond": 145,
+        "sign": 145,
+        "return_signature_and_clean_state_on_success": 145,
+        "submit_participant_info": 2
+      },
+      "directSign": 145,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "fast-auth.near",
+          77
+        ],
+        [
+          "btc-connector.bridge.near",
+          29
+        ],
+        [
+          "tx-bench.near",
+          20
+        ]
+      ],
+      "topThreeCount": 126
+    },
+    {
+      "blocks": [
+        212000000,
+        212000999
+      ],
+      "parentObservedRange": [
+        "2026-08-19T11:18:41.972Z",
+        "2026-08-19T11:28:54.267Z"
+      ],
+      "receipts": 800,
+      "methods": {
+        "sign": 264,
+        "return_signature_and_clean_state_on_success": 264,
+        "respond": 267,
+        "submit_participant_info": 2,
+        "derived_public_key": 2,
+        "resolve_verification": 1
+      },
+      "directSign": 264,
+      "initiatingAccounts": 12,
+      "topThree": [
+        [
+          "fast-auth.near",
+          115
+        ],
+        [
+          "btc-connector.bridge.near",
+          50
+        ],
+        [
+          "omni.bridge.near",
+          45
+        ]
+      ],
+      "topThreeCount": 210
+    },
+    {
+      "blocks": [
+        216000000,
+        216000999
+      ],
+      "parentObservedRange": [
+        "2026-09-17T02:13:46.273Z",
+        "2026-09-17T02:23:48.285Z"
+      ],
+      "receipts": 368,
+      "methods": {
+        "respond": 121,
+        "sign": 119,
+        "return_signature_and_clean_state_on_success": 119,
+        "submit_participant_info": 4,
+        "verify_foreign_transaction": 1,
+        "return_verify_foreign_tx_and_clean_state_on_success": 1,
+        "respond_verify_foreign_tx": 1,
+        "derived_public_key": 2
+      },
+      "directSign": 119,
+      "initiatingAccounts": 9,
+      "topThree": [
+        [
+          "fast-auth.near",
+          49
+        ],
+        [
+          "tx-bench.near",
+          20
+        ],
+        [
+          "zcash-connector.bridge.near",
+          20
+        ]
+      ],
+      "topThreeCount": 89
+    },
+    {
+      "blocks": [
+        220000000,
+        220000999
+      ],
+      "parentObservedRange": [
+        "2026-10-14T23:47:24.676Z",
+        "2026-10-14T23:57:07.682Z"
+      ],
+      "receipts": 212,
+      "methods": {
+        "sign": 69,
+        "return_signature_and_clean_state_on_success": 69,
+        "respond": 67,
+        "submit_participant_info": 4,
+        "resolve_verification": 3
+      },
+      "directSign": 69,
+      "initiatingAccounts": 11,
+      "topThree": [
+        [
+          "btc-connector.bridge.near",
+          21
+        ],
+        [
+          "omni.bridge.near",
+          19
+        ],
+        [
+          "fast-auth.near",
+          16
+        ]
+      ],
+      "topThreeCount": 56
+    },
+    {
+      "blocks": [
+        224000000,
+        224000999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T01:50:48.366Z",
+        "2026-11-11T01:59:42.082Z"
+      ],
+      "receipts": 253,
+      "methods": {
+        "respond": 85,
+        "sign": 80,
+        "return_signature_and_clean_state_on_success": 80,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "respond_verify_foreign_tx": 2,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 80,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          43
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          7
+        ]
+      ],
+      "topThreeCount": 72
+    },
+    {
+      "blocks": [
+        224000000,
+        224000999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T01:50:48.366Z",
+        "2026-11-11T01:59:42.082Z"
+      ],
+      "receipts": 253,
+      "methods": {
+        "respond": 85,
+        "sign": 80,
+        "return_signature_and_clean_state_on_success": 80,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "respond_verify_foreign_tx": 2,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 80,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          43
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          7
+        ]
+      ],
+      "topThreeCount": 72
+    },
+    {
+      "blocks": [
+        224012000,
+        224012999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T03:46:59.445Z",
+        "2026-11-11T03:56:37.613Z"
+      ],
+      "receipts": 327,
+      "methods": {
+        "sign": 105,
+        "return_signature_and_clean_state_on_success": 105,
+        "respond": 106,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 105,
+      "initiatingAccounts": 7,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          53
+        ],
+        [
+          "fast-auth.near",
+          21
+        ],
+        [
+          "btc-connector.bridge.near",
+          14
+        ]
+      ],
+      "topThreeCount": 88
+    },
+    {
+      "blocks": [
+        224024000,
+        224024999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T05:45:36.330Z",
+        "2026-11-11T05:55:10.293Z"
+      ],
+      "receipts": 290,
+      "methods": {
+        "respond": 95,
+        "sign": 96,
+        "return_signature_and_clean_state_on_success": 96,
+        "verify_foreign_transaction": 1,
+        "return_verify_foreign_tx_and_clean_state_on_success": 1,
+        "respond_verify_foreign_tx": 1
+      },
+      "directSign": 96,
+      "initiatingAccounts": 7,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          50
+        ],
+        [
+          "btc-connector.bridge.near",
+          22
+        ],
+        [
+          "fast-auth.near",
+          14
+        ]
+      ],
+      "topThreeCount": 86
+    },
+    {
+      "blocks": [
+        224036000,
+        224036999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T07:44:05.467Z",
+        "2026-11-11T07:53:58.711Z"
+      ],
+      "receipts": 380,
+      "methods": {
+        "respond": 135,
+        "sign": 119,
+        "return_signature_and_clean_state_on_success": 119,
+        "respond_verify_foreign_tx": 2,
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "vote_tee_verifier_change": 1
+      },
+      "directSign": 119,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          48
+        ],
+        [
+          "zcash-connector.bridge.near",
+          28
+        ],
+        [
+          "fast-auth.near",
+          20
+        ]
+      ],
+      "topThreeCount": 96
+    },
+    {
+      "blocks": [
+        224048000,
+        224048999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T09:41:06.305Z",
+        "2026-11-11T09:50:46.212Z"
+      ],
+      "receipts": 398,
+      "methods": {
+        "respond": 123,
+        "sign": 121,
+        "return_signature_and_clean_state_on_success": 121,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10,
+        "respond_verify_foreign_tx": 10,
+        "vote_tee_verifier_change": 3
+      },
+      "directSign": 121,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          65
+        ],
+        [
+          "zcash-connector.bridge.near",
+          20
+        ],
+        [
+          "btc-connector.bridge.near",
+          16
+        ]
+      ],
+      "topThreeCount": 101
+    },
+    {
+      "blocks": [
+        224060000,
+        224060999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T11:36:52.075Z",
+        "2026-11-11T11:46:24.351Z"
+      ],
+      "receipts": 413,
+      "methods": {
+        "verify_foreign_transaction": 2,
+        "return_verify_foreign_tx_and_clean_state_on_success": 2,
+        "sign": 129,
+        "return_signature_and_clean_state_on_success": 129,
+        "respond": 131,
+        "respond_verify_foreign_tx": 2,
+        "verify_tee": 16,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 129,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          66
+        ],
+        [
+          "fast-auth.near",
+          22
+        ],
+        [
+          "btc-connector.bridge.near",
+          19
+        ]
+      ],
+      "topThreeCount": 107
+    },
+    {
+      "blocks": [
+        224072000,
+        224072999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T13:31:56.766Z",
+        "2026-11-11T13:41:19.591Z"
+      ],
+      "receipts": 455,
+      "methods": {
+        "sign": 144,
+        "return_signature_and_clean_state_on_success": 144,
+        "respond": 143,
+        "submit_participant_info": 3,
+        "resolve_verification": 3,
+        "verify_foreign_transaction": 6,
+        "return_verify_foreign_tx_and_clean_state_on_success": 6,
+        "respond_verify_foreign_tx": 6
+      },
+      "directSign": 144,
+      "initiatingAccounts": 11,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          62
+        ],
+        [
+          "btc-connector.bridge.near",
+          27
+        ],
+        [
+          "fast-auth.near",
+          25
+        ]
+      ],
+      "topThreeCount": 114
+    },
+    {
+      "blocks": [
+        224084000,
+        224084999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T15:33:04.452Z",
+        "2026-11-11T15:42:42.238Z"
+      ],
+      "receipts": 441,
+      "methods": {
+        "respond": 144,
+        "sign": 143,
+        "return_signature_and_clean_state_on_success": 143,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3,
+        "submit_participant_info": 1,
+        "resolve_verification": 1
+      },
+      "directSign": 143,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          56
+        ],
+        [
+          "btc-connector.bridge.near",
+          28
+        ],
+        [
+          "fast-auth.near",
+          28
+        ]
+      ],
+      "topThreeCount": 112
+    },
+    {
+      "blocks": [
+        224096000,
+        224096999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T17:29:48.847Z",
+        "2026-11-11T17:39:23.388Z"
+      ],
+      "receipts": 505,
+      "methods": {
+        "respond": 158,
+        "sign": 155,
+        "return_signature_and_clean_state_on_success": 155,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10,
+        "respond_verify_foreign_tx": 10,
+        "submit_participant_info": 3,
+        "resolve_verification": 3,
+        "derived_public_key": 1
+      },
+      "directSign": 155,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          57
+        ],
+        [
+          "fast-auth.near",
+          49
+        ],
+        [
+          "btc-connector.bridge.near",
+          29
+        ]
+      ],
+      "topThreeCount": 135
+    },
+    {
+      "blocks": [
+        224108000,
+        224108999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T19:28:46.305Z",
+        "2026-11-11T19:39:05.947Z"
+      ],
+      "receipts": 376,
+      "methods": {
+        "respond": 112,
+        "sign": 111,
+        "return_signature_and_clean_state_on_success": 111,
+        "submit_participant_info": 6,
+        "resolve_verification": 6,
+        "respond_verify_foreign_tx": 10,
+        "verify_foreign_transaction": 10,
+        "return_verify_foreign_tx_and_clean_state_on_success": 10
+      },
+      "directSign": 111,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          56
+        ],
+        [
+          "fast-auth.near",
+          27
+        ],
+        [
+          "btc-connector.bridge.near",
+          10
+        ]
+      ],
+      "topThreeCount": 93
+    },
+    {
+      "blocks": [
+        224120000,
+        224120999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T21:29:15.585Z",
+        "2026-11-11T21:38:59.798Z"
+      ],
+      "receipts": 503,
+      "methods": {
+        "respond": 162,
+        "sign": 162,
+        "return_signature_and_clean_state_on_success": 162,
+        "submit_participant_info": 4,
+        "resolve_verification": 4,
+        "verify_foreign_transaction": 3,
+        "return_verify_foreign_tx_and_clean_state_on_success": 3,
+        "respond_verify_foreign_tx": 3
+      },
+      "directSign": 162,
+      "initiatingAccounts": 8,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          78
+        ],
+        [
+          "btc-connector.bridge.near",
+          27
+        ],
+        [
+          "fast-auth.near",
+          27
+        ]
+      ],
+      "topThreeCount": 132
+    },
+    {
+      "blocks": [
+        224132000,
+        224132999
+      ],
+      "parentObservedRange": [
+        "2026-11-11T23:25:21.140Z",
+        "2026-11-11T23:34:48.423Z"
+      ],
+      "receipts": 403,
+      "methods": {
+        "respond": 120,
+        "sign": 117,
+        "return_signature_and_clean_state_on_success": 117,
+        "respond_verify_foreign_tx": 13,
+        "verify_foreign_transaction": 13,
+        "return_verify_foreign_tx_and_clean_state_on_success": 13,
+        "submit_participant_info": 5,
+        "resolve_verification": 5
+      },
+      "directSign": 117,
+      "initiatingAccounts": 10,
+      "topThree": [
+        [
+          "omni.bridge.near",
+          52
+        ],
+        [
+          "btc-connector.bridge.near",
+          33
+        ],
+        [
+          "fast-auth.near",
+          21
+        ]
+      ],
+      "topThreeCount": 106
+    }
+  ],
+  "pooledSpaced": {
+    "receipts": 4744,
+    "methods": {
+      "respond": 1514,
+      "sign": 1482,
+      "return_signature_and_clean_state_on_success": 1482,
+      "verify_foreign_transaction": 65,
+      "return_verify_foreign_tx_and_clean_state_on_success": 65,
+      "respond_verify_foreign_tx": 65,
+      "submit_participant_info": 25,
+      "resolve_verification": 25,
+      "vote_tee_verifier_change": 4,
+      "verify_tee": 16,
+      "derived_public_key": 1
+    },
+    "directSign": 1482,
+    "initiatingAccounts": 18,
+    "topThree": [
+      [
+        "omni.bridge.near",
+        686
+      ],
+      [
+        "fast-auth.near",
+        287
+      ],
+      [
+        "btc-connector.bridge.near",
+        246
+      ]
+    ],
+    "topThreeCount": 1219
+  },
+  "feeOutcomes": 80,
+  "feeSumYocto": "33515283269620000000000",
+  "averageSignChargeNear": 0.00041894104087025,
+  "rewardMaps": 25,
+  "grossRewardsYocto": "645868122218432013441559002016",
+  "grossRewardsDailyNear": 92266.87460263315,
+  "netSupplyChangeYocto": "640251368455432230888835903392",
+  "grossMinusNetYocto": "5616753762999782552723098624",
+  "separateIntentsContext": {
+    "currentPeriod": [
+      "2026-10-14",
+      "2026-11-12"
+    ],
+    "sums": {
+      "intentsFees": 5807392,
+      "intentsNetRevenue": 1836360,
+      "intentsHoldersRevenue": 1836360,
+      "appFees": 6558401.369999998
+    },
+    "changeVsPrior": -0.2909604474937748
+  },
+  "liveRecheck": {
+    "checkedAtUtc": "2026-11-14T12:01:59.929039+00:00",
+    "feeReceiptsVerified": 80,
+    "rewardMapsVerified": 25,
+    "supplyBoundaryBlocksVerified": 4,
+    "fullDayBoundaryBlocks": [
+      {
+        "height": 223988377,
+        "hash": "FSJAHKeqiJ2bCcCTQq8Len3Lqb8M8umzctu5HSaq43dQ",
+        "timeUtc": "2026-11-10T23:59:59.397Z"
+      },
+      {
+        "height": 223988378,
+        "hash": "AL2hAQv6jYiiTMDLG158nPu6FhvGcB9k8J5kymvvpPCW",
+        "timeUtc": "2026-11-11T00:00:00.014Z"
+      },
+      {
+        "height": 224135609,
+        "hash": "EacX9sDK6GTbMsqUfvhged4BvR94mVkfWexsFxWbELbU",
+        "timeUtc": "2026-11-11T23:59:59.752Z"
+      },
+      {
+        "height": 224135610,
+        "hash": "JD95GM2eLSyetHJRK9TRVyXVZ4iwcDtNVv5bwRgTMWfc",
+        "timeUtc": "2026-11-12T00:00:00.223Z"
+      }
+    ],
+    "protocolConfigs": [
+      {
+        "height": 200000000,
+        "version": 83,
+        "burntGasReward": [
+          3,
+          10
+        ]
+      },
+      {
+        "height": 220000000,
+        "version": 86,
+        "burntGasReward": [
+          3,
+          10
+        ]
+      },
+      {
+        "height": 224000000,
+        "version": 88,
+        "burntGasReward": [
+          0,
+          1
+        ]
+      }
+    ],
+    "feeReceiptTimestampChecks": [
+      {
+        "receiptId": "8SxUtETsdB82sTNG4HbuKPwu6XTL3HrGrm7QumEACpzK",
+        "parentTransaction": "2kooARtgwMikuUMrrFnSspq8xB6YgzTUvuFBPAkbwn1c",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "Epi9Srm24ifqAZbRooaW95KKQZcMLbbS69yBc8H3jeWe",
+        "parentTransaction": "2nTcu5bx7ECgZhTa4pH6TxquHKt1gaczFEuEi1xCBFfo",
+        "receiptRecordedTimestampNs": "1794361918608735519",
+        "executionTimestampNs": "1794361918608735519",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "HuKnttYdzQuZj6cMctqoaat4Kb4BguEiZEsDuQprdZFu",
+        "parentTransaction": "8PDbad7HgvRJEoSjaTCUeApnLHwcer2JVVnbJH9kRic4",
+        "receiptRecordedTimestampNs": "1794361891362590140",
+        "executionTimestampNs": "1794361891362590140",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "F3uPj5zfgvnHdmzZRerVdC3fXvRyHAHBVLrtTYvXv2f2",
+        "parentTransaction": "9jsoD6xhwZjdhHpqHBwEzuP7NaShNNxRdakKKbGRBXnF",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "9HydgBYTRQ5vAdX27XcJTfvZ1gkoB8N85mJ2E4UFj7HM",
+        "parentTransaction": "A3AMVRyS1Ceq9SFRVuQaBipbGzsgD4odBpvAXkmGuDfc",
+        "receiptRecordedTimestampNs": "1794361898639330904",
+        "executionTimestampNs": "1794361898639330904",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "8onYabZfqu2ea5AXvoURESBRQ9qHjfrqNB1VVJYFBQmC",
+        "parentTransaction": "ET6XjaR323hwyzsKPYTEPZpi153Z5XPsDAUpcMRiFREm",
+        "receiptRecordedTimestampNs": "1794361849471525238",
+        "executionTimestampNs": "1794361849471525238",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "97dVvXRV4EsugHjScdevfaVybXnDQ5BfADqSb2zxatgx",
+        "parentTransaction": "RE8rWbsu2MSaC8fb333A6JCLngzShG74qX55uFMTSYj",
+        "receiptRecordedTimestampNs": "1794361851540375503",
+        "executionTimestampNs": "1794361851540375503",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "83i1pu7gyxVc3KzELu2TcxQgqgpda85ywaBRghBS4qBM",
+        "parentTransaction": "2RpPdJYW343rJMRL63WYpKtLZkK7YWw5fNenpMHA6vTv",
+        "receiptRecordedTimestampNs": "1794361877817692908",
+        "executionTimestampNs": "1794361877817692908",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "Lw6fdyM9ocwQzr6TgnZ7JjWiFG2r56a51aHF1byVCJb",
+        "parentTransaction": "2jF4MqKc9rTESLQ4uC96VcfkzPS7rqwZNvLSAJ3ff7kB",
+        "receiptRecordedTimestampNs": "1794361890241474993",
+        "executionTimestampNs": "1794361890241474993",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "6kJpXqoTFWVaKqEWv8H8ox21svrJsdgwEMpMJXevTW6d",
+        "parentTransaction": "392vaVwRpjeiWpQ5zPjCNhLwyLzZg2WEPu2zgu1Sqbbf",
+        "receiptRecordedTimestampNs": "1794361898060904567",
+        "executionTimestampNs": "1794361898060904567",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "8n8SsDhhzKjzn3JH9YJZLPn3fRpEkoKTTtzPmjTUL2X3",
+        "parentTransaction": "3r6Fbu4KfK61Ub8MRGQCBrWvp333sMJ56pdaQhCm97uc",
+        "receiptRecordedTimestampNs": "1794361878343170948",
+        "executionTimestampNs": "1794361878343170948",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "7H6G6P7TbMnvBMx8SCcv5JooE3EMDkB7QAh2mTXEAJ2F",
+        "parentTransaction": "4NGBfQSwfrCG78qYVnsLqmRUCxos2ZZPJamLbZmFWCAd",
+        "receiptRecordedTimestampNs": "1794361852213360999",
+        "executionTimestampNs": "1794361852213360999",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "2TiMxJ1sVYRfQgaFBv3FwdbcTD7bRMcvN1yyQXxcCpVc",
+        "parentTransaction": "4YVFgPxsbxx6emRmxHBGQdqdUD8BbfiVp4W95t96ZpJw",
+        "receiptRecordedTimestampNs": "1794361913521289301",
+        "executionTimestampNs": "1794361913521289301",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "cPVeydewkN87zZyTQGsGqLM64HGq3HET1KAefCN38mp",
+        "parentTransaction": "4nxZ7tNaSZprt1pL238rLm9y9J31kWR1kyeryBYKweDg",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "61GT4X3Qy8JjHTkZVoGjTjK6mmYhaLrVEaecQRFYzLsh",
+        "parentTransaction": "75rR7wDgPKvGxa4vSYrRU8HvHfTavTMRqREfnDiqAi8X",
+        "receiptRecordedTimestampNs": "1794361851540375503",
+        "executionTimestampNs": "1794361851540375503",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "Csrf24oVjEgGPVtxvFjECctiJpxZoC8MMo8GxpiBRsWA",
+        "parentTransaction": "7nEn9CfaV7ZoPwo14Vya82JfW5ZtJGjZVuYQMQDAs3kL",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CbmSy7f6urTR6ki6moziW93MSqEyHvHzATYf96KAEnJD",
+        "parentTransaction": "9Vo1fVA9WznS1YwcoyviNBkb2YWLUo1kCUETRca6R3vQ",
+        "receiptRecordedTimestampNs": "1794361922757460903",
+        "executionTimestampNs": "1794361922757460903",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "8DmQHNeqRwMZoRvCkGfcTDRBN5aAyDByWKUX7zdQ6ktH",
+        "parentTransaction": "9Z9iMWUFnGuHyavLaWL5ixEg3THDY5UbXSJUKwD78ahv",
+        "receiptRecordedTimestampNs": "1794361921541073728",
+        "executionTimestampNs": "1794361921541073728",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "8XAZcFbT4CQC8EfoxAT2qoTmMrszVSoA4JtoKPeUum9i",
+        "parentTransaction": "AbxrFdPrrJM6qNXNK3VfAgG2gsjVwjk1uDR2FESWj3D5",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "E65WBRA78vo1gxYKzaw3V81WYcBYRGDPUh9iRrPazigj",
+        "parentTransaction": "EXJQaLJxtjauhyvLTztJviG6TVqkhRf6TxbmqBf9nok6",
+        "receiptRecordedTimestampNs": "1794361907812273380",
+        "executionTimestampNs": "1794361907812273380",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "beNq86Am2kxucWE2zVeZbWd5nhz8CSgL7hFjRen97Qp",
+        "parentTransaction": "2awBHWBYUHWMw4hTZKj9pJV2UmSTpmCSLPFUN4g6wwcF",
+        "receiptRecordedTimestampNs": "1794362000649568402",
+        "executionTimestampNs": "1794362000649568402",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "2s62bmdMPEPykKj1SG2J3G2A6Y3EEUTAnXsK4dT9JbEt",
+        "parentTransaction": "4aQKLpwucNGkkvrwrKz6K1iv53yrq3GKLLbD9EJEkXRU",
+        "receiptRecordedTimestampNs": "1794362070231568068",
+        "executionTimestampNs": "1794362070231568068",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "EJRnKCFKdFRPAgKG7qFahFKnyV1g1759ZhJiduHz844D",
+        "parentTransaction": "99D1zyC2rfAFShTejg8GhUF6J4hYTTVLxSnv7T4gq5W5",
+        "receiptRecordedTimestampNs": "1794361937220506651",
+        "executionTimestampNs": "1794361937220506651",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "F8TaLfGCRYbtc1eJmKkVYDRcTdCE1mqznyyPv37z9vqK",
+        "parentTransaction": "C7reYoAf4bWaS1kL9UXxXq83PrXyyrD9DajjwH6kRm2b",
+        "receiptRecordedTimestampNs": "1794362001579239762",
+        "executionTimestampNs": "1794362001579239762",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "8b3eQ8E5ZSRBKd1HcdFdpRAkVkAAKRa8Py3VjWUcXHsW",
+        "parentTransaction": "DFiYuaSMNFqjhcaY3fWLntrVabbaVp7JsmAEDfAj76UY",
+        "receiptRecordedTimestampNs": "1794361998321363084",
+        "executionTimestampNs": "1794361998321363084",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CTb9bLcywUNyioE4tPtLaZ9Zd7YWzksMeWTw3dwnEWmW",
+        "parentTransaction": "EpzgHT8cZZZA1f36vsaGJmh9HkCm4eq7P9PnP1sVBkcw",
+        "receiptRecordedTimestampNs": "1794361970051689764",
+        "executionTimestampNs": "1794361970051689764",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "QezVU2y49szvghEpHLchjNHreb6x3vnV77566oCWQn2",
+        "parentTransaction": "FzTJv9VkxgV3E19qsTz5aHB7WrxejrD5k4uJSPFWdNqT",
+        "receiptRecordedTimestampNs": "1794362008334654437",
+        "executionTimestampNs": "1794362008334654437",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "AqChS73R9tj74RycqQb1w2tWLU4pAhd1rBZGascrHwWx",
+        "parentTransaction": "ev52FGQNyXT7gmJhZjDNAvB8cRUNh3S23UUSuQRtavg",
+        "receiptRecordedTimestampNs": "1794361999426970889",
+        "executionTimestampNs": "1794361999426970889",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "EckKQNHMZoEQa6qqujxFrBXNqoa9WeDdbVq8A8njyy4o",
+        "parentTransaction": "36zh3NYoBvgvYce2aCkznRinKy3CYdzGMvWKpgqpXgGJ",
+        "receiptRecordedTimestampNs": "1794361931744863516",
+        "executionTimestampNs": "1794361931744863516",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "Ed45Bsq97ztc1mWcti9ia5FKW2zTC7NhtYz34Sf5RZ1h",
+        "parentTransaction": "3XNbVR3GBkGL21FmosaSTqKSUCzJuMtGQWiUMMHeiWsv",
+        "receiptRecordedTimestampNs": "1794362036885155861",
+        "executionTimestampNs": "1794362036885155861",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "5QFB26hB6LjB29hZquWixfscRee23z7aM6xuBQpHgT4E",
+        "parentTransaction": "3Ypj3eevkpvwFtupw53QvNJ8MtvH1tLi2wq3xZpBhXme",
+        "receiptRecordedTimestampNs": "1794362118024526852",
+        "executionTimestampNs": "1794362118024526852",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "6Whq11C97MWm7WRvxvVyWV24RGc5xTZsem23rvHUZcHr",
+        "parentTransaction": "3qEseaud3PPGYBT2gNf8fuiBrHirBNe8Bpw6NLvm8xMT",
+        "receiptRecordedTimestampNs": "1794362003284441206",
+        "executionTimestampNs": "1794362003284441206",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "nkgJAaY58uSM9Gk9Enb2DseVCt91qmcL9aTcksRdkoe",
+        "parentTransaction": "7quscgiiDTAfybEJqHvMhmESfJ2J7LVDB1pAuTjJH7eG",
+        "receiptRecordedTimestampNs": "1794362070783779278",
+        "executionTimestampNs": "1794362070783779278",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "FCq8cmby4KgLmbJqToWy5Dz4yjWjG4epo5QpWr4Zi3YW",
+        "parentTransaction": "7zpfwWPScWUpfUMLVfvRUcj98WthuN9FC57XauDngc1Z",
+        "receiptRecordedTimestampNs": "1794362076716222966",
+        "executionTimestampNs": "1794362076716222966",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "C7MLf2pfzYJj8d3nZBi53kTv1PCJjG2ibwzXRNfGXQ5K",
+        "parentTransaction": "9E7rQVy6zzcDh12N67sB4M2KCgLR5tRvx1CsdYqq2K2A",
+        "receiptRecordedTimestampNs": "1794362051823166721",
+        "executionTimestampNs": "1794362051823166721",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "88k1MjWi8HsmSCMMNSJe7Y5e5q89YFJeFvUWymEaUEvF",
+        "parentTransaction": "9ioDwZmft8wZeALzCf2B2FPdXFvcC2vgvKYJ99Rf9Ga",
+        "receiptRecordedTimestampNs": "1794361963332766295",
+        "executionTimestampNs": "1794361963332766295",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "9DKM1iF7xdXGvrsYaGJhWwHyW2pz5McU79N9vp8KDmsV",
+        "parentTransaction": "ChRdJ642EpmPx2UnxKpadNPkopKb4wpwkL9UnLnMvFN1",
+        "receiptRecordedTimestampNs": "1794361962802782203",
+        "executionTimestampNs": "1794361962802782203",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CrfMwwDk7z5r6oa91p69ngexU9cycEqxZuR7XL2kQqgD",
+        "parentTransaction": "DYDn1G9LuRP6iarmDWGGLEZWdfmEyejtNsBbQ1KUfgx4",
+        "receiptRecordedTimestampNs": "1794361984525627210",
+        "executionTimestampNs": "1794361984525627210",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "M78iRVVoAdqg4brThjZbfUyWiJtZS4HF1iR3w4QfPxB",
+        "parentTransaction": "GrDrqs1izY5HFbZuAfVuthCNp1gAx95wEMnoRB8Mubud",
+        "receiptRecordedTimestampNs": "1794362005484680786",
+        "executionTimestampNs": "1794362005484680786",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "BHbS5rdmVpVD5NpAMNQLdMiNrx3aSNGHzpXMPJKm611V",
+        "parentTransaction": "Hp4rWN8YXgb5HtULgnX4mmpEYgVDrwN5yKJVioAbzcf6",
+        "receiptRecordedTimestampNs": "1794361928083514645",
+        "executionTimestampNs": "1794361928083514645",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "FbyJkVkLFidTzodZNk3Ac3spWhobdhRFbNPXekJFZeBk",
+        "parentTransaction": "3rSnqTo5NXA5UQtqR5j4RLbsEkkWW3Rz6e2TUAbQvbBW",
+        "receiptRecordedTimestampNs": "1794362225249309365",
+        "executionTimestampNs": "1794362225249309365",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "HjHj34sXPGhzzztcYzNYnnJ3hDF2ovNNHMTdBJBZzAei",
+        "parentTransaction": "44jr7nBBvz2efzXGCRqzB7DAzZu9u1NkM1xEXoM3puvv",
+        "receiptRecordedTimestampNs": "1794362252900332824",
+        "executionTimestampNs": "1794362252900332824",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "Go3oDwmrWPDaDS2FRnG3gd3GckmSoVSMcNrvFGiFnq26",
+        "parentTransaction": "52na1i8FN34TRtyYMHiCM7MmimA6T4y3v5QmtbiZpL9i",
+        "receiptRecordedTimestampNs": "1794362253994209204",
+        "executionTimestampNs": "1794362253994209204",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "42YvaDb4XXbirdaFtFqiGud7jCFi7mgCmgeCboKdkCrR",
+        "parentTransaction": "5XpuAuPrMFQWUZFxL4Wd9Tsub6CrAhxa1hhA85Xuae63",
+        "receiptRecordedTimestampNs": "1794362277841284589",
+        "executionTimestampNs": "1794362277841284589",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "AXwCiGpEdGGoTGJv8CxM2xFkqKqsWTPFkvXAADa7fKzT",
+        "parentTransaction": "6poupw6dVsDSXjyVLVPimQCGhtDBn1qtRbr1GKzdv6ca",
+        "receiptRecordedTimestampNs": "1794362228594194589",
+        "executionTimestampNs": "1794362228594194589",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "BDU4efjcdRyqSFJbUAP87k3MfP356K71QbLTfCcNDAKM",
+        "parentTransaction": "8mYUALBZjqUvwBgj5B56Afpxkar35G4iKVqJ3mZmodgn",
+        "receiptRecordedTimestampNs": "1794362093827643645",
+        "executionTimestampNs": "1794362093827643645",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "B4jryPLYHoM2vVBaqWq7J8C7NtWKUa5jPA1hWHVgCwE9",
+        "parentTransaction": "9oixqmv9b26nBJdX7gbsdXMQLRvQL1WCAvaZXpmzUrSP",
+        "receiptRecordedTimestampNs": "1794362143526090165",
+        "executionTimestampNs": "1794362143526090165",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "5rEChqxR8RTEBZoB3cg76Gb3dBc3Xk3DjFo2pcBHtcWx",
+        "parentTransaction": "Aw9tT6zQ23mNhyNeVJ8anx3jHrwPUwsqsVFGqPfMoQzi",
+        "receiptRecordedTimestampNs": "1794362135091876661",
+        "executionTimestampNs": "1794362135091876661",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "G2ED6ZJvL9djbtpT3NtDivD3Jf8pAz3CJtkfdD6g4Qtg",
+        "parentTransaction": "Ewq1SryKSGATK3RZYMjuBUrxdhLhdFz8A6anpAkhoUaA",
+        "receiptRecordedTimestampNs": "1794362139155447288",
+        "executionTimestampNs": "1794362139155447288",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "EimVMNDB3XEfBHNH5hkmmdVC61cWX4KjejKY3kQ97dzc",
+        "parentTransaction": "HCxE8MF3sKJE8tUE8tx8BJzc9rtEVZhCNZswQpzRq9qV",
+        "receiptRecordedTimestampNs": "1794362184527900683",
+        "executionTimestampNs": "1794362184527900683",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "APVWwrXphzdgwMeVtHUBk4MMCq3dUCzgNK7e5dejYFS1",
+        "parentTransaction": "6UJ3fKG39NAPP7PrN2ScURb8duEFwxo18CcEygcJ9pCJ",
+        "receiptRecordedTimestampNs": "1794362143016781046",
+        "executionTimestampNs": "1794362143016781046",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CQyeDvDuMJQZ353guG4E2W59Eey2VJZzpjmevMtNS1FS",
+        "parentTransaction": "7HPu4pQy8pt6pg4QdbzuT8BLoz17XhHeQT17RsgHRPVx",
+        "receiptRecordedTimestampNs": "1794362195671271021",
+        "executionTimestampNs": "1794362195671271021",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "H87NLTsrSSXwFtfHpfPqgZZiKNwy9yFJ2EFfwEookJrd",
+        "parentTransaction": "9CFoHCo2V5bZC3rCZ1D6RciER4wwbt5rEgBBiGvPc7Dh",
+        "receiptRecordedTimestampNs": "1794362203508884506",
+        "executionTimestampNs": "1794362203508884506",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "DF1FnZqFm4kxudm7ubjZWebatGYdxscD5eEgj9r918Fv",
+        "parentTransaction": "9fNEoWvB6sE8BAeYuFLeG2Gv6bLUBaaDDR75isSCRXtJ",
+        "receiptRecordedTimestampNs": "1794362187686071555",
+        "executionTimestampNs": "1794362187686071555",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "5aKg8gALgkbYhfSUZr4FYUhTFRXGDQRXGrUMzVAuHEZ4",
+        "parentTransaction": "BpZrmnwR58ismiAeERFmJk8GVGT773cktWqeTFB2JY34",
+        "receiptRecordedTimestampNs": "1794362177959108629",
+        "executionTimestampNs": "1794362177959108629",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "4WffpL3YHszRrnQf8bPbtLgvJzs1XzkFrfAi8wRP98Ec",
+        "parentTransaction": "C1ECM2siZ7hZr2GXhxqwDKx4mShZ6EBvNmm5nomEMpwu",
+        "receiptRecordedTimestampNs": "1794362102332839638",
+        "executionTimestampNs": "1794362102332839638",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "6x6x2WSMyPrfJ8TgAYrwsyfxZnGs9WytnXzabew2BnEc",
+        "parentTransaction": "CSwo5nP8J7UFKQDqrLVM4P8QQaCR6tEthev48nKwccxx",
+        "receiptRecordedTimestampNs": "1794362177959108629",
+        "executionTimestampNs": "1794362177959108629",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "HZnwctrW8EFNGqFyxPS44HSY3nsDa9gLZBH3t9c3E5kE",
+        "parentTransaction": "EYzRozgr5G58AUxrX2493RPrenBkHih1qQ9H7bfax1es",
+        "receiptRecordedTimestampNs": "1794362158217594065",
+        "executionTimestampNs": "1794362158217594065",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CTSpzHXULSho1BwGPpzVpBK5pezG7ELxrZPzpswYNJi7",
+        "parentTransaction": "F1Fj16AsZpps3Ycuzgk1m79PGJunxFu1rhPcjhATA3f7",
+        "receiptRecordedTimestampNs": "1794362161682202529",
+        "executionTimestampNs": "1794362161682202529",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CWoJbZw8QuFkgzKbRVe4BexkDR5jneFkZkyKabfNsuEG",
+        "parentTransaction": "MFk6UxjJsw8jFbm1jY9jstb2vVondPJ8gvL6ZaWLarB",
+        "receiptRecordedTimestampNs": "1794362113210498359",
+        "executionTimestampNs": "1794362113210498359",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CvEdSK7AV4c5oZ6U8kf6oncXE7tgtz5uN1rpKad5wWj",
+        "parentTransaction": "4dvJed9Ss43Ceme8jTTMixCAiukQUDYjQTPfdCGyuQ3a",
+        "receiptRecordedTimestampNs": "1794362303287141694",
+        "executionTimestampNs": "1794362303287141694",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "AnqKntZq27cpcMbsLUcmjhCGG91NvXwbsvT72Abf4yX9",
+        "parentTransaction": "6f6fgzi2xGUUKHgvH78gR9rW6TKBMgSxccPtXSXqqkpa",
+        "receiptRecordedTimestampNs": "1794362225249309365",
+        "executionTimestampNs": "1794362225249309365",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "9VDJ8yToBBR65dpy1rJFCwoGALdAUfZzB3bpg7Bg2z5B",
+        "parentTransaction": "7kjszxy4PBXJjkdq7KrZhFs23D5VCnfhGe4jNxq2fids",
+        "receiptRecordedTimestampNs": "1794362338955149803",
+        "executionTimestampNs": "1794362338955149803",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "D5tJ9d2AmWdr9Q8ZBcRF2DR6CywJj5vbBsS1kPVnvn7S",
+        "parentTransaction": "9kdowLZdAUWzVzTncvLTFEiC8GZ6oAPTZrD212wdzBfU",
+        "receiptRecordedTimestampNs": "1794362220145726255",
+        "executionTimestampNs": "1794362220145726255",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "3PCqfaimgeYCMQgYGYfVMBodat7HL86hW3WRNh9Vcknc",
+        "parentTransaction": "CRMe5Fu5HJPGEkgy4tPhFq1gZVTihyjpVNa95WT7hciC",
+        "receiptRecordedTimestampNs": "1794362364873969482",
+        "executionTimestampNs": "1794362364873969482",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "45vKVQrApaDwyiA5YgwqdsmjxwmwFTkr4VGgqaA9nsZE",
+        "parentTransaction": "FnyZLmPstt3hpx9kJGWdTHek5vJSbUVMZqYU5mBDhCJ7",
+        "receiptRecordedTimestampNs": "1794362384844008185",
+        "executionTimestampNs": "1794362384844008185",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "4iaDhNspvwqURStcStAYwJZRhSixVjFSJCn1cQ21JHaq",
+        "parentTransaction": "H1Z39bz6cSzqE2yenMbfMd3fRXsxodTEZrrR4xEhejVV",
+        "receiptRecordedTimestampNs": "1794362348630860331",
+        "executionTimestampNs": "1794362348630860331",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "6nuGF19UaGSXN2iM7qfYmxG5nhP43qsxjcCzjvMWU2v4",
+        "parentTransaction": "H3LWSUYvC2mHcXMbeUKbhoePHpEVA2q3cLg7fLuyuwiR",
+        "receiptRecordedTimestampNs": "1794362332581785009",
+        "executionTimestampNs": "1794362332581785009",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "B64MfhM55qjTmaXg8XpHFcxGt5YRpFsmmoCzUpJGuEGL",
+        "parentTransaction": "2PD3YuGEc4KwRt62Knh2EaXsLQ3nfLeqiuRvRrdqqikD",
+        "receiptRecordedTimestampNs": "1794362376190442529",
+        "executionTimestampNs": "1794362376190442529",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "CSPjVUPCgSmtmWfd186ngQSKCax8DSqnkro3T4YbyUit",
+        "parentTransaction": "3fnafqeKFZ7yN2zM1RNyvcPYTwRaC5sx1Ez9M7KMdRMe",
+        "receiptRecordedTimestampNs": "1794362345096989573",
+        "executionTimestampNs": "1794362345096989573",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "5KLaC1AGiK47g97Ybnsd7JvvhyEzJQUcVDKifrTf7LPU",
+        "parentTransaction": "3wF34M1wh9jSaWj2S3z5F7nawRnnLaEd3ss3qtHxr6Hy",
+        "receiptRecordedTimestampNs": "1794362316066970680",
+        "executionTimestampNs": "1794362316066970680",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "6ByFVcuLvG7iQz7cUMyY2MaBwzdRGmjp95RyQfysksRL",
+        "parentTransaction": "5RqnddVga9yMmuS47XExHDaJQJQttz7RRhgwTUJv36ob",
+        "receiptRecordedTimestampNs": "1794362315403201741",
+        "executionTimestampNs": "1794362315403201741",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "2EaHCtPzCrApauFHnTqkcsihxjhHfPBwhwVD2K7nq7iw",
+        "parentTransaction": "5rUBaMyAXMF7YU8nY9o66g8LkQeiLCyRRfiQmteDQZYR",
+        "receiptRecordedTimestampNs": "1794362301743382880",
+        "executionTimestampNs": "1794362301743382880",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "B3gdsifS6dRtuhYDoKQnq8gYP87xPkzCvAZTUoSZhNRB",
+        "parentTransaction": "7CggZ6G6Gos6kat1BNATvCddLEY2nRvq5YAERCa6GfmE",
+        "receiptRecordedTimestampNs": "1794362225249309365",
+        "executionTimestampNs": "1794362225249309365",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "FF1LSPAhCyGCCQggVmnXTUs48byaY7hzBwueN9XnU39u",
+        "parentTransaction": "8rPL5yAJ2wnk5infX4JNUyvGxodcGJwQRY6SEd9Qq8FJ",
+        "receiptRecordedTimestampNs": "1794362213166530819",
+        "executionTimestampNs": "1794362213166530819",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "GSZs6SkG3tPUQMoQcD3Yt8qiEt4kztQAY5PQg3zpnBBr",
+        "parentTransaction": "92aZaUJLPVwcky4JaSUfRZQnZtQ9mZwJq6hPvd6zgGqL",
+        "receiptRecordedTimestampNs": "1794362372730534009",
+        "executionTimestampNs": "1794362372730534009",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "J1iK1zKjb4sSpPCALkBwrRxz5rgTyu8PQPhoivYHbaAR",
+        "parentTransaction": "99xvGBMSqZ26L2nJygztoXBzxiKRqYeYHVKxewmtgQfZ",
+        "receiptRecordedTimestampNs": "1794362338450630880",
+        "executionTimestampNs": "1794362338450630880",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "64uEWNqA3cWebHgwHHw9ps1xuPyBZwANPQHo7NrsMfwM",
+        "parentTransaction": "9B4nXTd6rZunba84Aw5zEeC8JYmQn3Pt2iDVKXVHnCbb",
+        "receiptRecordedTimestampNs": "1794362227626034167",
+        "executionTimestampNs": "1794362227626034167",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "695rKzBN3spQ4Wa9PKULnVoXjanZe84M8WjibMeVKEVv",
+        "parentTransaction": "AsggUEa8qW94Fv1o9LmBAwtcfMKMnEhtB2YydReTrc35",
+        "receiptRecordedTimestampNs": "1794362316066970680",
+        "executionTimestampNs": "1794362316066970680",
+        "status": "SuccessReceiptId"
+      },
+      {
+        "receiptId": "A5RmykshrTNF1VmCgt6zAQY6wsmK1WV3qRL2CB7nqbrG",
+        "parentTransaction": "BUVWNF8o8jB7bKN5p3ny2xstQb1TdksUT3YzG8ijV9DH",
+        "receiptRecordedTimestampNs": "1794362380235560032",
+        "executionTimestampNs": "1794362380235560032",
+        "status": "SuccessReceiptId"
+      }
+    ],
+    "limits": "Same public providers, not independent full-node replay; does not verify every full-day trace."
+  }
+}

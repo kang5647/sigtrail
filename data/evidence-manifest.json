@@ -1,0 +1,54 @@
+{
+  "snapshot.json": {
+    "sha256": "53597467fb8e8e5be27c248d11153464804be6ff305d1fc8877d80bba6c6cdeb",
+    "bytes": 4051034
+  },
+  "receipt-audit.csv": {
+    "sha256": "bb912b690ea3501218959980a29902667c3014593d522cf5ee904f98794d6224",
+    "bytes": 1446902
+  },
+  "fee-audit.csv": {
+    "sha256": "445ba1fb2b27a9758e6b6930745de72046edb691a684c61795e5ed699ca16e94",
+    "bytes": 10770
+  },
+  "full-day-receipt-audit.csv": {
+    "sha256": "d20b696e23cdb32198de9193331930a36ec94c2feb015fb5a9d73cf70dac21da",
+    "bytes": 9147675
+  },
+  "comparison.json": {
+    "sha256": "4849b2572d9d0dd7c21d28706dcae1d80c2d7cb8cee93fac7d1cfb2b00c8e1c8",
+    "bytes": 8470
+  },
+  "comparison-receipts.csv": {
+    "sha256": "dd2c94cfe4d9c9f82ca0ef60f1046e266a785df08becc3f9ed19d95d0982d3c5",
+    "bytes": 275265
+  },
+  "finding-evidence.json": {
+    "sha256": "cb5039706cb1313a8edfd0a4e03fb5491e61d8f55fe6a0f5f9c3613df27e4882",
+    "bytes": 2475770
+  },
+  "full-day-census.json.gz": {
+    "sha256": "9b36c9c2f86575a788b68b1592b33f1b7a9cdf0c81b73ea7afd6a87b6960c065",
+    "bytes": 5104241
+  },
+  "comparison-source.json.gz": {
+    "sha256": "350e06ff3fe99ab378d2c3bd46bff6e8c25225274df052e5860a44b1f200fd1d",
+    "bytes": 7670495
+  },
+  "rebuild-proof.txt": {
+    "sha256": "0923d2cebda2c6ef3d9f00421025937147a33982b758c1ee876fe835ceff4dfe",
+    "bytes": 496
+  },
+  "../METHODOLOGY.md": {
+    "sha256": "24e5d5609d17bd8d51d5aada6d8bc8fec3670384f7a3213b69d4a0548a10be3e",
+    "bytes": 14373
+  },
+  "../DEMO.md": {
+    "sha256": "d2f77204360000ac3f5258e8e47c0827bd8de9b8d6b4848da1a83ac55a2e2e8d",
+    "bytes": 3423
+  },
+  "../THESIS.md": {
+    "sha256": "3bdc52d073de280238b72568c47f9adb9833694a0f37720ce280c6d2984bedcd",
+    "bytes": 14917
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "fetchedAtUtc": "2026-11-14T11:43:23.054Z",
+  "selection": "First UTC hour on 10 and 11 November 2026, selected post hoc before collection; two narrow matched cohorts, not full days or an adoption trend.",
+  "sources": {
+    "rpc": "https://archival-rpc.mainnet.fastnear.com",
+    "index": "https://tx.main.fastnear.com/v0/account",
+    "traces": "https://tx.main.fastnear.com/v0/transactions"
+  },
+  "periods": [
+    {
+      "date": "2026-11-10",
+      "startUtc": "2026-11-10T00:00:00.000Z",
+      "endUtc": "2026-11-10T01:00:00.000Z",
+      "parentBlockRange": [
+        223838228,
+        223844259
+      ],
+      "touchingTransactions": 1295,
+      "signerActionReceipts": 1934,
+      "categories": {
+        "request": 615,
+        "mpc_response": 652,
+        "internal_completion": 615,
+        "other_method": 52
+      },
+      "directRequests": 615,
+      "distinctAccounts": 12,
+      "topCallers": [
+        {
+          "account": "omni.bridge.near",
+          "count": 243
+        },
+        {
+          "account": "btc-connector.bridge.near",
+          "count": 115
+        },
+        {
+          "account": "zcash-connector.bridge.near",
+          "count": 104
+        },
+        {
+          "account": "fast-auth.near",
+          "count": 92
+        },
+        {
+          "account": "tx-bench.near",
+          "count": 24
+        },
+        {
+          "account": "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora",
+          "count": 9
+        },
+        {
+          "account": "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb",
+          "count": 6
+        },
+        {
+          "account": "kernel-near.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-usdc.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-usdt.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-zec.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "6s5b8.sputnik-dao.near",
+          "count": 2
+        }
+      ],
+      "topOneShare": 0.3951219512195122,
+      "topThreeCount": 462,
+      "topThreeShare": 0.751219512195122,
+      "totalTokensBurntYocto": "257842719043961800000000",
+      "signStageChargeNear": 0.2578427190439618,
+      "meanSignStageChargeNear": 0.00041925645373001917,
+      "protocolVersion": 88,
+      "contractRewardFraction": 0,
+      "signStageSupplyBurnNear": 0.2578427190439618,
+      "directStageFailures": 0,
+      "directExecutionOutsideHour": 0
+    },
+    {
+      "date": "2026-11-11",
+      "startUtc": "2026-11-11T00:00:00.000Z",
+      "endUtc": "2026-11-11T01:00:00.000Z",
+      "parentBlockRange": [
+        223988378,
+        223994730
+      ],
+      "touchingTransactions": 1253,
+      "signerActionReceipts": 1878,
+      "categories": {
+        "request": 600,
+        "mpc_response": 619,
+        "internal_completion": 600,
+        "other_method": 59
+      },
+      "directRequests": 600,
+      "distinctAccounts": 13,
+      "topCallers": [
+        {
+          "account": "omni.bridge.near",
+          "count": 301
+        },
+        {
+          "account": "fast-auth.near",
+          "count": 105
+        },
+        {
+          "account": "btc-connector.bridge.near",
+          "count": 92
+        },
+        {
+          "account": "zcash-connector.bridge.near",
+          "count": 54
+        },
+        {
+          "account": "tx-bench.near",
+          "count": 24
+        },
+        {
+          "account": "kernel-near.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-usdc.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-usdt.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "kernel-zec.meteor-vaults.near",
+          "count": 5
+        },
+        {
+          "account": "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f",
+          "count": 1
+        },
+        {
+          "account": "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora",
+          "count": 1
+        },
+        {
+          "account": "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9",
+          "count": 1
+        },
+        {
+          "account": "gimbal_dex.near",
+          "count": 1
+        }
+      ],
+      "topOneShare": 0.5016666666666667,
+      "topThreeCount": 498,
+      "topThreeShare": 0.83,
+      "totalTokensBurntYocto": "251489829827030500000000",
+      "signStageChargeNear": 0.2514898298270305,
+      "meanSignStageChargeNear": 0.00041914971637838414,
+      "protocolVersion": 88,
+      "contractRewardFraction": 0,
+      "signStageSupplyBurnNear": 0.2514898298270305,
+      "directStageFailures": 0,
+      "directExecutionOutsideHour": 1
+    }
+  ],
+  "change": {
+    "directRequests": -15,
+    "directRequestsPct": -0.024390243902439046,
+    "distinctAccounts": 1,
+    "topThreePercentagePoints": 7.8780487804878,
+    "signStageChargeNear": -0.006352889216931279,
+    "enteredAccounts": [
+      "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f",
+      "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9",
+      "gimbal_dex.near"
+    ],
+    "exitedAccounts": [
+      "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb",
+      "6s5b8.sputnik-dao.near"
+    ],
+    "retainedAccounts": [
+      "omni.bridge.near",
+      "btc-connector.bridge.near",
+      "zcash-connector.bridge.near",
+      "fast-auth.near",
+      "tx-bench.near",
+      "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora",
+      "kernel-near.meteor-vaults.near",
+      "kernel-usdc.meteor-vaults.near",
+      "kernel-usdt.meteor-vaults.near",
+      "kernel-zec.meteor-vaults.near"
+    ],
+    "accountChanges": [
+      {
+        "account": "omni.bridge.near",
+        "before": 243,
+        "after": 301,
+        "delta": 58
+      },
+      {
+        "account": "zcash-connector.bridge.near",
+        "before": 104,
+        "after": 54,
+        "delta": -50
+      },
+      {
+        "account": "btc-connector.bridge.near",
+        "before": 115,
+        "after": 92,
+        "delta": -23
+      },
+      {
+        "account": "fast-auth.near",
+        "before": 92,
+        "after": 105,
+        "delta": 13
+      },
+      {
+        "account": "62e1e3be3df663f0563c4ef48233d42ec988e6d9.aurora",
+        "before": 9,
+        "after": 1,
+        "delta": -8
+      },
+      {
+        "account": "33f976ce1e7019fc56060f9e911f9b47b9c86dcd2cff7e022523619466ccc4bb",
+        "before": 6,
+        "after": 0,
+        "delta": -6
+      },
+      {
+        "account": "6s5b8.sputnik-dao.near",
+        "before": 2,
+        "after": 0,
+        "delta": -2
+      },
+      {
+        "account": "07e5b6ed0cb5d393dce98464a6fc8992bbe65d81c31d1266be408a3f1313857f",
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      },
+      {
+        "account": "ca7c5c6488281e177bcd442f1f4ccd11d1195bf921c7d9e2d58f6b91710133e9",
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      },
+      {
+        "account": "gimbal_dex.near",
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      },
+      {
+        "account": "kernel-near.meteor-vaults.near",
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      {
+        "account": "kernel-usdc.meteor-vaults.near",
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      {
+        "account": "kernel-usdt.meteor-vaults.near",
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      {
+        "account": "kernel-zec.meteor-vaults.near",
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      {
+        "account": "tx-bench.near",
+        "before": 24,
+        "after": 24,
+        "delta": 0
+      }
+    ]
+  },
+  "limits": [
+    "Two post hoc matched one-hour parent cohorts cannot establish daily growth or a sustained trend.",
+    "Initiating account IDs are not independently verified application operators or unique users.",
+    "Direct receipt execution status does not establish signature completion or destination settlement.",
+    "Exact charges cover direct sign execution only; other workflow stages and destination-chain costs are excluded.",
+    "FastNear index completeness is not independently checked against a full node.",
+    "Receipt creation time and execution time are retained separately; parent inclusion defines cohort membership."
+  ]
+}

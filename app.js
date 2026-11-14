@@ -131,8 +131,9 @@ function render(data) {
   moneyGrid.before(document.querySelector('.fee-panel'));
   moneyGrid.before(element('h3', 'intents-heading', 'Separate context: NEAR Intents fees and buybacks'));
   const latest = data.signerWindows.at(-1);
-  $('#hero-share').textContent = `${Math.round(latest.topThreeShare * 100)}%`;
-  $('#hero-count').textContent = `${integer(latest.topThreeCount)} of ${integer(latest.categories.request)}`;
+  const census = data.fullDayCensus;
+  $('#hero-share').textContent = percent(census.topThreeShare);
+  $('#hero-count').textContent = `${integer(census.topThreeCount)} of ${integer(census.categories.request)}`;
   $('#hero-raw').textContent = integer(latest.touchingTransactions);
   $('#hero-sign').textContent = integer(latest.categories.request);
   $('#freshness').textContent = `REFRESHED ${shortDate(data.fetchedAt)} · FEES THROUGH ${shortDate(data.dataThrough)}`;
@@ -146,6 +147,9 @@ function render(data) {
   $('#fee-100k').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 100_000).signReceiptNearPerDay);
   $('#fee-million').textContent = integer(data.feeFootprint.scenarios.find(row => row.dailyRequests === 1_000_000).signReceiptNearPerDay);
   const issuance = data.issuanceAudit;
+  const observedEstimate = census.categories.request * data.feeFootprint.averageNear;
+  const estimate = element('p', 'observed-estimate', `Scale check: applying the 80-outcome mean to the ${integer(census.categories.request)} observed full-day parent-cohort requests gives an estimated ${observedEstimate.toFixed(3)} NEAR of sign-stage burn, ${((observedEstimate / issuance.dailyMintedNear) * 100).toFixed(4)}% of the daily gross issuance baseline. Actual full-day fee outcomes were not audited.`);
+  document.querySelector('.fee-scenario').append(estimate);
   $('#issuance-seven').textContent = `${integer(issuance.mintedNearInWindow)} NEAR`;
   $('#issuance-daily').textContent = `${integer(issuance.dailyMintedNear)} NEAR`;
   $('#issuance-yearly').textContent = `${integer(issuance.annualizedMintedNear)} NEAR`;
@@ -220,6 +224,16 @@ function render(data) {
     }
   }
   const day = data.daySummary;
+  $('#census-touching').textContent = integer(census.touchingTransactions);
+  $('#census-direct').textContent = integer(census.categories.request);
+  $('#census-share').textContent = percent(census.topThreeShare);
+  $('#census-fraction').textContent = `${integer(census.topThreeCount)} of ${integer(census.categories.request)} direct requests`;
+  $('#census-accounts').textContent = integer(census.initiatingAccounts);
+  for (const caller of census.topCallers.slice(0, 4)) {
+    const cell = element('div');
+    cell.append(element('span', '', caller.account), element('strong', '', integer(caller.count)));
+    $('#census-callers').append(cell);
+  }
   $('#day-share').textContent = percent(day.topThreeShare);
   $('#day-fraction').textContent = `${integer(day.topThreeCount)} of ${integer(day.categories.request)} sampled requests`;
   $('#day-request-count').textContent = integer(day.categories.request);
@@ -249,7 +263,7 @@ try {
   const response = await fetch('./data/snapshot.json', { cache: 'no-store' });
   if (!response.ok) throw new Error(`Data request failed (${response.status})`);
   const data = await response.json();
-  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare) || !Number.isFinite(data.feeFootprint?.averageNear) || !Number.isFinite(data.issuanceAudit?.dailyMintedNear)) throw new Error('Signer or issuance audit data is incomplete');
+  if (!Array.isArray(data.signerWindows) || data.signerWindows.length !== 7 || data.signerWindows.some(window => !Number.isFinite(window.topThreeShare)) || !Array.isArray(data.dayWindows) || data.dayWindows.length !== 12 || !Number.isFinite(data.daySummary?.topThreeShare) || !Number.isFinite(data.fullDayCensus?.topThreeShare) || !Number.isFinite(data.feeFootprint?.averageNear) || !Number.isFinite(data.issuanceAudit?.dailyMintedNear)) throw new Error('Signer or issuance audit data is incomplete');
   render(data);
   const proof = await fetch('./data/rebuild-proof.txt', { cache: 'no-store' });
   if (proof.ok) $('#rebuild-output').textContent = await proof.text();

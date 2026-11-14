@@ -109742,5 +109742,98 @@
       "netSupplyChangeNear": 640251.3684554322,
       "grossMinusNetNear": 5616.753762999783
     }
+  },
+  "fullDayCensus": {
+    "date": "2026-11-11",
+    "fetchedAtUtc": "2026-11-14T03:17:07.604Z",
+    "parentBlockRange": [
+      223988378,
+      224135609
+    ],
+    "boundaryBlocks": {
+      "startBefore": {
+        "height": 223988377,
+        "hash": "FSJAHKeqiJ2bCcCTQq8Len3Lqb8M8umzctu5HSaq43dQ",
+        "timeUtc": "2026-11-10T23:59:59.397Z"
+      },
+      "startInside": {
+        "height": 223988378,
+        "hash": "AL2hAQv6jYiiTMDLG158nPu6FhvGcB9k8J5kymvvpPCW",
+        "timeUtc": "2026-11-11T00:00:00.014Z"
+      },
+      "endInside": {
+        "height": 224135609,
+        "hash": "EacX9sDK6GTbMsqUfvhged4BvR94mVkfWexsFxWbELbU",
+        "timeUtc": "2026-11-11T23:59:59.752Z"
+      },
+      "endAfter": {
+        "height": 224135610,
+        "hash": "JD95GM2eLSyetHJRK9TRVyXVZ4iwcDtNVv5bwRgTMWfc",
+        "timeUtc": "2026-11-12T00:00:00.223Z"
+      }
+    },
+    "source": {
+      "index": "https://tx.main.fastnear.com/v0/account",
+      "traces": "https://tx.main.fastnear.com/v0/transactions",
+      "query": {
+        "account_id": "v1.signer",
+        "from_tx_block_height": 223988378,
+        "to_tx_block_height": 224135609,
+        "is_function_call": true,
+        "desc": false
+      }
+    },
+    "archiveSha256": "9b36c9c2f86575a788b68b1592b33f1b7a9cdf0c81b73ea7afd6a87b6960c065",
+    "transactionHashesSha256": "651b003bf3f1566bb0fb58f4c3bc40f2e4aaaa120eca8b38836aaccde070806e",
+    "touchingTransactions": 37775,
+    "categories": {
+      "request": 17665,
+      "mpc_response": 17892,
+      "internal_completion": 17665,
+      "other_method": 3494,
+      "other_receipt": 0
+    },
+    "receiptCount": 56716,
+    "receiptsExecutedOutsideUtcDay": 2,
+    "directSignsExecutedOutsideUtcDay": 1,
+    "initiatingAccounts": 82,
+    "topCallers": [
+      {
+        "account": "omni.bridge.near",
+        "count": 8492
+      },
+      {
+        "account": "fast-auth.near",
+        "count": 3304
+      },
+      {
+        "account": "btc-connector.bridge.near",
+        "count": 2438
+      },
+      {
+        "account": "zcash-connector.bridge.near",
+        "count": 2151
+      },
+      {
+        "account": "tx-bench.near",
+        "count": 576
+      },
+      {
+        "account": "kernel-near.meteor-vaults.near",
+        "count": 132
+      },
+      {
+        "account": "kernel-usdt.meteor-vaults.near",
+        "count": 124
+      },
+      {
+        "account": "kernel-usdc.meteor-vaults.near",
+        "count": 120
+      }
+    ],
+    "topOneCount": 8492,
+    "topOneShare": 0.4807245966600623,
+    "topThreeCount": 14234,
+    "topThreeShare": 0.8057741296348712
   }
 }

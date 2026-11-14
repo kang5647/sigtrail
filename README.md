@@ -18,12 +18,14 @@ Open `http://localhost:4177`.
 
 | Do this | See this |
 | --- | --- |
-| Select **11 November** under Seven windows | 170 transactions touching the signer reduce to 80 direct `sign` receipts; three initiating accounts made 72/80. |
-| Select a row under **Inspect a direct request** | The exact receipt ID, caller, method, timestamp, parent hash, and public transaction link. |
-| Scroll to the **Full UTC-day parent cohort** | 37,775 indexed signer-touching parent transactions yielded 17,665 direct requests; the top three accounts made 14,234 (80.6%). |
-| Continue to the **Earlier spaced check** | 1,219/1,482 pooled direct requests from the top three in twelve selected windows; this was a sample, subsequently checked against the full-day parent cohort. |
-| Change **Assumed direct requests/day** to `1000000` and **independent-app share** to `100` | About 418.94 NEAR/day of hypothetical `sign`-stage burn and 0.4541% of the observed daily gross issuance baseline. |
-| Run `npm run rebuild` again | Snapshot, CSVs, and THESIS.md regenerate offline; the command prints the 7 historical windows, 12 spaced windows, full-day parent cohort, 80 fee outcomes, 25 issuance epochs, and the 1% offset threshold. |
+| Open **Overview** | **80.6%** of full-day parent-cohort direct requests came from three initiating account IDs: **14,234/17,665**. A caller bar chart and exact account counts explain the concentration. |
+| Select **Inspect a real request** | **Inspect receipts** opens the latest fixed window: **170** signer-touching transactions, **80** direct `sign` requests. Seven dated windows remain selectable. |
+| Select a request row | The exact caller, method and receipt timestamp. Expand **Exact receipt and parent transaction**, then open the public transaction link. |
+| Select **Test impact** | A hypothetical scenario starts at **1,000,000** direct requests/day, **100%** assumed independent-app share and **1×** sampled fee: **418.94 NEAR/day**, or **0.4541%** of the observed daily gross issuance baseline. |
+| Click **10 million** or change an assumption | The calculation and visual scale update. Outputs count only the assumed independent-app share; other requests also burn fees. These are assumptions, not observed demand. |
+| Open **Sources & method**, then expand a source disclosure | Dated evidence, raw archives, fee outcomes and recorded offline rebuild output remain available without crowding the main journey. |
+| Run `npm run rebuild` | The same historical windows, full-day parent cohort, fee outcomes, issuance baseline, CSVs and thesis regenerate offline. |
+
 
 The independent-app share is a **user assumption**, not an estimate from account IDs. The burn model excludes parent transactions, MPC responses, cleanup, other contracts, and destination-chain fees. It is not a demand forecast, net-supply forecast, holder-income claim, or price target.
 
@@ -50,8 +52,10 @@ The full-day archive is rebuilt offline with `npm run rebuild`. To repeat its **
 
 ## Limits and judge path
 
-A direct `sign` request may not lead to an external settlement. The linked [NEAR transaction](https://pikespeak.ai/transaction-viewer/FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG) and [confirmed Bitcoin transaction](https://mempool.space/tx/75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7) are one indexed association, **not a measured settlement rate**. FastNear and NearBlocks are third-party indexes. Operator identities, actual full-day sign-stage fee outcomes, complete NEAR workflow burn, and destination-chain settlement rate remain unmeasured. [DEMO.md](DEMO.md) gives the 60–90-second judge route.
+A direct `sign` request may not lead to an external settlement. The linked [NEAR transaction](https://pikespeak.ai/transaction-viewer/FrBQdrUigUK1JYaXyVqA7uJH4PvLYJVCHD1iPUn1UrFG) and [confirmed Bitcoin transaction](https://mempool.space/tx/75a2455fdab91a57c89980f39df4ae50b8d094b28d6e74a87e46468f1148edd7) are one indexed association, **not a measured settlement rate**. FastNear and NearBlocks are third-party indexes. Operator identities, actual full-day sign-stage fee outcomes, complete NEAR workflow burn, and destination-chain settlement rate remain unmeasured. The [32-second actual-app walkthrough](public/demo.mp4) follows the [DEMO.md](DEMO.md) route.
 
 Capture Test is the independent project intended for GitHub user `kang5647`. Orbit and PrizeKey remain separate projects with `bebe0307mz`; none shares this codebase or submission. Its [GitHub Pages workflow](.github/workflows/pages.yml) builds and deploys `public/` after publication. **This repository remains local under the owner's current instruction.** A public repo, accessible demo, and public X post are still required for final submission; no publication or submission has occurred. See the [official hackathon rules](https://nearhackathon.com/HACKATHON.md).
 
-MIT license: [LICENSE](LICENSE).
+The frontend vendors **GSAP 3.15.1** under its [standard license](https://gsap.com/standard-license/) for brief transform/opacity entrances. Reduced-motion preferences are respected. Research data and scenario calculations do not depend on animation.
+
+MIT license applies to this project’s own code: [LICENSE](LICENSE). Third-party GSAP retains its license banner.

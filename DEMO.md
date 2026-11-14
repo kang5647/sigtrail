@@ -9,11 +9,11 @@ Run `npm test`, `npm run independent-audit`, `npm run rebuild`, then `npm run se
 | Time | Actual screen action | Narration |
 | --- | --- | --- |
 | 0–5s | Original question slide | Is NEAR’s cross-chain infrastructure actually gaining adoption? |
-| 5–12s | Actual app Overview; scope, metrics and account mix | Capture Test gives researchers a dated view of activity, account mix, and the evidence behind that story. |
+| 5–12s | Actual app Overview; select a participant in Account activity | Capture Test exposes the dated activity. Selecting an account focuses its counted requests. |
 | 12–18s | Compare periods | Compare matched periods. These two hours show six hundred and fifteen requests becoming six hundred. |
 | 18–22s | Hold matched-hour scope | That comparison does not establish a lasting trend. |
-| 22–27s | Accounts & receipts | Filter the initiating account to inspect its exact requests. |
-| 27–33s | Select omni.bridge.near; 8,492 matching requests | This account has eight thousand, four hundred and ninety-two requests. Export every matching row. |
+| 22–27s | Accounts & receipts, carrying the selected account | Open the receipt view to inspect the requests behind that account. |
+| 27–33s | Filter fast-auth.near, then omni.bridge.near; 3,304 → 8,492 matches | Filter participants: this account made eight thousand, four hundred and ninety-two requests. |
 | 33–37s | Actual CSV export and visible result | The export retains receipt IDs and parent transactions. |
 | 37–42s | Public parent trace, exact sign receipt | Open the public trace to verify the receiver and signing method. |
 | 42–48s | Implications view | The investment read stays bounded: real service use, but unproven growth in independent application adoption. |

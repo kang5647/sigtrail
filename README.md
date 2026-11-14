@@ -33,6 +33,7 @@ Open `http://localhost:4177`.
 | Do this | See this |
 | --- | --- |
 | Open **Overview** | The dated scope, 17,665 requests, 82 initiating account IDs, 37,775 parent transactions and top-three share. Account mix and a bounded interpretation are visible immediately. |
+| Select an account in **Account activity**, then **Inspect … receipt rows** | The chart highlights its actual share and the inspector opens with the same full-day account filter. Clear selection restores all accounts. |
 | Open **Compare periods** | 615 → 600 requests, −2.4%, in two matched UTC hours; top-three share 75.1% → 83.0%. This is not a lasting trend. |
 | Open **Accounts & receipts**, then choose `omni.bridge.near` | 8,492 matching direct requests, with exact receipt and parent IDs. |
 | Click **Export matching receipts** | A CSV with every selected row, not only the 20 displayed. |

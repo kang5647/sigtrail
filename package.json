@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "rebuild": "node scripts/rebuild.mjs",
+    "full-day-census": "node scripts/full-day-census.mjs",
+    "seal-full-day": "node scripts/seal-full-day.mjs",
     "issuance-check": "node scripts/issuance-check.mjs",
     "supply-check": "node scripts/supply-check.mjs",
     "concentration-check": "node scripts/concentration-report.mjs",

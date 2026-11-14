@@ -13,9 +13,11 @@ const markdownTable = (header, rows) => [header, header.map((_, index) => index 
 export function renderThesis(template, snapshot, canonicalSnapshotText) {
   const latest = snapshot.signerWindows.at(-1);
   const pool = snapshot.daySummary;
+  const census = snapshot.fullDayCensus;
   const fee = snapshot.feeFootprint;
   const issuance = snapshot.issuanceAudit;
-  if (!issuance?.supplyCrossCheck || latest.topThreeShare < 0.6 || pool.topThreeShare < 0.6) {
+  if (!issuance?.supplyCrossCheck || !census || latest.topThreeShare < 0.6 ||
+      pool.topThreeShare < 0.6 || census.topThreeShare < 0.6) {
     throw new Error('Thesis conclusion needs manual review before rebuild');
   }
   const historical = markdownTable(
@@ -48,6 +50,15 @@ export function renderThesis(template, snapshot, canonicalSnapshotText) {
     DAY_TOP_THREE_COUNT: n(pool.topThreeCount), DAY_DIRECT: n(pool.categories.request),
     DAY_TOP_THREE_PCT: pct(pool.topThreeShare), DAY_ACCOUNTS: n(pool.uniqueCallers),
     DAY_TOP_ONE_COUNT: n(pool.topCallers[0].count), DAY_TOP_ONE_PCT: pct(pool.topCallerShare),
+    CENSUS_TOUCHING: n(census.touchingTransactions), CENSUS_DIRECT: n(census.categories.request),
+    CENSUS_ACCOUNTS: n(census.initiatingAccounts),
+    CENSUS_TOP_ONE_COUNT: n(census.topOneCount), CENSUS_TOP_ONE_PCT: pct(census.topOneShare),
+    CENSUS_TOP_THREE_COUNT: n(census.topThreeCount), CENSUS_TOP_THREE_PCT: pct(census.topThreeShare),
+    CENSUS_CALLERS: census.topCallers.slice(0, 4).map(row => `\`${row.account}\` (${n(row.count)})`).join(', '),
+    CENSUS_SPILLOVER: n(census.directSignsExecutedOutsideUtcDay),
+    CENSUS_SHA: census.archiveSha256,
+    CENSUS_ESTIMATED_BURN: n(census.categories.request * fee.averageNear, 3),
+    CENSUS_ESTIMATED_ISSUANCE_PCT: `${n(census.categories.request * fee.averageNear / issuance.dailyMintedNear * 100, 4)}%`,
     BRIDGE_COUNT: n(bridgeCount), BRIDGE_PCT: pct(bridgeCount / pool.categories.request),
     HISTORICAL_TABLE: historical,
     FEE_RECEIPTS: n(fee.receiptCount), FEE_TOTAL: n(fee.totalNear, 9), FEE_AVERAGE: n(fee.averageNear, 12),

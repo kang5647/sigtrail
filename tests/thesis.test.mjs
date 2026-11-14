@@ -13,7 +13,8 @@ test('committed investment thesis matches the offline receipt and epoch audit', 
   const { snapshot, files } = rebuildArtifacts(source);
   const rendered = renderThesis(template, snapshot, files['snapshot.json']);
   assert.equal(committed, rendered);
-  assert.match(rendered, /72\/80 direct requests/);
+  assert.match(rendered, /14,234\/17,665 direct `sign` receipts \(80\.6%\)/);
+  assert.match(rendered, /72\/80 \(90\.0%\)/);
   assert.match(rendered, /1,219\/1,482/);
   assert.match(rendered, /2,202,384/);
 });

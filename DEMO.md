@@ -1,30 +1,24 @@
-# Capture Test demonstration
+# Capture Test · natural product walkthrough
 
-The current product is an independent four-view research workspace. The video is a separate presentation of selected interactions.
+The working research application and this video are separate deliverables. The app has four independent research views and no narration/reveal gate.
 
-The current 68-second production assembly is **awaiting Michael’s recording**. No synthetic Michael voice is used. The obsolete 32-second preview is archived privately. Final audio synchronization and the final public video link remain blocked on the human recording and publication authorization.
+The current main take is **desktop, approximately 80 seconds**, recorded through actual browser use at a verified 1280×720 CSS viewport. It includes genuine vertical scrolling, account selection, receipt inspection, a real CSV download and the bounded comparison/implication. There are no slides, decorative phone frames, screenshot pans or reconstructed results. A genuine partial 390×844 mobile scroll capture is retained as supporting evidence; it is not presented as a complete mobile walkthrough.
 
-Run `npm test`, `npm run independent-audit`, `npm run rebuild`, then `npm run serve`. Open http://127.0.0.1:4177.
+The preview remains silent while Michael’s authorized narration is finalized. Earlier 32/68-second montage cuts are superseded. No new blockchain transaction is performed: this is current read-only inspection of saved mainnet evidence.
 
-| Time | Actual screen action | Narration |
-| --- | --- | --- |
-| 0–5s | Original question slide | Is NEAR’s cross-chain infrastructure actually gaining adoption? |
-| 5–12s | Actual app Overview; select a participant in Account activity | Capture Test exposes the dated activity. Selecting an account focuses its counted requests. |
-| 12–18s | Compare periods | Compare matched periods. These two hours show six hundred and fifteen requests becoming six hundred. |
-| 18–22s | Hold matched-hour scope | That comparison does not establish a lasting trend. |
-| 22–27s | Accounts & receipts, carrying the selected account | Open the receipt view to inspect the requests behind that account. |
-| 27–33s | Filter fast-auth.near, then omni.bridge.near; 3,304 → 8,492 matches | Filter participants: this account made eight thousand, four hundred and ninety-two requests. |
-| 33–37s | Actual CSV export and visible result | The export retains receipt IDs and parent transactions. |
-| 37–42s | Public parent trace, exact sign receipt | Open the public trace to verify the receiver and signing method. |
-| 42–48s | Implications view | The investment read stays bounded: real service use, but unproven growth in independent application adoption. |
-| 48–54s | Concrete research signals and explicit unknowns | Watch for sustained use across unrelated apps, completed external actions, and full-workflow economics. |
-| 54–60s | Direct-stage fee assumptions | Current fee estimates cover only the initial signing stage. They do not establish material NEAR token demand. |
-| 60–68s | Original closing slide | Capture Test makes the adoption story easier to examine, with conclusions you can trace back to the evidence. |
+Run `npm test`, `npm run independent-audit`, `npm run build`, then `npm run serve`. Open http://127.0.0.1:4177.
 
-Captions follow these ordinary spoken sentences without a redundant provenance footer. Cohort and saved-evidence labels stay in the application. Recording timings are provisional until Michael’s actual delivery is integrated; never speed or clone his voice to force a fit.
+| Approximate time | Visible action and result |
+| --- | --- |
+| 0–7s | Dated research workspace; the question is whether NEAR signing activity establishes adoption. |
+| 7–20s | Actually scroll to the account chart, select omni.bridge.near, and see 8,492 requests / 48.1% of the full-day parent cohort. |
+| 20–37s | Open that account’s receipts and scroll real rows, creation timestamps, IDs and public parent links. |
+| 37–47s | Scroll back, click Export matching receipts, and see the actual completed 8,492-row export. |
+| 47–63s | Scroll to navigation and compare the matched first UTC hours on 10/11 November: 615 → 600 requests, with the two-hour limit visible. |
+| 63–80s | Open Implications and scroll the bounded research interpretation and concrete signals to investigate next. |
 
-The public request shot shows receipt `HvLvAtJCexC3neX4uxG4UeZH7ZniPA63WZyracCgwAZr`, receiver `v1.signer`, predecessor `omni.bridge.near`, exact method `sign`, in parent `49YbWgMy4hKtcSSGZ36E4yD5mi8miuGHFXTPeWLrpxui`. This verifies the selected request, not a destination settlement. The explorer displays local time; the app’s UTC creation timestamp remains authoritative for the archived label.
+Only idle pauses between capture tool calls are omitted. Actions remain in chronological order, at the same viewport and scale. Ordinary spoken captions follow the visible actions; there is no second provenance banner. Short click emphasis is tied to actual logged click locations. The app retains its source/date/scope labels.
 
-The full-day finding uses 14,234 / 17,665 distinct `sign` receipts, with exact receiver filtering at collection. The inspector and filtered export use that same population. The comparison is the first UTC hour on 10 and 11 November, selected post hoc; it is separate from the headline. Account IDs do not count applications, and requests do not establish settlements.
+The full-day finding is 14,234 / 17,665 direct requests (80.6%) from three initiating account IDs. Shared account activity does not count independent apps or people. Signing requests do not establish successful signatures or destination settlements. The historical comparison covers only two selected one-hour parent cohorts; it does not establish a lasting adoption trend. Economic estimates cover the initial signing stage and extrapolate 80 measured fee outcomes; full-day actual fees and complete workflow economics remain unmeasured.
 
-Use the thesis, methodology, raw archives and independent audit for all analytical boundaries. The 80 measured fee outcomes cover the initial `sign` stage; full-day actual fees and full-workflow burn remain unmeasured. All demonstration actions read saved mainnet records or calculate explicit hypothetical scenarios. No new blockchain transaction is performed.
+The matching final narration, caption timing, raw viewport frames, action/scroll log, downloaded CSV, capture verification and encoded preview are retained in the private production packet. Voice samples, models/IDs and personal submission fields stay outside this repository. Final audio synchronization, authorized publication and submission remain separate pending actions.

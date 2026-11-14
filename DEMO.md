@@ -4,7 +4,7 @@
 
 ## Problem and evidence opening for the next recording
 
-“NEAR lets apps sign transactions on other blockchains. But if that activity grows, how much value comes back to NEAR? Capture Test checks the evidence.”
+“If you’re researching NEAR, growing transaction numbers only tell part of the story. They don’t tell you how widely the technology is being used, or how much NEAR those requests burn in fees. Capture Test brings the requests, caller breakdown and fee model into one dashboard, so you can inspect the evidence and test your assumptions.”
 
 Show the dated concentration finding, inspect an actual request, then change a burn-model assumption. The concentration observation and the fee scenario answer different questions; neither is a price forecast. Use the README’s evidence table for exact counts and source links. The existing video linked above predates this revised narration; a new face-led recording is not yet complete.
 

@@ -4,7 +4,7 @@
 
 [NEAR Chain Signatures](https://docs.near.org/chain-abstraction/chain-signatures) lets NEAR accounts authorize transactions on other blockchains. For someone evaluating NEAR’s long-term investment case, the missing link is between that useful technology, repeat demand from independent applications, and value captured by the NEAR token. Activity counts alone do not establish that link.
 
-Capture Test is an **Investment Thesis** dashboard that lets a reader inspect real signing requests, check which accounts initiate them, and test how measured signing-stage fees compare with gross NEAR issuance. It separates observed evidence from user assumptions and keeps Chain Signatures distinct from NEAR Intents fees and buybacks.
+Checking that link requires tracing requests, identifying initiating accounts and calculating fees. Capture Test brings the receipts, caller breakdown and fee model into one **Investment Thesis** dashboard: a researcher can inspect real signing requests and test how different usage assumptions compare with gross NEAR issuance. It separates observed evidence from user assumptions and keeps Chain Signatures distinct from NEAR Intents fees and buybacks.
 
 ### Why investigate? Three pieces of evidence
 
